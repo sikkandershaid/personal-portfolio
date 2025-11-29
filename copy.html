@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Smooth Animated Center Image with Rings</title>
+<style>
+:root{
+  --size: 420px;
+  --ring-color: rgba(0,230,255,0.95);
+  --ring-color-2: rgba(100,180,255,0.85);
+  --bg: #071428;
+}
+
+html, body{
+  height:100%;
+  margin:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(10,25,40,0.35), transparent 10%),
+              linear-gradient(180deg, #03111a 0%, #071428 50%, #04101b 100%);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:#e6f7ff;
+}
+
+.stage{
+  width:var(--size);
+  height:var(--size);
+  position:relative;
+  display:grid;
+  place-items:center;
+  filter: drop-shadow(0 30px 40px rgba(0,0,0,0.6));
+}
+
+.photo{
+  width:64%;
+  height:64%;
+  border-radius:50%;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:40;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: inset 0 2px 10px rgba(255,255,255,0.02), 0 6px 30px rgba(0,0,0,0.6);
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.rings{
+  position:absolute;
+  inset:0;
+  z-index:10;
+  pointer-events:none;
+}
+
+.caption{
+  position:absolute;
+  bottom:-48px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:14px;
+  color:rgba(230,247,255,0.85);
+  letter-spacing:0.6px;
+  text-align:center;
+  opacity:0.95;
+}
+
+.ring { fill:none; stroke-linecap:round; stroke-width:2.5; }
+
+.dash-anim {
+  stroke-dasharray: 6 8 10 8;
+  animation: dashmove 4s linear infinite;
+}
+
+@keyframes dashmove{
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -200; }
+}
+
+.rotate-slow{
+  animation: rot 16s linear infinite;
+  transform-origin:center center;
+}
+
+.rotate-rev{
+  animation: rot-rev 12s linear infinite;
+  transform-origin:center center;
+}
+
+@keyframes rot{ to { transform: rotate(360deg); } }
+@keyframes rot-rev{ to { transform: rotate(-360deg); } }
+
+.glow{ filter: drop-shadow(0 0 12px rgba(0,230,255,0.15)); }
+
+@media (max-width:520px){
+  :root{ --size:320px; }
+}
+</style>
+</head>
+<body>
+
+<div class="stage" role="img" aria-label="Animated rings around center image">
+
+<svg class="rings" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Outer neon segmented arc -->
+  <g class="rotate-slow" stroke="var(--ring-color)" stroke-width="4" stroke-linecap="round">
+    <path d="M 250 40 A 210 210 0 0 1 460 250" fill="none" opacity="0.9">
+      <animate attributeName="stroke-dasharray" values="30 20; 10 10; 30 20" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="stroke-dashoffset" values="0; -60" dur="3s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Cyber rotating hex pattern ring -->
+  <g class="rotate-rev" stroke="var(--ring-color-2)" stroke-width="3">
+    <circle cx="250" cy="250" r="170" fill="none" stroke-opacity="0.85"
+      stroke-dasharray="12 6 4 6 20 8 10 16">
+      <animate attributeName="stroke-dashoffset" values="0; 200" dur="4s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Inner soft glow pulse ring -->
+  <g>
+    <circle cx="250" cy="250" r="120" fill="none" stroke="var(--ring-color)" stroke-width="2.2">
+      <animate attributeName="r" values="118;130;118" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="stroke-width" values="2;5;2" dur="4s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Small rotating nodes -->
+  <g>
+    <circle cx="250" cy="80" r="6" fill="var(--ring-color)">
+      <animateTransform attributeName="transform" type="rotate" from="0 250 250" to="360 250 250" dur="6s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="430" cy="250" r="4" fill="var(--ring-color-2)">
+      <animateTransform attributeName="transform" type="rotate" from="0 250 250" to="-360 250 250" dur="7s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+</svg>
+
+<div class="photo" title="center image">
+  <img src="batperson@192.webp" alt="center image"/>
+</div>
+
+<div class="caption">Born to run — Run for dream</div>
+</div>
+
+</body>
+</html>
