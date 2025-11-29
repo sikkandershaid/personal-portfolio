@@ -1,0 +1,85 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//MEDIA QUERY MANAGER-------------
+/*
+0px - 575px    :         Phone
+576px - 767px  :         Tablet
+768px - 991px  :         Small-Laptop
+992px - 1200px :         Big-Laptop Or Desktop
+1201px +       :         Extra Big Screen*/
+
+//$BREAKPOINT ARGUMENT CHOICE------
+/*
+-- phone
+-- tablet
+-- sm-laptop
+-- bg-laptop
+-- bg-desktop*/
+
+// [ 1em = 16px ]
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 575px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 767px) {
+      @content;
+    }
+  }
+  @if $breakpoint == sm-laptop {
+    @media only screen and (max-width: 991px) {
+      @content;
+    }
+  }
+  @if $breakpoint == bg-laptop {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint == bg-screen {
+    @media only screen and (min-width: 1400px) {
+      @content;
+    }
+  }
+}
+
+@mixin para-text($color: $white-color,) {
+  color: $color;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+@mixin btn{
+  padding: 10px 24px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+@mixin top-title($color: $light-color,$t-bg-color: #D2E4D6){
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 26px;
+  padding: .8rem 1.2rem;
+  border-radius: 5px;
+  color: $color;
+  background-color: $t-bg-color;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+}

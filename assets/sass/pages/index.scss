@@ -1,0 +1,127 @@
+.hero-banner-section{
+  background: url(../../img/hero-banner.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  &_text-part{
+    & .hero-title{
+      font-size: 8rem;
+      font-weight: 900;
+      color: $white-color;
+      text-transform: capitalize;
+
+      .highlight{
+        color: $light-color;
+        border-bottom: 0.7rem solid;
+      }
+    }
+    & .short-title{
+      @include para-text;
+      max-width: 460px;
+      margin: 4.8rem 0;
+    }
+  }
+  &_btn-wrap{
+    display: flex;
+    gap: 2.4rem;
+  }
+  &_img-part{
+    position: relative;
+  }
+  &_img-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    position: absolute;
+    right: 32px;
+    bottom: 28px;
+    & .content_item{
+      text-align: center;
+      background: linear-gradient(180deg, rgba(2, 102, 0, 0.2) -165.11%, rgba(202, 238, 14, 0.3) 100%);
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid $light-color;
+      backdrop-filter: blur(80px);
+      box-shadow: 0px 2px 7px 0px #00000040;
+      & .icon{
+        width: 49px;
+        height: 49px;
+        font-size: 2.2rem;
+        border-radius: 5px;
+        background: linear-gradient(270deg, #00291D -455.1%, #CAEE0E 205.1%);
+        color: $white-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 1.2rem;
+      }
+      & .title{
+        span{
+          display: block;
+          margin-bottom: 1rem;
+        }
+        font-size: 2rem;
+        font-weight: 700;
+        color: $white-color;
+
+      }
+
+    }
+  }
+}
+
+.about{
+  display: flex;
+  justify-content: space-between;
+  gap: 120px;
+  &__img-part{
+    position: relative;
+    & .img-part-content{
+      position: absolute;
+      width: 123px;
+      height: 123px;
+      top: 50%;
+      bottom: 50%;
+      right: -61px;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      border: 4px solid $white-color;
+      background-color: $light-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 7px;
+    }
+    & .title{
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: $black-color;
+    }
+  }
+  &__text-part{
+    & .top-title{
+      margin: 0;
+    }
+    & .title{
+      font-size: 6rem;
+      font-weight: 900;
+      color: $light-color;
+      margin: 3.2rem 0;
+      max-width: 500px;
+    }
+    & .short-des{
+      @include para-text;
+      color: #333333;
+    }
+  }
+}
+
+

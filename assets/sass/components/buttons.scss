@@ -1,0 +1,26 @@
+.login-button a{
+  font-family: $font-primary;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #1B2228;
+  background-color: $light-color;
+  border-radius: 5px;
+  padding: 3px 2.4rem;
+  display: inline-block;
+}
+
+.bg-color-btn{
+  @include btn;
+  background-color: $light-color;
+  color: $light-color;
+}
+
+.border-btn{
+  @include btn;
+  border: 1px solid $white-color;
+  color: $white-color;
+}
+.bg-color-btn i,
+.border-btn i{
+  margin-left: 4px;
+}
