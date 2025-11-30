@@ -15,12 +15,15 @@
 //Components
 @import 'components/buttons.scss';
 @import 'components/sidebar.scss';
+@import 'components/mouse-indicator.scss';
 
 //Layout
 @import 'layout/header.scss';
 @import 'layout/footer.scss';
 @import 'layout/grid.scss';
 @import 'layout/navigation.scss';
+@import 'layout/common.scss';
 
 //Pages
 @import 'pages/index.scss';
+@import 'pages/contact.scss';

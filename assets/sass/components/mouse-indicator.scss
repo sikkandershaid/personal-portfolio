@@ -1,0 +1,58 @@
+/* --- ADVANCED TOP MOUSE ANIMATION (Updated) --- */
+
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .mouse {
+    width: 26px;
+    height: 42px;
+    border: 2px solid $primary-color;
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 10px;
+    box-shadow: 0 0 15px rgba(0, 242, 195, 0.2);
+    animation: mouseFloat 4s ease-in-out infinite;
+  }
+  .wheel {
+    width: 4px;
+    height: 4px;
+    background-color: $primary-color;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: wheelDrop 2s cubic-bezier(0.15, 0.41, 0.69, 0.94) infinite;
+  }
+  .dashed-line {
+    width: 2px;
+    height: 70px;
+    margin-top: 5px;
+  
+    background-image: linear-gradient(
+      to bottom,
+      $primary-color 50%,
+      transparent 50%
+    );
+    background-size: 2px 15px;
+    background-repeat: repeat-y;
+    position: relative;
+    animation: moveDashes 0.8s linear infinite;
+  }
+  .dashed-line::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 6px;
+    height: 6px;
+    background-color: $primary-color;
+    box-shadow: 0 0 5px $primary-color;
+  }
+}

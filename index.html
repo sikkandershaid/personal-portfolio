@@ -1,171 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>BookClub | Home Page</title>
+    <link rel="icon" href="fav-icon.png" type="image/gif" sizes="16x16" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="assets/fonts/fontawesome-free/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>BookClub | Home Page</title>
-  <link rel="icon" href="fav-icon.png" type="image/gif" sizes="16x16" />
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/fonts/fontawesome-free/css/all.min.css" />
-  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-
-</head>
-
-<body class="site">
-  <header class="header">
-    <div class="container">
-      <div class="d-none d-lg-block">
-        <div class="header__menu">
-          <!-- NavBar  -->
-          <nav class="navigation">
-            <ul class="navigation__list">
-              <li class="navigation__item">
-                <a href="index.html" class="navigation__link">Home</a>
-              </li>
-              <li class="navigation__item">
-                <a href="#" class="navigation__link">About</a>
-              </li>
-              <li class="navigation__item">
-                <a href="#" class="navigation__link">Blogs</a>
-              </li>
-              <li class="navigation__item">
-                <a href="#" class="navigation__link">Product</a>
-              </li>
-              <li class="navigation__item">
-                <a href="#" class="navigation__link">Services</a>
-              </li>
-              <li class="navigation__item">
-                <a href="#" class="navigation__link">Team</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-
-      <!--Mobile Nav Menu-->
-      <div class="d-lg-none">
-        <!-- Overlay -->
-        <div class="overlay" id="overlay"></div>
-        <div class="header__menu">
-          <div class="mobile-toggle">
-            <div class="header__logo-box">
-              <a href="index.html"><img src="assets/img/logo.png" alt="Company Logo" /></a>
-            </div>
-            <button class="menu-btn" id="menuBtn">&#9776;</button>
-          </div>
-
-          <div class="sidebar" id="sidebar">
-            <div class="mobile-logo">
-              <a href="index.html"><img src="assets/img/logo.png" alt="logo" /></a>
-            </div>
-            <!-- mobile logo -->
-            <div class="mobile-canvas-close close-mobile-menu">
-              <p class="sidebar__menu-title">Menu</p>
-            </div>
-            <div class="mobile-main-menu">
-              <button class="close-btn" id="closeBtn">
-                <i class="fa-solid fa-xmark"></i>
-              </button>
-              <nav class="navigation">
-                <ul class="navigation__list">
-                  <li class="navigation__item">
-                    <a href="index.html" class="navigation__link">Home</a>
-                  </li>
-                  <li class="navigation__item">
-                    <a href="#" class="navigation__link">About</a>
-                  </li>
-                  <li class="navigation__item">
-                    <a href="#" class="navigation__link">Blogs</a>
-                  </li>
-                  <li class="navigation__item">
-                    <a href="#" class="navigation__link">Product</a>
-                  </li>
-                  <li class="navigation__item">
-                    <a href="#" class="navigation__link">Services</a>
-                  </li>
-                  <li class="navigation__item">
-                    <a href="#" class="navigation__link">Team</a>
-                  </li>
-                </ul>
-              </nav>
-              <div class="login-button">
-                <a href="tel:01786293291">Log in</a>
-              </div>
-            </div>
-            <!-- mobile main menu -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <main class="site__content">
-    <section class="hero_section">
+  <body class="site">
+    <header class="header">
       <div class="container">
-        <div class="hero-content">
-          <div class="row">
-            <div class="col-lg-8">
-              <!-- Caption / tagline -->
-              <div class="caption">Welcome to my world</div>
+        <div class="d-none d-lg-block">
+          <div class="header__menu">
+            <!-- NavBar  -->
+            <nav class="navigation">
+              <ul class="navigation__list">
+                <li class="navigation__item">
+                  <a href="index.html" class="navigation__link">Home</a>
+                </li>
+                <li class="navigation__item">
+                  <a href="#" class="navigation__link">About Me</a>
+                </li>
+                <li class="navigation__item">
+                  <a href="#" class="navigation__link">Portfolio</a>
+                </li>
+                <li class="navigation__item">
+                  <a href="#" class="navigation__link">Skills</a>
+                </li>
+                <li class="navigation__item">
+                  <a href="#" class="navigation__link">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
 
-              <!-- Frontend Developer title -->
-              <div class="title">Hi, I’m Sikkander Shaid</div>
-
-              <!-- Subheading / skills -->
-              <div class="subheading">a Frontend Developer</div>
-              <!-- Short des -->
-              <p class="short-des">It is a long established fact that a reader will be of a page when established fact
-                looking at its layout. It is a long established fact that a reader will be of a page when established
-                fact looking at its layout.</p>
-
-              <div class="hero-actions">
-                <a href="#projects" class="secondary-btn">
-                  View Portfolio <i class="fa-solid fa-arrow-right"></i>
-                </a>
-                <a href="#contact" class="primary-btn">
-                  Let's Talk <i class="fa-solid fa-comments"></i>
-                </a>
+        <!--Mobile Nav Menu-->
+        <div class="d-lg-none">
+          <!-- Overlay -->
+          <div class="overlay" id="overlay"></div>
+          <div class="header__menu">
+            <div class="mobile-toggle">
+              <div class="header__logo-box">
+                <a href="index.html"
+                  ><img src="assets/img/logo.png" alt="Company Logo"
+                /></a>
               </div>
+              <button class="menu-btn" id="menuBtn">&#9776;</button>
             </div>
-            <div class="col-lg-4">
-              <div class="stage" role="img" aria-label="Animated rings around center image">
-                <!-- Neon ring -->
-                <svg class="rings" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <g class="rotate-slow" stroke="#00e6ff" stroke-width="2" stroke-linecap="round">
-                    <path d="M 250 40 A 210 210 0 0 1 460 250" fill="none" opacity="0.9">
-                      <animate attributeName="stroke-dasharray" values="30 20; 10 10; 30 20" dur="3s"
-                        repeatCount="indefinite" />
-                      <animate attributeName="stroke-dashoffset" values="0; -60" dur="3s" repeatCount="indefinite" />
-                    </path>
-                  </g>
-                </svg>
 
-                <!-- Circular glass photo -->
-                <div class="photo" title="Profile Image">
-                  <img src="Designer.jpeg" alt="Profile Image" />
+            <div class="sidebar" id="sidebar">
+              <div class="mobile-logo">
+                <a href="index.html"
+                  ><img src="assets/img/logo.png" alt="logo"
+                /></a>
+              </div>
+              <!-- mobile logo -->
+              <div class="mobile-canvas-close close-mobile-menu">
+                <p class="sidebar__menu-title">Menu</p>
+              </div>
+              <div class="mobile-main-menu">
+                <button class="close-btn" id="closeBtn">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+                <nav class="navigation">
+                  <ul class="navigation__list">
+                    <li class="navigation__item">
+                      <a href="index.html" class="navigation__link">Home</a>
+                    </li>
+                    <li class="navigation__item">
+                      <a href="#" class="navigation__link">About</a>
+                    </li>
+                    <li class="navigation__item">
+                      <a href="#" class="navigation__link">Blogs</a>
+                    </li>
+                    <li class="navigation__item">
+                      <a href="#" class="navigation__link">Product</a>
+                    </li>
+                    <li class="navigation__item">
+                      <a href="#" class="navigation__link"></a>
+                    </li>
+                    <li class="navigation__item">
+                      <a href="#" class="navigation__link">Team</a>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="login-button">
+                  <a href="tel:01786293291">Log in</a>
+                </div>
+              </div>
+              <!-- mobile main menu -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="site__content">
+      <section class="hero_section section_padding">
+        <div class="container">
+          <div class="hero-content">
+            <div class="row">
+              <div class="col-lg-8">
+                <!-- Caption / tagline -->
+                <div class="caption">Welcome to my world</div>
+
+                <!-- Frontend Developer title -->
+                <div class="title">Hi, I’m Sikkander Shaid</div>
+
+                <!-- Subheading / skills -->
+                <div class="subheading">a Frontend Developer</div>
+                <!-- Short des -->
+                <p class="short-des">
+                  It is a long established fact that a reader will be of a page
+                  when established fact looking at its layout. It is a long
+                  established fact that a reader will be of a page when
+                  established fact looking at its layout.
+                </p>
+
+                <div class="hero-actions">
+                  <a href="#contact" class="primary-btn">
+                    Let's Talk <i class="fa-solid fa-comments"></i>
+                  </a>
+                  <a href="#projects" class="secondary-btn">
+                    View Portfolio <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div
+                  class="stage"
+                  role="img"
+                  aria-label="Animated rings around center image"
+                >
+                  <!-- Neon ring -->
+                  <svg
+                    class="rings"
+                    viewBox="0 0 500 500"
+                    preserveAspectRatio="xMidYMid meet"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      class="rotate-slow"
+                      stroke="#00e6ff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    >
+                      <path
+                        d="M 250 40 A 210 210 0 0 1 460 250"
+                        fill="none"
+                        opacity="0.9"
+                      >
+                        <animate
+                          attributeName="stroke-dasharray"
+                          values="30 20; 10 10; 30 20"
+                          dur="3s"
+                          repeatCount="indefinite"
+                        />
+                        <animate
+                          attributeName="stroke-dashoffset"
+                          values="0; -60"
+                          dur="3s"
+                          repeatCount="indefinite"
+                        />
+                      </path>
+                    </g>
+                  </svg>
+
+                  <!-- Circular glass photo -->
+                  <div class="photo" title="Profile Image">
+                    <img src="Designer.jpeg" alt="Profile Image" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
-  <!-- footer area -->
-  <footer class="footer section__padding">
-    <div class="container">
-    </div>
-    </div>
-  </footer>
+      </section>
+      <section class="contact-us_section section_padding">
+        <div class="scroll-indicator">
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
+          <div class="dashed-line"></div>
+        </div>
+        <div class="container">
+          <div class="section-title-wrap">
+            <h1 class="section-title">Contact</h1>
+            <div class="title-underline">
+              <span class="dot"></span>
+              <span class="line"></span>
+              <span class="dot"></span>
+            </div>
+            <p class="subtitle">I'm currently available for freelance work</p>
+          </div>
+          <div class="cta-banner">Send Me A Message</div>
 
-  <!-- Js File -->
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/scrollreveal.min.js"></script>
-  <script src="js/swiper-bundle.min.js"></script>
-  <script src="js/script.js"></script>
-</body>
+          <form class="contact-form">
+            <div class="row g-0 contact-form-row">
+              <!-- Name  -->
+              <div class="col-lg-6">
+                <div class="input-group">
+                  <label>Your name *</label>
+                  <input type="text" placeholder="Enter your name" required />
+                  <span class="focus-border"></span>
+                </div>
+              </div>
+              <!-- Email  -->
+              <div class="col-lg-6">
+                <div class="input-group">
+                  <label>Your email *</label>
+                  <input type="email" placeholder="Enter your email" required />
+                  <span class="focus-border"></span>
+                </div>
+              </div>
+              <!-- Message  -->
+              <div class="col-lg-12">
+                <div class="input-group">
+                  <label>Your message *</label>
+                  <textarea
+                    rows="1"
+                    placeholder="Enter your needs"
+                    required
+                  ></textarea>
+                  <span class="focus-border"></span>
+                </div>
+              </div>
+            </div>
 
+            <button type="submit" class="submit-btn">
+              Send Message <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <!-- footer area -->
+    <footer class="footer section__padding">
+      <div class="container"></div>
+    </footer>
+
+    <!-- Js File -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scrollreveal.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>

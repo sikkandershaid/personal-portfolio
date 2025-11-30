@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
-body{
+
+body {
   box-sizing: border-box;
   font-family: $font-primary;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.7;
-  color: #777;
+  color: $shadow-color;
 }
 
 ::selection {
@@ -21,79 +22,98 @@ h4,
 h5,
 h6,
 p {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 a {
-	text-decoration: none;
-	transition: .4s;
-	-webkit-transition: all .3s linear;
+  text-decoration: none;
+  transition: 0.4s;
+  -webkit-transition: all 0.3s linear;
 }
 
 a:hover {
-	color: currentColor;
+  color: currentColor;
 }
 
-.site{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	min-height: 100vh;
-	&__content{
-		flex: 1;
-	}
+.site {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  &__content {
+    flex: 1;
+  }
 }
 
-.section__padding{
-	padding: 8rem 0;
-	@include respond(sm-laptop){
-		padding: 6rem 0;
-	}
-	@include respond(tablet){
-		padding: 4.5rem 0;
-	}
-	@include respond(phone){
-		padding: 4rem 0;
-	}
+.section_padding {
+  padding: 80px 0;
+  @include respond(sm-laptop) {
+    padding: 6rem 0;
+  }
+  @include respond(tablet) {
+    padding: 4.5rem 0;
+  }
+  @include respond(phone) {
+    padding: 4rem 0;
+  }
 }
-input:focus{
-	box-shadow: none !important;
-}
-
-input,select,::placeholder{
-	font-size: 1.6rem !important;
-	font-weight: 400 !important;
-	line-height: 2.6rem !important;
-	color: $light-color !important;
-	border: none !important;
+input:focus {
+  box-shadow: none !important;
 }
 
-.section-title{
-	text-align: center;
-	& .title{
-		font-size: 3.6rem;
-		font-weight: 700;
-		color: $black-color;
-		max-width: 578px;
-		margin: 2.4rem auto 0;
-	}
+input,
+select,
+::placeholder {
+  font-size: 1.6rem !important;
+  font-weight: 400 !important;
+  line-height: 2.6rem !important;
+  color: $light-color !important;
+  border: none !important;
 }
 
-.top-title,.top-title-b-white{
-	@include top-title;
-	& i{
-		margin: 5px 5px 0;
-		font-size: 6px;
-	}
-}
-
-.top-title-b-white{
-	background-color: $white-color;
+.section-title-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: $primary-color;
+    letter-spacing: 1px;
+    max-width: 578px;
+    margin: 2.4rem auto 0;
+  }
+  .title-underline {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 15px;
+    .dot {
+      width: 6px;
+      height: 6px;
+      background-color: $secondary-color;
+      border-radius: 50%;
+    }
+    .line {
+      width: 150px;
+      height: 2px;
+      background-color: $primary-color;
+    }
+  }
+  .subtitle {
+    color: $white-color;
+    font-size: 16px;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+	max-width: 648px;
+  }
 }

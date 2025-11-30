@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import "../fontawesome-free/css/all.min.css";
 /*
 0px - 575px    :         Phone
@@ -11,7 +12,7 @@
 -- sm-laptop
 -- bg-laptop
 -- bg-desktop*/
-@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
 *,
 *::after,
 *::before {
@@ -46,11 +47,11 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: "Hind Siliguri", sans-serif;
+  font-family: "Rajdhani", sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.7;
-  color: #777;
+  color: rgba(230, 247, 255, 0.85);
 }
 
 ::selection {
@@ -95,21 +96,21 @@ a:hover {
   flex: 1;
 }
 
-.section__padding {
-  padding: 8rem 0;
+.section_padding {
+  padding: 80px 0;
 }
 @media only screen and (max-width: 991px) {
-  .section__padding {
+  .section_padding {
     padding: 6rem 0;
   }
 }
 @media only screen and (max-width: 767px) {
-  .section__padding {
+  .section_padding {
     padding: 4.5rem 0;
   }
 }
 @media only screen and (max-width: 575px) {
-  .section__padding {
+  .section_padding {
     padding: 4rem 0;
   }
 }
@@ -118,7 +119,9 @@ input:focus {
   box-shadow: none !important;
 }
 
-input, select, ::placeholder {
+input,
+select,
+::placeholder {
   font-size: 1.6rem !important;
   font-weight: 400 !important;
   line-height: 2.6rem !important;
@@ -126,37 +129,44 @@ input, select, ::placeholder {
   border: none !important;
 }
 
-.section-title {
-  text-align: center;
+.section-title-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.section-title .title {
-  font-size: 3.6rem;
+.section-title-wrap .section-title {
+  text-align: center;
+  font-size: 36px;
   font-weight: 700;
-  color: #000000;
+  color: #00e6ff;
+  letter-spacing: 1px;
   max-width: 578px;
   margin: 2.4rem auto 0;
 }
-
-.top-title, .top-title-b-white {
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 26px;
-  padding: 0.8rem 1.2rem;
-  border-radius: 5px;
-  color: #EEFAFF;
-  background-color: #D2E4D6;
+.section-title-wrap .title-underline {
   display: flex;
   align-items: center;
-  width: fit-content;
-  margin: 0 auto;
+  gap: 6px;
+  margin-bottom: 15px;
 }
-.top-title i, .top-title-b-white i {
-  margin: 5px 5px 0;
-  font-size: 6px;
+.section-title-wrap .title-underline .dot {
+  width: 6px;
+  height: 6px;
+  background-color: #FAA32C;
+  border-radius: 50%;
 }
-
-.top-title-b-white {
-  background-color: #FFFFFF;
+.section-title-wrap .title-underline .line {
+  width: 150px;
+  height: 2px;
+  background-color: #00e6ff;
+}
+.section-title-wrap .subtitle {
+  color: #FFFFFF;
+  font-size: 16px;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+  max-width: 648px;
 }
 
 .u-center-text {
@@ -540,36 +550,92 @@ input, select, ::placeholder {
     transform: rotate(360deg);
   }
 }
-.login-button a {
-  font-family: "Hind Siliguri", sans-serif;
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: #1B2228;
-  background-color: #EEFAFF;
-  border-radius: 5px;
-  padding: 3px 2.4rem;
-  display: inline-block;
+/* মাউসের অ্যাডভান্স কীফ্রেম */
+@keyframes mouseFloat {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 0 15px rgba(0, 242, 195, 0.2);
+  }
+  50% {
+    transform: translateY(-6px);
+    /* একটু উপরে উঠবে */
+    box-shadow: 0 0 25px rgba(0, 242, 195, 0.5);
+    /* গ্লো বাড়বে */
+  }
+}
+/* চাকা পড়ার অ্যাডভান্স কীফ্রেম (ড্রপ + স্ট্রেচ) */
+@keyframes wheelDrop {
+  0% {
+    top: 5px;
+    opacity: 0;
+    height: 4px;
+    /* শুরুতে গোল */
+  }
+  10% {
+    opacity: 1;
+    height: 6px;
+    /* নামার সময় একটু লম্বা হবে */
+  }
+  100% {
+    top: 25px;
+    opacity: 0;
+    height: 4px;
+  }
+}
+/* ড্যাশ লাইনের কীফ্রেম (যেমন আছে) */
+@keyframes moveDashes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 30px;
+    /* ড্যাশগুলো নিচে নামবে */
+  }
+}
+/* Primary Butto  - Outline */
+.primary-btn {
+  background-color: transparent;
+  color: #00e6ff;
+  border: 2px solid #00e6ff;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px 20px 5px 20px;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.5px;
+}
+.primary-btn:hover {
+  transform: translateY(-3px);
+  background-color: rgba(0, 242, 195, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 242, 195, 0.15);
+  color: #00e6ff;
 }
 
-.bg-color-btn {
-  padding: 10px 24px;
-  border-radius: 5px;
-  display: inline-block;
-  background-color: #EEFAFF;
-  color: #EEFAFF;
+/* Secondary Button - Outline */
+.secondary-btn {
+  background-color: transparent;
+  color: #FAA32C;
+  border: 2px solid #FAA32C;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px 20px 5px 20px;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.5px;
 }
-
-.border-btn {
-  padding: 10px 24px;
-  border-radius: 5px;
-  display: inline-block;
-  border: 1px solid #FFFFFF;
-  color: #FFFFFF;
-}
-
-.bg-color-btn i,
-.border-btn i {
-  margin-left: 4px;
+.secondary-btn:hover {
+  transform: translateY(-3px);
+  background-color: rgba(250, 163, 44, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 242, 195, 0.15);
+  color: #FAA32C;
 }
 
 .mobile-toggle {
@@ -678,6 +744,59 @@ input, select, ::placeholder {
   visibility: visible;
 }
 
+/* --- ADVANCED TOP MOUSE ANIMATION (Updated) --- */
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.scroll-indicator .mouse {
+  width: 26px;
+  height: 42px;
+  border: 2px solid #00e6ff;
+  border-radius: 20px;
+  position: relative;
+  margin-bottom: 10px;
+  box-shadow: 0 0 15px rgba(0, 242, 195, 0.2);
+  animation: mouseFloat 4s ease-in-out infinite;
+}
+.scroll-indicator .wheel {
+  width: 4px;
+  height: 4px;
+  background-color: #00e6ff;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: wheelDrop 2s cubic-bezier(0.15, 0.41, 0.69, 0.94) infinite;
+}
+.scroll-indicator .dashed-line {
+  width: 2px;
+  height: 70px;
+  margin-top: 5px;
+  background-image: linear-gradient(to bottom, #00e6ff 50%, transparent 50%);
+  background-size: 2px 15px;
+  background-repeat: repeat-y;
+  position: relative;
+  animation: moveDashes 0.8s linear infinite;
+}
+.scroll-indicator .dashed-line::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 6px;
+  height: 6px;
+  background-color: #00e6ff;
+  box-shadow: 0 0 5px #00e6ff;
+}
+
 .header {
   padding: 12px 32px;
   position: fixed;
@@ -700,7 +819,7 @@ input, select, ::placeholder {
   color: #00e6ff;
   transition: color 0.3s ease;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .header .navigation .navigation__item .navigation__link::after {
@@ -711,11 +830,11 @@ input, select, ::placeholder {
   width: 0;
   height: 3px;
   border-radius: 50px;
-  background: #EEFAFF;
+  background: #FAA32C;
   transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .header .navigation .navigation__item .navigation__link:hover {
-  background: #EEFAFF;
+  background: #FAA32C;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -723,6 +842,23 @@ input, select, ::placeholder {
   width: 100%;
   left: 0;
   right: auto;
+}
+
+/* --- CTA Banner --- */
+.cta-banner {
+  border: 2px solid #00e6ff;
+  color: #00e6ff;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 5px 20px 5px 20px;
+  box-shadow: 0 0 10px rgba(0, 242, 195, 0.1);
+  transition: all 0.3s ease;
+  width: fit-content;
+  margin: 0 auto 50px;
+}
+.cta-banner:hover {
+  box-shadow: 0 0 20px rgba(0, 242, 195, 0.3);
+  transform: translateY(-2px);
 }
 
 .hero_section {
@@ -733,6 +869,10 @@ input, select, ::placeholder {
   background-size: cover;
   position: relative;
   overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Darker cinematic overlay */
@@ -750,7 +890,6 @@ input, select, ::placeholder {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 .stage {
@@ -790,7 +929,8 @@ input, select, ::placeholder {
 }
 
 .caption {
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: 600;
   color: rgba(230, 247, 255, 0.85);
   letter-spacing: 0.6px;
   opacity: 0.95;
@@ -808,8 +948,9 @@ input, select, ::placeholder {
 
 /* Skills / subheading */
 .subheading {
-  margin-top: 8px;
+  margin: 8px 0;
   font-size: 48px;
+  font-weight: 600;
   color: #FAA32C;
   letter-spacing: 0.5px;
   z-index: 3;
@@ -831,52 +972,105 @@ input, select, ::placeholder {
   margin-top: 48px;
 }
 
-/* Primary Button (Let's Talk) - Solid Fill */
-.primary-btn {
-  background-color: transparent;
-  color: #FAA32C;
-  border: 2px solid #FAA32C;
-  padding: 12px 30px;
+/* --- Typography --- */
+.contact-us_section {
+  background-color: #15191d;
+  position: relative;
+}
+
+/* --- Form Styles --- */
+.contact-form {
+  width: 100%;
+  text-align: left;
+}
+
+.contact-form-row {
+  gap: 48px;
+  margin-bottom: 40px;
+}
+
+.contact-form-row > div {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.input-group {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  color: #00e6ff;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #00e6ff !important;
+  padding: 10px 0;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-group textarea {
+  resize: none;
+}
+
+/* Animation on Focus */
+.input-group input:focus,
+.input-group textarea:focus {
+  border-bottom: 1px solid #00e6ff;
+}
+
+.full-width {
+  margin-bottom: 50px;
+}
+
+/* --- Submit Button --- */
+.submit-btn {
+  background-color: #00e6ff;
+  color: #15191d;
+  border: none;
+  padding: 12px 40px;
   font-size: 16px;
   font-weight: 600;
-  border-radius: 5px 20px 5px 20px;
-  text-decoration: none;
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-  display: inline-flex;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
   align-items: center;
-  gap: 8px;
-  letter-spacing: 0.5px;
+  gap: 10px;
+  margin: 0 auto;
+  /* Center the button */
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.primary-btn:hover {
+.submit-btn:hover {
   transform: translateY(-3px);
-  background-color: rgba(250, 163, 44, 0.1);
-  box-shadow: 0 5px 20px rgba(0, 242, 195, 0.15);
-  color: #FAA32C;
+  box-shadow: 0 5px 15px rgba(0, 242, 195, 0.4);
 }
 
-/* Secondary Button (View Portfolio) - Outline */
-.secondary-btn {
-  background-color: transparent;
-  color: #00e6ff;
-  border: 2px solid #00e6ff;
-  padding: 12px 30px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 5px 20px 5px 20px;
-  text-decoration: none;
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  letter-spacing: 0.5px;
+.submit-btn i {
+  font-size: 0.9rem;
 }
 
-.secondary-btn:hover {
-  transform: translateY(-3px);
-  background-color: rgba(0, 242, 195, 0.1);
-  box-shadow: 0 5px 20px rgba(0, 242, 195, 0.15);
-  color: #00e6ff;
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .input-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .section-title {
+    font-size: 2.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

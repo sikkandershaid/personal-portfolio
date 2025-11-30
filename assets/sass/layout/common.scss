@@ -1,0 +1,16 @@
+/* --- CTA Banner --- */
+.cta-banner {
+  border: 2px solid $primary-color;
+  color: $primary-color;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 5px 20px 5px 20px;
+  box-shadow: 0 0 10px rgba(0, 242, 195, 0.1);
+  transition: all 0.3s ease;
+  width: fit-content;
+  margin: 0 auto 50px;
+  &:hover {
+    box-shadow: 0 0 20px rgba(0, 242, 195, 0.3);
+    transform: translateY(-2px);
+  }
+}

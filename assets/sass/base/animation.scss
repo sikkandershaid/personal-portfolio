@@ -40,3 +40,55 @@
     transform: rotate(360deg);
   }
 }
+
+// Mouse Animation Stert
+/* মাউসের অ্যাডভান্স কীফ্রেম */
+@keyframes mouseFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 0 15px rgba(0, 242, 195, 0.2);
+  }
+
+  50% {
+    transform: translateY(-6px);
+    /* একটু উপরে উঠবে */
+    box-shadow: 0 0 25px rgba(0, 242, 195, 0.5);
+    /* গ্লো বাড়বে */
+  }
+}
+
+/* চাকা পড়ার অ্যাডভান্স কীফ্রেম (ড্রপ + স্ট্রেচ) */
+@keyframes wheelDrop {
+  0% {
+    top: 5px;
+    opacity: 0;
+    height: 4px;
+    /* শুরুতে গোল */
+  }
+
+  10% {
+    opacity: 1;
+    height: 6px;
+    /* নামার সময় একটু লম্বা হবে */
+  }
+
+  100% {
+    top: 25px;
+    opacity: 0;
+    height: 4px;
+  }
+}
+
+/* ড্যাশ লাইনের কীফ্রেম (যেমন আছে) */
+@keyframes moveDashes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 30px;
+    /* ড্যাশগুলো নিচে নামবে */
+  }
+}
+// Mouse Animation Stert
