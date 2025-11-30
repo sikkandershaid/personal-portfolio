@@ -10,7 +10,7 @@ body{
 }
 
 ::selection {
-  background-color: #7ed56f;
+  background-color: $primary-color;
   color: #ffffff;
 }
 
@@ -35,6 +35,10 @@ a {
 	text-decoration: none;
 	transition: .4s;
 	-webkit-transition: all .3s linear;
+}
+
+a:hover {
+	color: currentColor;
 }
 
 .site{

@@ -1,28 +1,15 @@
 // Main Header
 .header {
-  padding: 12px 0;
-  position: sticky;
-  top: 0;
+  padding: 12px 32px;
+  position: fixed;
+  top: 20px;
+  width: fit-content;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50px;
+  background-color: #1A1E23;
   box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.06);
   z-index: 999;
-  &__menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 32px;
-
-    // Logo
-    .header__logo-box {
-      .logo {
-        display: inline-block;
-        max-width: 230px;
-        img {
-          width: 100%;
-          height: auto;
-        }
-      }
-    }
-  }
 
   // Nab Bar
   .navigation {
@@ -36,7 +23,7 @@
       // margin: 0 10px;
       .navigation__link {
         position: relative;
-        color: $heading-color;
+        color: $primary-color;
         transition: color 0.3s ease;
         font-size: 16px;
         font-weight: 500;
