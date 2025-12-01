@@ -119,14 +119,8 @@ input:focus {
   box-shadow: none !important;
 }
 
-input,
-select,
 ::placeholder {
-  font-size: 1.6rem !important;
-  font-weight: 400 !important;
-  line-height: 2.6rem !important;
-  color: #EEFAFF !important;
-  border: none !important;
+  color: rgba(230, 247, 255, 0.85) !important;
 }
 
 .section-title-wrap {
@@ -638,6 +632,27 @@ select,
   color: #FAA32C;
 }
 
+/* --- Submit Button --- */
+.submit-btn {
+  background-color: #00e6ff;
+  color: #15191d;
+  border: none;
+  padding: 12px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 242, 195, 0.4);
+}
+
 .mobile-toggle {
   width: 100%;
   display: flex;
@@ -972,43 +987,130 @@ select,
   margin-top: 48px;
 }
 
-/* --- Typography --- */
-.contact-us_section {
+.skills_section {
   background-color: #15191d;
   position: relative;
 }
 
-/* --- Form Styles --- */
-.contact-form {
+.skill-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  padding: 25px 35px;
+  border-radius: 12px;
+  width: 220px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 255, 255, 0.2);
+}
+
+.box-title {
+  font-weight: 600;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.tech-icons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+.tech-item {
+  text-align: center;
+  animation: popIn 0.8s ease forwards;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  margin: auto;
+  transition: 0.3s ease;
+  color: white;
+}
+
+.bg-1 {
+  background-color: #E54F26;
+}
+
+.bg-2 {
+  background-color: #0C73B8;
+}
+
+.bg-3 {
+  background-color: #E7A020;
+}
+
+.bg-4 {
+  background-color: #28A9E0;
+}
+
+.bg-5 {
+  background-color: #5FA04E;
+}
+
+.circle:hover {
+  transform: translateY(-10px) scale(1.1);
+}
+
+.contact-us_section {
+  background-color: #15191d;
+  position: relative;
+  /* --- Form Styles --- */
+}
+.contact-us_section .contact-form {
   width: 100%;
   text-align: left;
 }
-
-.contact-form-row {
+.contact-us_section .contact-form-row {
   gap: 48px;
   margin-bottom: 40px;
 }
-
-.contact-form-row > div {
+.contact-us_section .contact-form-row > div {
   flex: 1 1 45%;
   min-width: 300px;
 }
-
-.input-group {
+.contact-us_section .contact-form-row .input-group {
   position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
-
-.input-group label {
+.contact-us_section .contact-form-row .input-group label {
   color: #00e6ff;
   font-size: 16px;
   margin-bottom: 10px;
 }
-
-.input-group input,
-.input-group textarea {
+.contact-us_section .contact-form-row .input-group input,
+.contact-us_section .contact-form-row .input-group textarea {
   width: 100%;
   background: transparent;
   border: none;
@@ -1020,57 +1122,18 @@ select,
   outline: none;
   transition: border-color 0.3s;
 }
-
-.input-group textarea {
-  resize: none;
+.contact-us_section .contact-form-row .input-group input::placeholder,
+.contact-us_section .contact-form-row .input-group textarea::placeholder {
+  color: rgba(230, 247, 255, 0.85);
 }
-
-/* Animation on Focus */
-.input-group input:focus,
-.input-group textarea:focus {
+.contact-us_section .contact-form-row .input-group input input:focus,
+.contact-us_section .contact-form-row .input-group input textarea:focus,
+.contact-us_section .contact-form-row .input-group textarea input:focus,
+.contact-us_section .contact-form-row .input-group textarea textarea:focus {
   border-bottom: 1px solid #00e6ff;
 }
-
-.full-width {
-  margin-bottom: 50px;
-}
-
-/* --- Submit Button --- */
-.submit-btn {
-  background-color: #00e6ff;
-  color: #15191d;
-  border: none;
-  padding: 12px 40px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 30px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 auto;
-  /* Center the button */
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.submit-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 242, 195, 0.4);
-}
-
-.submit-btn i {
-  font-size: 0.9rem;
-}
-
-/* --- Responsive Design --- */
-@media (max-width: 768px) {
-  .input-row {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .section-title {
-    font-size: 2.5rem;
-  }
+.contact-us_section .contact-form-row .input-group textarea {
+  resize: none;
 }
 
 /*# sourceMappingURL=style.css.map */

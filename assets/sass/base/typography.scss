@@ -68,16 +68,11 @@ input:focus {
   box-shadow: none !important;
 }
 
-input,
-select,
 ::placeholder {
-  font-size: 1.6rem !important;
-  font-weight: 400 !important;
-  line-height: 2.6rem !important;
-  color: $light-color !important;
-  border: none !important;
+  color: $shadow-color !important;
 }
 
+// Section_title ====
 .section-title-wrap {
   display: flex;
   flex-direction: column;
