@@ -1,5 +1,4 @@
-.skills_section{
-  background-color: #15191d;
+.skills_section {
   position: relative;
 }
 
@@ -25,83 +24,83 @@
   gap: 40px;
   flex-wrap: wrap;
   margin-bottom: 60px;
+  .box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px);
+    padding: 25px 35px;
+    border-radius: 12px;
+    width: 280px;
+    border-left: 4px solid $secondary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 255, 255, 0.2);
+    }
+
+    .icon-wrap {
+      i {
+        font-size: 32px;
+      }
+    }
+    .box-title {
+      font-weight: 600;
+      margin-top: 10px;
+      font-size: 18px;
+      color: $primary-color;
+    }
+    .expreance {
+      text-align: center;
+    }
+  }
 }
 
-.box {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(6px);
-  padding: 25px 35px;
-  border-radius: 12px;
-  width: 220px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 255, 255, 0.2);
-}
-
-.box-title {
-  font-weight: 600;
-  margin-top: 10px;
-  font-size: 18px;
-}
-
-.tech-icons {
+.skills-tech-icons {
   display: flex;
   justify-content: center;
   gap: 50px;
   margin-top: 40px;
-}
 
-.tech-item {
-  text-align: center;
-  animation: popIn 0.8s ease forwards;
-}
+  .tech-item {
+    text-align: center;
+    animation: techIcon 0.8s ease forwards;
 
-@keyframes popIn {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
+    .circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      margin: auto;
+      transition: 0.3s ease;
+      color: white;
+
+      &:hover {
+        transform: translateY(-10px) scale(1.1);
+        // color: #000;
+      }
+    }
+    .bg-1 {
+      background-color: #e54f26;
+    }
+    .bg-2 {
+      background-color: #0c73b8;
+    }
+    .bg-3 {
+      background-color: #e7a020;
+    }
+    .bg-4 {
+      background-color: #28a9e0;
+    }
+    .bg-5 {
+      background-color: #5fa04e;
+    }
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.circle {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  margin: auto;
-  transition: 0.3s ease;
-  color: white;
-}
-
-.bg-1{
-  background-color: #E54F26;
-}
-.bg-2{
-  background-color: #0C73B8;
-}
-.bg-3{
-  background-color: #E7A020;
-}
-.bg-4{
-  background-color: #28A9E0;
-}
-.bg-5{
-  background-color: #5FA04E;
-}
-
-.circle:hover {
-  transform: translateY(-10px) scale(1.1);
-  // color: #000;
 }

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import "../fontawesome-free/css/all.min.css";
 /*
 0px - 575px    :         Phone
@@ -52,6 +51,7 @@ body {
   font-weight: 500;
   line-height: 1.7;
   color: rgba(230, 247, 255, 0.85);
+  background: linear-gradient(135deg, #000000 0%, #04101b 50%, #071428 100%);
 }
 
 ::selection {
@@ -82,10 +82,6 @@ a {
   -webkit-transition: all 0.3s linear;
 }
 
-a:hover {
-  color: currentColor;
-}
-
 .site {
   display: flex;
   flex-direction: column;
@@ -97,7 +93,7 @@ a:hover {
 }
 
 .section_padding {
-  padding: 80px 0;
+  padding: 100px 0;
 }
 @media only screen and (max-width: 991px) {
   .section_padding {
@@ -136,7 +132,6 @@ input:focus {
   color: #00e6ff;
   letter-spacing: 1px;
   max-width: 578px;
-  margin: 2.4rem auto 0;
 }
 .section-title-wrap .title-underline {
   display: flex;
@@ -544,7 +539,16 @@ input:focus {
     transform: rotate(360deg);
   }
 }
-/* মাউসের অ্যাডভান্স কীফ্রেম */
+@keyframes techIcon {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 @keyframes mouseFloat {
   0%, 100% {
     transform: translateY(0);
@@ -552,23 +556,18 @@ input:focus {
   }
   50% {
     transform: translateY(-6px);
-    /* একটু উপরে উঠবে */
     box-shadow: 0 0 25px rgba(0, 242, 195, 0.5);
-    /* গ্লো বাড়বে */
   }
 }
-/* চাকা পড়ার অ্যাডভান্স কীফ্রেম (ড্রপ + স্ট্রেচ) */
 @keyframes wheelDrop {
   0% {
     top: 5px;
     opacity: 0;
     height: 4px;
-    /* শুরুতে গোল */
   }
   10% {
     opacity: 1;
     height: 6px;
-    /* নামার সময় একটু লম্বা হবে */
   }
   100% {
     top: 25px;
@@ -576,14 +575,12 @@ input:focus {
     height: 4px;
   }
 }
-/* ড্যাশ লাইনের কীফ্রেম (যেমন আছে) */
 @keyframes moveDashes {
   0% {
     background-position: 0 0;
   }
   100% {
     background-position: 0 30px;
-    /* ড্যাশগুলো নিচে নামবে */
   }
 }
 /* Primary Butto  - Outline */
@@ -633,9 +630,10 @@ input:focus {
 }
 
 /* --- Submit Button --- */
-.submit-btn {
+.section-btn {
   background-color: #00e6ff;
   color: #15191d;
+  width: fit-content;
   border: none;
   padding: 12px 40px;
   font-size: 16px;
@@ -647,9 +645,11 @@ input:focus {
   gap: 10px;
   margin: 0 auto;
   transition: transform 0.3s, box-shadow 0.3s;
+  margin-top: 48px;
 }
-.submit-btn:hover {
+.section-btn:hover {
   transform: translateY(-3px);
+  color: #FFFFFF;
   box-shadow: 0 5px 15px rgba(0, 242, 195, 0.4);
 }
 
@@ -792,7 +792,7 @@ input:focus {
 }
 .scroll-indicator .dashed-line {
   width: 2px;
-  height: 70px;
+  height: 50px;
   margin-top: 5px;
   background-image: linear-gradient(to bottom, #00e6ff 50%, transparent 50%);
   background-size: 2px 15px;
@@ -888,9 +888,8 @@ input:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Darker cinematic overlay */
 }
-
-/* Darker cinematic overlay */
 .hero_section::after {
   content: "";
   position: absolute;
@@ -988,7 +987,6 @@ input:focus {
 }
 
 .skills_section {
-  background-color: #15191d;
   position: relative;
 }
 
@@ -999,51 +997,48 @@ input:focus {
   flex-wrap: wrap;
   margin-bottom: 60px;
 }
-
-.box {
+.skill-boxes .box {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(6px);
   padding: 25px 35px;
   border-radius: 12px;
-  width: 220px;
+  width: 280px;
+  border-left: 4px solid #FAA32C;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
-
-.box:hover {
+.skill-boxes .box:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 25px rgba(0, 255, 255, 0.2);
 }
-
-.box-title {
+.skill-boxes .box .icon-wrap i {
+  font-size: 32px;
+}
+.skill-boxes .box .box-title {
   font-weight: 600;
   margin-top: 10px;
   font-size: 18px;
+  color: #00e6ff;
+}
+.skill-boxes .box .expreance {
+  text-align: center;
 }
 
-.tech-icons {
+.skills-tech-icons {
   display: flex;
   justify-content: center;
   gap: 50px;
   margin-top: 40px;
 }
-
-.tech-item {
+.skills-tech-icons .tech-item {
   text-align: center;
-  animation: popIn 0.8s ease forwards;
+  animation: techIcon 0.8s ease forwards;
 }
-
-@keyframes popIn {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-.circle {
+.skills-tech-icons .tech-item .circle {
   width: 90px;
   height: 90px;
   border-radius: 50%;
@@ -1056,33 +1051,26 @@ input:focus {
   transition: 0.3s ease;
   color: white;
 }
-
-.bg-1 {
-  background-color: #E54F26;
-}
-
-.bg-2 {
-  background-color: #0C73B8;
-}
-
-.bg-3 {
-  background-color: #E7A020;
-}
-
-.bg-4 {
-  background-color: #28A9E0;
-}
-
-.bg-5 {
-  background-color: #5FA04E;
-}
-
-.circle:hover {
+.skills-tech-icons .tech-item .circle:hover {
   transform: translateY(-10px) scale(1.1);
+}
+.skills-tech-icons .tech-item .bg-1 {
+  background-color: #e54f26;
+}
+.skills-tech-icons .tech-item .bg-2 {
+  background-color: #0c73b8;
+}
+.skills-tech-icons .tech-item .bg-3 {
+  background-color: #e7a020;
+}
+.skills-tech-icons .tech-item .bg-4 {
+  background-color: #28a9e0;
+}
+.skills-tech-icons .tech-item .bg-5 {
+  background-color: #5fa04e;
 }
 
 .contact-us_section {
-  background-color: #15191d;
   position: relative;
   /* --- Form Styles --- */
 }

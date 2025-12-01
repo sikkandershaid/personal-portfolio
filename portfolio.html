@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Personal Portfolio Section</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Using a dark blue/gray background for contrast */
+            background-color: #0d1117; 
+            color: #e5e7eb;
+            transition: background-color 0.3s;
+        }
+        /* Custom style to prevent body scrolling when modal is open */
+        .overflow-hidden {
+            overflow: hidden !important;
+        }
+        /* Simple transition for image placeholder */
+        .mockup-placeholder {
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-10">
+
+    <!-- Portfolio/Projects Section -->
+    <section id="portfolio" class="max-w-7xl mx-auto py-12 md:py-20">
+        
+        <!-- Section Header -->
+        <header class="text-center mb-12">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-3">
+                My Recent Work
+            </h2>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                A selection of personal and client projects that showcase my skills in development and design.
+            </p>
+        </header>
+
+        <!-- Projects Grid -->
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            
+            <!-- Project Card 1: E-Commerce Platform -->
+            <!-- Note: Added ID to button for JS to control the modal -->
+            <div class="bg-gray-800 p-6 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 hover:scale-[1.02]">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-bold text-blue-400">E-Commerce API</h3>
+                    <span class="text-sm font-medium text-gray-500">2024</span>
+                </div>
+                
+                <p class="text-gray-400 mb-4 h-24 overflow-hidden">
+                    A headless e-commerce backend built with Node.js and PostgreSQL. Features secure user authentication, product management, and optimized checkout flow.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 bg-blue-900/50 text-blue-300 rounded-full text-xs font-semibold">Node.js</span>
+                    <span class="px-3 py-1 bg-blue-900/50 text-blue-300 rounded-full text-xs font-semibold">PostgreSQL</span>
+                    <span class="px-3 py-1 bg-blue-900/50 text-blue-300 rounded-full text-xs font-semibold">Express</span>
+                </div>
+
+                <div class="flex gap-4">
+                    <a href="#" id="view-demo-1" class="flex-1 text-center py-3 px-4 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-150">
+                        View Demo
+                    </a>
+                    <a href="#github-project-1" class="flex-1 text-center py-3 px-4 bg-gray-700 text-gray-300 font-semibold rounded-lg shadow-md hover:bg-gray-600 transition duration-150">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project Card 2: Interactive Data Dashboard -->
+            <div class="bg-gray-800 p-6 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20 hover:scale-[1.02]">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-bold text-green-400">Data Visualization</h3>
+                    <span class="text-sm font-medium text-gray-500">2023</span>
+                </div>
+                
+                <p class="text-gray-400 mb-4 h-24 overflow-hidden">
+                    An interactive dashboard application for visualizing large datasets using React and D3.js. Includes custom charts, filters, and real-time updates.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 bg-green-900/50 text-green-300 rounded-full text-xs font-semibold">React</span>
+                    <span class="px-3 py-1 bg-green-900/50 text-green-300 rounded-full text-xs font-semibold">D3.js</span>
+                    <span class="px-3 py-1 bg-green-900/50 text-green-300 rounded-full text-xs font-semibold">TypeScript</span>
+                </div>
+
+                <div class="flex gap-4">
+                    <a href="#view-project-2" class="flex-1 text-center py-3 px-4 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-150">
+                        View Demo
+                    </a>
+                    <a href="#github-project-2" class="flex-1 text-center py-3 px-4 bg-gray-700 text-gray-300 font-semibold rounded-lg shadow-md hover:bg-gray-600 transition duration-150">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project Card 3: Personal Blog & CMS -->
+            <div class="bg-gray-800 p-6 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.02]">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-bold text-purple-400">Modern Blog Engine</h3>
+                    <span class="text-sm font-medium text-gray-500">2024</span>
+                </div>
+                
+                <p class="text-gray-400 mb-4 h-24 overflow-hidden">
+                    A static-generated blog powered by Next.js and integrated with a headless CMS (Contentful). Focused on performance, SEO, and clean typography.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 bg-purple-900/50 text-purple-300 rounded-full text-xs font-semibold">Next.js</span>
+                    <span class="px-3 py-1 bg-purple-900/50 text-purple-300 rounded-full text-xs font-semibold">Tailwind CSS</span>
+                    <span class="px-3 py-1 bg-purple-900/50 text-purple-300 rounded-full text-xs font-semibold">Contentful</span>
+                </div>
+
+                <div class="flex gap-4">
+                    <a href="#view-project-3" class="flex-1 text-center py-3 px-4 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 transition duration-150">
+                        View Demo
+                    </a>
+                    <a href="#github-project-3" class="flex-1 text-center py-3 px-4 bg-gray-700 text-gray-300 font-semibold rounded-lg shadow-md hover:bg-gray-600 transition duration-150">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project Card 4: Collaborative Whiteboard (Example of a fourth project) -->
+            <div class="bg-gray-800 p-6 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/20 hover:scale-[1.02]">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-bold text-red-400">Whiteboard App</h3>
+                    <span class="text-sm font-medium text-gray-500">2023</span>
+                </div>
+                
+                <p class="text-gray-400 mb-4 h-24 overflow-hidden">
+                    A real-time, collaborative drawing application using WebSockets and Canvas API. Supports multiple users drawing simultaneously with low latency.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 bg-red-900/50 text-red-300 rounded-full text-xs font-semibold">WebSockets</span>
+                    <span class="px-3 py-1 bg-red-900/50 text-red-300 rounded-full text-xs font-semibold">Canvas API</span>
+                    <span class="px-3 py-1 bg-red-900/50 text-red-300 rounded-full text-xs font-semibold">Vue.js</span>
+                </div>
+
+                <div class="flex gap-4">
+                    <a href="#view-project-4" class="flex-1 text-center py-3 px-4 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition duration-150">
+                        View Demo
+                    </a>
+                    <a href="#github-project-4" class="flex-1 text-center py-3 px-4 bg-gray-700 text-gray-300 font-semibold rounded-lg shadow-md hover:bg-gray-600 transition duration-150">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Call to Action Footer -->
+        <footer class="mt-16 text-center">
+            <p class="text-gray-400 mb-4">
+                Want to see more of my work?
+            </p>
+            <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-indigo-600 shadow-lg hover:bg-indigo-700 transition duration-150 transform hover:scale-105">
+                Get In Touch
+            </a>
+        </footer>
+
+    </section>
+
+    <!-- Project Detail Modal -->
+    <div id="project-detail-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black bg-opacity-80 transition-opacity duration-300" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        
+        <!-- Modal Overlay for closing on click -->
+        <div id="modal-overlay" class="absolute inset-0"></div>
+
+        <!-- Modal Content Container -->
+        <div class="flex items-center justify-center min-h-screen px-4 py-8 sm:p-0">
+            
+            <div class="relative bg-gray-900 rounded-3xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto transform transition-all p-6 md:p-10">
+                
+                <!-- Close Button -->
+                <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white transition duration-150 p-2 rounded-full hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <!-- SVG for Close Icon (X) -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <!-- Project Content -->
+                <div class="text-left">
+                    <h3 class="text-4xl font-extrabold text-blue-400 mb-2" id="modal-title">E-Commerce API: Project Details</h3>
+                    <p class="text-lg text-gray-400 mb-6">
+                        Completed in 2024 | Role: Backend Lead Developer
+                    </p>
+
+                    <!-- Mockup/Image Placeholder -->
+                    <div class="h-72 w-full bg-gray-700 rounded-xl mb-8 flex items-center justify-center mockup-placeholder">
+                        <p class="text-gray-500 text-2xl font-semibold">Application Mockup / Screenshot Placeholder</p>
+                    </div>
+
+                    <!-- Description and Highlights -->
+                    <div class="grid md:grid-cols-3 gap-8 mb-8">
+                        <div class="md:col-span-2">
+                            <h4 class="text-2xl font-bold text-white mb-3">Project Overview</h4>
+                            <p class="text-gray-300 mb-4 leading-relaxed">
+                                This project involved building a robust, scalable, and secure backend system for a high-traffic e-commerce store. The architecture was designed using a microservices approach to ensure modularity and maintainability. It handles hundreds of requests per second efficiently.
+                            </p>
+                            <p class="text-gray-300 leading-relaxed">
+                                Key challenges included implementing a fault-tolerant database replication setup and ensuring API response times remained under 100ms even during peak load periods. We successfully achieved a 99.99% uptime during the first quarter of deployment.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-2xl font-bold text-white mb-3">Key Features</h4>
+                            <ul class="space-y-2 text-gray-300 list-disc list-inside">
+                                <li>JWT-based Authentication & Authorization</li>
+                                <li>Product Inventory Management</li>
+                                <li>Secure Payment Gateway Integration (Stripe)</li>
+                                <li>Optimized Database Querying</li>
+                                <li>Automated Testing Suite (Mocha/Chai)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Technologies Used -->
+                    <h4 class="text-2xl font-bold text-white mb-3">Core Technologies</h4>
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <span class="px-4 py-2 bg-blue-600 text-white rounded-full font-semibold shadow-lg">Node.js</span>
+                        <span class="px-4 py-2 bg-blue-600 text-white rounded-full font-semibold shadow-lg">PostgreSQL</span>
+                        <span class="px-4 py-2 bg-blue-600 text-white rounded-full font-semibold shadow-lg">Express.js</span>
+                        <span class="px-4 py-2 bg-blue-600 text-white rounded-full font-semibold shadow-lg">Docker</span>
+                        <span class="px-4 py-2 bg-blue-600 text-white rounded-full font-semibold shadow-lg">Redis Caching</span>
+                    </div>
+
+                    <!-- Action Links -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4 border-t border-gray-700">
+                        <a href="#live-site" class="flex-1 text-center py-3 px-4 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition duration-150 transform hover:scale-[1.01]">
+                            Visit Live Site
+                        </a>
+                        <a href="#github-repo" class="flex-1 text-center py-3 px-4 bg-gray-700 text-gray-300 font-semibold rounded-lg shadow-lg hover:bg-gray-600 transition duration-150 transform hover:scale-[1.01]">
+                            Review Code on GitHub
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Modal Functionality -->
+    <script>
+        // Get the modal and related elements
+        const modal = document.getElementById('project-detail-modal');
+        const viewDemoBtn = document.getElementById('view-demo-1');
+        const closeBtn = document.getElementById('close-modal-btn');
+        const modalOverlay = document.getElementById('modal-overlay');
+
+        function openModal() {
+            // Remove 'hidden' class to show the modal
+            modal.classList.remove('hidden');
+            // Prevent scrolling on the main body
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeModal() {
+            // Add 'hidden' class to hide the modal
+            modal.classList.add('hidden');
+            // Re-enable scrolling on the main body
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Event Listeners setup
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Open Modal when 'View Demo' button for Project 1 is clicked
+            if (viewDemoBtn) {
+                viewDemoBtn.addEventListener('click', (e) => {
+                    e.preventDefault(); // Stop default anchor link behavior
+                    openModal();
+                });
+            }
+
+            // 2. Close Modal when the X button is clicked
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
+            }
+
+            // 3. Close Modal when clicking the dark background overlay
+            if (modalOverlay) {
+                modalOverlay.addEventListener('click', (e) => {
+                    // Check if the click occurred exactly on the overlay, not on the content
+                    if (e.target === modalOverlay) {
+                        closeModal();
+                    }
+                });
+            }
+            
+            // 4. Close Modal on ESC key press
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

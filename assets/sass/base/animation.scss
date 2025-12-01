@@ -35,14 +35,26 @@
   }
 }
 
+// Home Profile Image round Animation
 @keyframes rot {
   to {
     transform: rotate(360deg);
   }
 }
 
-// Mouse Animation Stert
-/* মাউসের অ্যাডভান্স কীফ্রেম */
+// Skills Tech Icon Animation
+@keyframes techIcon {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Mouse Animation Stert____Start
 @keyframes mouseFloat {
   0%,
   100% {
@@ -52,25 +64,20 @@
 
   50% {
     transform: translateY(-6px);
-    /* একটু উপরে উঠবে */
     box-shadow: 0 0 25px rgba(0, 242, 195, 0.5);
-    /* গ্লো বাড়বে */
   }
 }
 
-/* চাকা পড়ার অ্যাডভান্স কীফ্রেম (ড্রপ + স্ট্রেচ) */
 @keyframes wheelDrop {
   0% {
     top: 5px;
     opacity: 0;
     height: 4px;
-    /* শুরুতে গোল */
   }
 
   10% {
     opacity: 1;
     height: 6px;
-    /* নামার সময় একটু লম্বা হবে */
   }
 
   100% {
@@ -80,7 +87,6 @@
   }
 }
 
-/* ড্যাশ লাইনের কীফ্রেম (যেমন আছে) */
 @keyframes moveDashes {
   0% {
     background-position: 0 0;
@@ -88,7 +94,6 @@
 
   100% {
     background-position: 0 30px;
-    /* ড্যাশগুলো নিচে নামবে */
   }
 }
-// Mouse Animation Stert
+// Mouse Animation Stert__End

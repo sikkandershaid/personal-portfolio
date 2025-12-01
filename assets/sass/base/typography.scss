@@ -8,6 +8,7 @@ body {
   font-weight: 500;
   line-height: 1.7;
   color: $shadow-color;
+  background: linear-gradient(135deg, #000000 0%, #04101b 50%, #071428 100%);
 }
 
 ::selection {
@@ -38,10 +39,6 @@ a {
   -webkit-transition: all 0.3s linear;
 }
 
-a:hover {
-  color: currentColor;
-}
-
 .site {
   display: flex;
   flex-direction: column;
@@ -51,9 +48,8 @@ a:hover {
     flex: 1;
   }
 }
-
 .section_padding {
-  padding: 80px 0;
+  padding: 100px 0;
   @include respond(sm-laptop) {
     padding: 6rem 0;
   }
@@ -85,7 +81,6 @@ input:focus {
     color: $primary-color;
     letter-spacing: 1px;
     max-width: 578px;
-    margin: 2.4rem auto 0;
   }
   .title-underline {
     display: flex;
