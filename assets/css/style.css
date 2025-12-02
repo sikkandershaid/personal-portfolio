@@ -629,7 +629,7 @@ input:focus {
   color: #FAA32C;
 }
 
-/* --- Submit Button --- */
+/* --- Section Button --- */
 .section-btn {
   background-color: #00e6ff;
   color: #15191d;
@@ -651,6 +651,26 @@ input:focus {
   transform: translateY(-3px);
   color: #FFFFFF;
   box-shadow: 0 5px 15px rgba(0, 242, 195, 0.4);
+}
+
+.secondary-btn-fill {
+  background-color: #1A1E23;
+  color: #FAA32C;
+  width: fit-content;
+  border: none;
+  padding: 12px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.secondary-btn-fill:hover {
+  background-color: #FAA32C;
+  color: #15191d;
 }
 
 .mobile-toggle {
@@ -998,7 +1018,7 @@ input:focus {
   margin-bottom: 60px;
 }
 .skill-boxes .box {
-  background: rgba(255, 255, 255, 0.1);
+  background: #1f2937;
   backdrop-filter: blur(6px);
   padding: 25px 35px;
   border-radius: 12px;
@@ -1049,7 +1069,7 @@ input:focus {
   font-size: 40px;
   margin: auto;
   transition: 0.3s ease;
-  color: white;
+  color: #FFFFFF;
 }
 .skills-tech-icons .tech-item .circle:hover {
   transform: translateY(-10px) scale(1.1);
@@ -1129,54 +1149,66 @@ input:focus {
 }
 .about_section .about-us-content-wrap {
   /* Personal Info Box */
-  /* Titles */
-  /* Info Text */
-  /* Download CV Button */
-  /* Stat Cards */
 }
 .about_section .about-us-content-wrap .personal-box {
   background: #1f2937;
-  border-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(55, 65, 81, 0.5);
+  border-radius: 16px;
+  padding: 24px;
 }
-.about_section .about-us-content-wrap .section-title {
-  border-bottom: 1px solid #555;
-  color: #fff;
-  text-transform: uppercase;
+.about_section .about-us-content-wrap .personal-box-title {
+  width: fit-content;
+  border-bottom: 2px solid #00e6ff;
+  color: #FFFFFF;
+  font-size: 28px;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
-.about_section .about-us-content-wrap .info-item strong {
+.about_section .about-us-content-wrap .personal-box .info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed #374151;
+}
+.about_section .about-us-content-wrap .personal-box .info-item strong {
   color: #d1d5db;
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 16px;
 }
-.about_section .about-us-content-wrap .info-item span {
+.about_section .about-us-content-wrap .personal-box .info-item span {
   color: #fff;
 }
-.about_section .about-us-content-wrap .email-link {
-  color: #22d3ee;
+.about_section .about-us-content-wrap .personal-box .info-item .email-link {
+  color: #00e6ff;
   text-decoration: none;
 }
-.about_section .about-us-content-wrap .email-link:hover {
+.about_section .about-us-content-wrap .personal-box .info-item .email-link:hover {
   color: #67e8f9;
 }
-.about_section .about-us-content-wrap .btn-cyan {
-  background: #22d3ee;
-  color: #000;
-  border-radius: 10px;
+.about_section .about-us-content-wrap .personal-box {
+  /* Download CV Button */
 }
-.about_section .about-us-content-wrap .btn-cyan:hover {
-  background: #0ea5e9;
-  color: #000;
+.about_section .about-us-content-wrap .personal-box .download-cv-btn {
+  margin-top: 24px;
+}
+.about_section .about-us-content-wrap {
+  /* Stat Cards */
 }
 .about_section .about-us-content-wrap .stat-card {
-  background: #111827;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  text-align: left;
+  background-color: #1f2937;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  border: 1px solid #374151;
+  border-radius: 12px;
+}
+.about_section .about-us-content-wrap .stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(34, 211, 238, 0.2); /* Cyan glow effect */
+  background-color: #253140;
 }
 .about_section .about-us-content-wrap .stat-number {
-  font-size: 2.2rem;
-  font-weight: 800;
+  font-size: 34px;
+  font-weight: 700;
   color: #22d3ee;
   margin-bottom: 0.3rem;
 }
@@ -1186,7 +1218,7 @@ input:focus {
   margin: 0.3rem 0 0.5rem 0;
 }
 .about_section .about-us-content-wrap .stat-text {
-  font-size: 0.7rem;
+  font-size: 16px;
   text-transform: uppercase;
   color: #9ca3af;
   margin: 0;
