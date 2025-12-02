@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <title>Personal Info</title>
+
+  <style>
+    body {
+      background: #0a0f15;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+
+    /* Personal Info Box */
+    .personal-box {
+      background: #1f2937;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Titles */
+    .section-title {
+      border-bottom: 1px solid #555;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    /* Info Text */
+    .info-item strong {
+      color: #d1d5db;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    .info-item span {
+      color: #fff;
+    }
+
+    .email-link {
+      color: #22d3ee;
+      text-decoration: none;
+    }
+
+    .email-link:hover {
+      color: #67e8f9;
+    }
+
+    /* Download CV Button */
+    .btn-cyan {
+      background: #22d3ee;
+      color: #000;
+      border-radius: 10px;
+    }
+
+    .btn-cyan:hover {
+      background: #0ea5e9;
+      color: #000;
+    }
+
+    /* Stat Cards */
+    .stat-card {
+      background: #111827;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: left;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #22d3ee;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-line {
+      width: 40px;
+      border-top: 2px solid #555;
+      margin: 0.3rem 0 0.5rem 0;
+    }
+
+    .stat-text {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: #9ca3af;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container py-5">
+
+    <div class="row g-4">
+
+      <!-- Column 1 -->
+      <div class="col-lg-8">
+        <div class="personal-box p-4 rounded-4 shadow-lg border border-secondary">
+
+          <h3 class="section-title pb-2 mb-4">
+            PERSONAL INFOS
+          </h3>
+
+          <div class="row gy-2">
+            <div class="col-md-6 info-item">
+              <strong>First Name:</strong> <span>Your</span>
+            </div>
+            <div class="col-md-6 info-item">
+              <strong>Last Name:</strong> <span>Name</span>
+            </div>
+            <div class="col-md-6 info-item">
+              <strong>Age:</strong> <span>28 Years</span>
+            </div>
+            <div class="col-md-6 info-item">
+              <strong>Nationality:</strong> <span>Your Country</span>
+            </div>
+            <div class="col-md-6 info-item">
+              <strong>Freelance:</strong> <span class="text-success fw-bold">Available</span>
+            </div>
+            <div class="col-md-6 info-item">
+              <strong>Email:</strong>
+              <a href="mailto:you@mail.com" class="email-link">you@mail.com</a>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-cyan mt-4 px-4 py-2 fw-bold d-inline-flex align-items-center">
+            DOWNLOAD CV
+            <svg class="ms-2" width="20" height="20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-9.707a1 1 0 011.414 0L10 9.586l1.293-1.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414z">
+              </path>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="col-lg-4">
+        <div class="row g-3">
+
+          <div class="col-6">
+            <div class="stat-card p-4 rounded-4 shadow">
+              <p class="stat-number">12+</p>
+              <hr class="stat-line">
+              <p class="stat-text">YEARS OF EXPERIENCE</p>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="stat-card p-4 rounded-4 shadow">
+              <p class="stat-number">97+</p>
+              <hr class="stat-line">
+              <p class="stat-text">COMPLETED PROJECTS</p>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="stat-card p-4 rounded-4 shadow">
+              <p class="stat-number">81+</p>
+              <hr class="stat-line">
+              <p class="stat-text">HAPPY CUSTOMERS</p>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="stat-card p-4 rounded-4 shadow">
+              <p class="stat-number">53+</p>
+              <hr class="stat-line">
+              <p class="stat-text">AWARDS WON</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

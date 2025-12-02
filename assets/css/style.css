@@ -1124,4 +1124,72 @@ input:focus {
   resize: none;
 }
 
+.about_section {
+  position: relative;
+}
+.about_section .about-us-content-wrap {
+  /* Personal Info Box */
+  /* Titles */
+  /* Info Text */
+  /* Download CV Button */
+  /* Stat Cards */
+}
+.about_section .about-us-content-wrap .personal-box {
+  background: #1f2937;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.about_section .about-us-content-wrap .section-title {
+  border-bottom: 1px solid #555;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+.about_section .about-us-content-wrap .info-item strong {
+  color: #d1d5db;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+.about_section .about-us-content-wrap .info-item span {
+  color: #fff;
+}
+.about_section .about-us-content-wrap .email-link {
+  color: #22d3ee;
+  text-decoration: none;
+}
+.about_section .about-us-content-wrap .email-link:hover {
+  color: #67e8f9;
+}
+.about_section .about-us-content-wrap .btn-cyan {
+  background: #22d3ee;
+  color: #000;
+  border-radius: 10px;
+}
+.about_section .about-us-content-wrap .btn-cyan:hover {
+  background: #0ea5e9;
+  color: #000;
+}
+.about_section .about-us-content-wrap .stat-card {
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: left;
+}
+.about_section .about-us-content-wrap .stat-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #22d3ee;
+  margin-bottom: 0.3rem;
+}
+.about_section .about-us-content-wrap .stat-line {
+  width: 40px;
+  border-top: 2px solid #555;
+  margin: 0.3rem 0 0.5rem 0;
+}
+.about_section .about-us-content-wrap .stat-text {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin: 0;
+}
+
 /*# sourceMappingURL=style.css.map */
