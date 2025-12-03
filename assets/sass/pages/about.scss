@@ -48,11 +48,17 @@
     /* Stat Cards */
 
     .stat-card {
+      height: 100%;
       background-color: #1f2937;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: default;
       border: 1px solid #374151;
+      padding: 16px;
       border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
     .stat-card:hover {
       transform: translateY(-5px);
@@ -63,7 +69,8 @@
     .stat-number {
       font-size: 34px;
       font-weight: 700;
-      color: #22d3ee;
+      color: $primary-color;
+      line-height: normal;
       margin-bottom: 0.3rem;
     }
 
@@ -80,4 +87,21 @@
       margin: 0;
     }
   }
+}
+
+.parent-row {
+  display: flex;
+  align-items: stretch;
+}
+
+.full-height {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-full {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
 }
