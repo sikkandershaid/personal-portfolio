@@ -1,0 +1,43 @@
+.copyright-section {
+  padding: 28px;
+  border-top: 1px solid $primary-color;
+  .copyright-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    text-align: center;
+
+    .contact-link-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      justify-content: center;
+      text-align: center;
+
+      .link {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: $primary-color;
+        font-size: 16px;
+        color: $heading-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .footer-link {
+      font-size: 16px;
+      color: $white-color;
+    }
+    .link-wrap {
+      .copyright-text {
+        color: $white-color;
+        font-size: 16px;
+      }
+    }
+  }
+}

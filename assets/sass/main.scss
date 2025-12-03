@@ -18,14 +18,11 @@
 @import 'components/mouse-indicator.scss';
 
 //Layout
-@import 'layout/header.scss';
-@import 'layout/footer.scss';
-@import 'layout/grid.scss';
-@import 'layout/navigation.scss';
-@import 'layout/common.scss';
+@import 'layout/index.scss';
 
 //Pages
-@import 'pages/index.scss';
-@import 'pages/skills.scss';
-@import 'pages/contact.scss';
-@import 'pages/about.scss';
+@import 'pages/home/index.scss';
+@import 'pages/contact/index.scss';
+@import 'pages/about/index.scss';
+@import 'pages/skills/index.scss';
+@import 'pages/portfolio/index.scss';

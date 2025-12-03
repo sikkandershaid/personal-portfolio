@@ -5,24 +5,3 @@
   padding: 0;
   box-sizing: inherit;
 }
-
-html {
-  // Base font size for desktops (>= 1200px)
-  font-size: 62.5%; // 1rem = 10px, assuming 16px is the default browser size
-
-  @include respond(bg-laptop) {
-    font-size: 59.375%; // 1rem = 9.5px, 9.5/16px = 60%
-  }
-
-  @include respond(sm-laptop) {
-    font-size: 56.25%; // 1rem = 9px, 9px/16 = 56.25%
-  }
-
-  @include respond(tablet) {
-    font-size: 53.125%; // 1rem = 8.5px, 8.5px/16 = 53.125%
-  }
-
-  @include respond(phone) {
-    font-size: 50%; // 1rem = 8px, 8px/16px = 50%
-  }
-}
