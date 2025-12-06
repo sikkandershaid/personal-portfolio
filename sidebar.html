@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Sidebar Demo</title>
+
+<style>
+body {
+  margin: 0;
+  background: #0a0a0a;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Top bar */
+.mobile-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #003827;
+  align-items: center;
+}
+
+.menu-btn {
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background: #00291d;
+  transform: translateX(-100%);
+  transition: .3s ease;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* Active sidebar */
+.sidebar.active {
+  transform: translateX(0);
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 0;
+}
+
+/* Menu List */
+.mobile-menu {
+  margin-top: 60px;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile-menu li a {
+  display: block;
+  padding: 12px 0;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  text-decoration: none;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+  z-index: 900;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+</style>
+
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="mobile-toggle">
+  <h2>Logo</h2>
+  <button class="menu-btn" id="menuBtn">&#9776;</button>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <button class="close-btn" id="closeBtn">✕</button>
+
+  <ul class="mobile-menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Team</a></li>
+  </ul>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
+  const menuBtn = document.getElementById("menuBtn");
+  const closeBtn = document.getElementById("closeBtn");
+
+  menuBtn.addEventListener("click", () => {
+    sidebar.classList.add("active");
+    overlay.classList.add("active");
+  });
+
+  const closeSidebar = () => {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+  };
+
+  closeBtn.addEventListener("click", closeSidebar);
+  overlay.addEventListener("click", closeSidebar);
+});
+</script>
+
+</body>
+</html>

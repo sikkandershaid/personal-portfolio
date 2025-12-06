@@ -31,12 +31,7 @@
       position: relative;
       color: #fff;
       overflow: hidden;
-
-      background:
-        radial-gradient(circle at center,
-          rgba(0, 120, 255, 0.45) 0%,
-          rgba(0, 10, 40, 0.95) 60%,
-          #000414 100%);
+      background: radial-gradient(circle at center, rgba(0, 230, 255, 0.45) 0%, rgba(0, 10, 40, 0.95) 60%, #000414 100%);
     }
 
     /* Navigation */
@@ -52,7 +47,7 @@
     .nav .logo {
       font-size: 24px;
       font-weight: bold;
-      color: #c880ff;
+      color: #00e6ff;
       letter-spacing: 1px;
     }
 
@@ -63,14 +58,14 @@
     }
 
     .nav ul li a {
-      color: #eedeff;
+      color: #e0ffff;
       text-decoration: none;
       font-size: 17px;
       transition: 0.3s;
     }
 
     .nav ul li a:hover {
-      color: #c880ff;
+      color: #00e6ff;
     }
 
     /* Hero Center Content */
@@ -83,7 +78,7 @@
     .hero-content h1 {
       font-size: 64px;
       font-weight: bold;
-      text-shadow: 0 0 25px #b100ff;
+      text-shadow: 0 0 25px #00e6ff;
     }
 
     .hero-content p {
@@ -96,20 +91,18 @@
       display: inline-block;
       margin-top: 38px;
       padding: 14px 50px;
-      background: linear-gradient(135deg, #001f5b, #003399);
-      /* dark blue gradient */
+      background: linear-gradient(135deg, #00e6ff, #00b8cc);
       color: #fff;
       text-decoration: none;
       font-size: 18px;
       border-radius: 10px;
-      box-shadow: 0 0 18px #0033aa;
-      /* blue glow */
+      box-shadow: 0 0 18px #00e6ff;
       transition: 0.3s;
     }
 
-
     .btn:hover {
       transform: scale(1.07);
+      box-shadow: 0 0 28px #00e6ff, 0 0 40px #00b8cc;
     }
 
     /* Floating Neon Icons */
@@ -117,7 +110,7 @@
       position: absolute;
       width: 70px;
       opacity: 0.35;
-      filter: drop-shadow(0 0 18px #0033aa);
+      filter: drop-shadow(0 0 18px #00e6ff);
       animation: float 4s ease-in-out infinite;
     }
 
@@ -141,13 +134,13 @@
       bottom: 170px;
       width: 100%;
       height: 200px;
-      background: linear-gradient(to top, rgba(255, 0, 255, 0.3), transparent);
+      background: linear-gradient(to top, rgba(0, 230, 255, 0.3), transparent);
       opacity: 0.4;
       transform: perspective(300px) rotateX(60deg);
       background-size: 40px 40px;
       background-image:
-        linear-gradient(#0033aa 1px, transparent 1px),
-        linear-gradient(90deg, #0033aa 1px, transparent 1px);
+        linear-gradient(#00e6ff 1px, transparent 1px),
+        linear-gradient(90deg, #00e6ff 1px, transparent 1px);
     }
 
     /* City Bottom */
@@ -156,15 +149,13 @@
       bottom: 0;
       width: 100%;
       height: 180px;
-      background: linear-gradient(to top, #001f5b, #003399, #001a33);
-      /* dark blue gradient */
+      background: linear-gradient(to top, #00b8cc, #00e6ff, #008f99);
       clip-path: polygon(0 100%, 0 40%, 10% 45%, 10% 55%, 18% 55%, 18% 30%,
           28% 30%, 28% 60%, 38% 60%, 38% 45%, 48% 45%, 48% 70%,
           60% 70%, 60% 50%, 72% 50%, 72% 65%, 82% 65%, 82% 42%,
           92% 42%, 92% 55%, 100% 55%, 100% 100%);
       opacity: 0.85;
-      box-shadow: 0 0 50px #0033aa;
-      /* dark blue glow */
+      box-shadow: 0 0 50px #00e6ff;
     }
   </style>
 </head>
