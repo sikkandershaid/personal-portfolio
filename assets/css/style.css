@@ -1080,12 +1080,14 @@ input:focus {
 }
 .about_section .about-us-content-wrap {
   /* Personal Info Box */
+  /* Stat Cards */
 }
 .about_section .about-us-content-wrap .personal-box {
   background: #1f2937;
   border: 1px solid rgba(55, 65, 81, 0.5);
   border-radius: 16px;
   padding: 24px;
+  /* Download CV Button */
 }
 .about_section .about-us-content-wrap .personal-box-title {
   width: fit-content;
@@ -1116,14 +1118,8 @@ input:focus {
 .about_section .about-us-content-wrap .personal-box .info-item .email-link:hover {
   color: #67e8f9;
 }
-.about_section .about-us-content-wrap .personal-box {
-  /* Download CV Button */
-}
 .about_section .about-us-content-wrap .personal-box .download-cv-btn {
   margin-top: 24px;
-}
-.about_section .about-us-content-wrap {
-  /* Stat Cards */
 }
 .about_section .about-us-content-wrap .stat-card {
   height: 100%;
@@ -1276,6 +1272,7 @@ input:focus {
 }
 .portfolio_section .skills-content-wrap {
   /* Filter Buttons */
+  /* Portfolio Grid */
 }
 .portfolio_section .skills-content-wrap .portfolio-filter {
   display: flex;
@@ -1303,9 +1300,6 @@ input:focus {
   box-shadow: 0 5px 15px rgba(0, 242, 195, 0.4);
   color: #15191d;
   background-color: #00e6ff;
-}
-.portfolio_section .skills-content-wrap {
-  /* Portfolio Grid */
 }
 
 .portfolio-grid {
