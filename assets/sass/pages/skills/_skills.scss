@@ -45,6 +45,7 @@
     .icon-wrap {
       i {
         font-size: 32px;
+        color: $white-color;
       }
     }
     .box-title {
@@ -54,6 +55,8 @@
       color: $primary-color;
     }
     .expreance {
+      font-size: 16px;
+      color: $white-color;
       text-align: center;
     }
   }
@@ -86,6 +89,12 @@
         transform: translateY(-10px) scale(1.1);
         // color: #000;
       }
+    }
+
+    .tech-title{
+      font-size: 16px;
+      margin-top: 4px;
+      color: $white-color;
     }
     .bg-1 {
       background-color: #e54f26;
