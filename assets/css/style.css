@@ -939,11 +939,13 @@ input:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../img/thegrid_1.jpg") no-repeat;
+  background: url("../img/360_F_1596296768_eDhRqAgnMexEQcjzPJ29fILXnm8YUXQ3.jpg") no-repeat;
   background-position: center;
   background-size: cover;
   z-index: 1;
   /* Darker cinematic overlay */
+  /* Main Image - clockwise rotation */
+  /* Child Image - counterclockwise rotation */
 }
 .hero_section::after {
   content: "";
@@ -969,16 +971,10 @@ input:focus {
   transform: translate(-50%, -50%);
   object-fit: contain;
 }
-.hero_section {
-  /* Main Image - clockwise rotation */
-}
 .hero_section .shild-image-wrap .main-image {
   width: 250px;
   height: 250px;
   animation: rotateClockwise 15s linear infinite;
-}
-.hero_section {
-  /* Child Image - counterclockwise rotation */
 }
 .hero_section .shild-image-wrap .child-image {
   width: 130px;
@@ -1048,6 +1044,8 @@ input:focus {
 }
 .hero_section .hero-content .hero-des-wrap {
   text-align: center;
+  /*title */
+  /* Skills / subheading */
 }
 .hero_section .hero-content .hero-des-wrap .cta-banner {
   margin: 0 auto;
@@ -1055,18 +1053,12 @@ input:focus {
   padding: 8px 24px;
   margin-bottom: 12px;
 }
-.hero_section .hero-content .hero-des-wrap {
-  /*title */
-}
 .hero_section .hero-content .hero-des-wrap .title {
   font-size: 60px;
   font-weight: 700;
   line-height: normal;
   color: #00e6ff;
   letter-spacing: 1px;
-}
-.hero_section .hero-content .hero-des-wrap {
-  /* Skills / subheading */
 }
 .hero_section .hero-content .hero-des-wrap .subheading {
   margin: 8px 0;
@@ -1089,12 +1081,10 @@ input:focus {
 
 .contact-us_section {
   position: relative;
+  /* --- Form Styles --- */
 }
 .contact-us_section .cta-banner {
   margin: 0 auto 50px;
-}
-.contact-us_section {
-  /* --- Form Styles --- */
 }
 .contact-us_section .contact-form {
   width: 100%;
@@ -1151,12 +1141,14 @@ input:focus {
 }
 .about_section .about-us-content-wrap {
   /* Personal Info Box */
+  /* Stat Cards */
 }
 .about_section .about-us-content-wrap .personal-box {
   background: #1f2937;
   border: 1px solid rgba(55, 65, 81, 0.5);
   border-radius: 16px;
   padding: 24px;
+  /* Download CV Button */
 }
 .about_section .about-us-content-wrap .personal-box-title {
   width: fit-content;
@@ -1187,14 +1179,8 @@ input:focus {
 .about_section .about-us-content-wrap .personal-box .info-item .email-link:hover {
   color: #67e8f9;
 }
-.about_section .about-us-content-wrap .personal-box {
-  /* Download CV Button */
-}
 .about_section .about-us-content-wrap .personal-box .download-cv-btn {
   margin-top: 24px;
-}
-.about_section .about-us-content-wrap {
-  /* Stat Cards */
 }
 .about_section .about-us-content-wrap .stat-card {
   height: 100%;
@@ -1347,6 +1333,7 @@ input:focus {
 }
 .portfolio_section .skills-content-wrap {
   /* Filter Buttons */
+  /* Portfolio Grid */
 }
 .portfolio_section .skills-content-wrap .portfolio-filter {
   display: flex;
@@ -1374,9 +1361,6 @@ input:focus {
   box-shadow: 0 5px 15px rgba(0, 242, 195, 0.4);
   color: #15191d;
   background-color: #00e6ff;
-}
-.portfolio_section .skills-content-wrap {
-  /* Portfolio Grid */
 }
 
 .portfolio-grid {
