@@ -1,12 +1,16 @@
 .skills_section {
   position: relative;
-  
+
   .skill-boxes {
     display: flex;
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
     margin-bottom: 60px;
+    @include respond(tablet) {
+      gap: 32px;
+      margin-bottom: 32px;
+    }
     .box {
       background: $medium-dark;
       backdrop-filter: blur(6px);
@@ -22,9 +26,9 @@
       cursor: pointer;
       &:hover {
         transform: translateY(-10px);
-        box-shadow: 0 10px 25px rgba(0, 255, 255, 0.2);
+        box-shadow: $card-shadow;
       }
-  
+
       .icon-wrap {
         i {
           font-size: 32px;
@@ -44,22 +48,31 @@
       }
     }
   }
-  
+
   .skills-tech-icons {
     display: flex;
     justify-content: center;
     gap: 50px;
+    flex-wrap: wrap;
     margin-top: 40px;
-  
+    @include respond(tablet) {
+      gap: 32px;
+      margin-top: 24px;
+    }
+    @include respond(phone) {
+      gap: 16px;
+      margin-top: 24px;
+    }
+
     .tech-item {
       text-align: center;
       animation: techIcon 0.8s ease forwards;
-  
+
       .circle {
         width: 90px;
         height: 90px;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.1);
+        background: $medium-dark;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -67,14 +80,24 @@
         margin: auto;
         transition: 0.3s ease;
         color: $white-color;
-  
+
         &:hover {
           transform: translateY(-10px) scale(1.1);
           // color: #000;
         }
+        @include respond(tablet) {
+          width: 70px;
+          height: 70px;
+          font-size: 34px;
+        }
+        @include respond(phone) {
+          width: 54px;
+          height: 54px;
+          font-size: 24px;
+        }
       }
-  
-      .tech-title{
+
+      .bottom-title {
         font-size: 16px;
         margin-top: 4px;
         color: $white-color;

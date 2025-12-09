@@ -3,13 +3,21 @@ $primary-color: #00e6ff;
 $secondary-color: #FAA32C;
 $medium-dark: #1f2937;
 $primary-dark: #1A1E23;
+$primary-light-bg: rgba(0, 242, 195, 0.1); 
+$secondary-light-bg: rgba(250, 163, 44, 0.1); 
 
 $shadow-color: rgba(230, 247, 255, 0.85);
 $border-color: rgb(55 65 81 / 0.5);
+$border-two-color: #555;
 $heading-color: #15191d;
 $white-color: #FFFFFF;
 $black-color: #000000;
 $light-color:#EEFAFF;
+$disable-color: #d1d5db;
+// Box Shadow 
+$primay-btn-shadow: 0 0 20px rgba(0, 242, 195, 0.3);
+$secondary-btn-shadow: 0 0 20px rgba(0, 242, 195, 0.4);
+$card-shadow: 0 10px 25px rgba(0, 255, 255, 0.2);
 
 // $gradient-light-color: linear-gradient(to right, #CAEE0E, #A1D70E, #6EBF0E);
 

@@ -1,8 +1,5 @@
 .about_section {
   position: relative;
-  // background:
-  //   radial-gradient(closest-side, #000000f0 0%, #04101bf0 40%, #071428f0 100%) center,
-  //   url("../img/1062.jpg") center/cover no-repeat;
   .about-us-content-wrap {
     /* Personal Info Box */
     .personal-box {
@@ -18,26 +15,33 @@
         font-size: 28px;
         font-weight: 700;
         letter-spacing: 2px;
+        @include respond(phone) {
+          font-size: 24px;
+        }
       }
       .info-item {
         display: flex;
         justify-content: space-between;
         padding: 8px 0;
-        border-bottom: 1px dashed #374151;
+        border-bottom: 1px dashed $border-color;
+        font-size: 16px;
+        @include respond(phone) {
+          padding: 0 0 3px 0;
+          font-size: 15px;
+        }
 
         strong {
-          color: #d1d5db;
+          color: $disable-color;
           text-transform: uppercase;
-          font-size: 16px;
         }
         span {
-          color: #fff;
+          color: $white-color;
         }
         .email-link {
           color: $primary-color;
           text-decoration: none;
           &:hover {
-            color: #67e8f9;
+            color: $primary-color;
           }
         }
       }
@@ -45,6 +49,9 @@
       /* Download CV Button */
       .download-cv-btn {
         margin-top: 24px;
+        @include respond(phone) {
+          margin-top: 16px;
+        }
       }
     }
 
@@ -52,20 +59,21 @@
 
     .stat-card {
       height: 100%;
-      background-color: #1f2937;
+      background-color: $medium-dark;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: default;
-      border: 1px solid #374151;
+      border: 1px solid $border-color;
       padding: 16px;
       border-radius: 12px;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      min-height: 170px;
     }
     .stat-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(34, 211, 238, 0.2); /* Cyan glow effect */
+      box-shadow: $card-shadow;
       background-color: #253140;
     }
 
@@ -79,14 +87,15 @@
 
     .stat-line {
       width: 40px;
-      border-top: 2px solid #555;
+      border-top: 2px solid $border-two-color;
       margin: 0.3rem 0 0.5rem 0;
     }
 
     .stat-text {
       font-size: 16px;
       text-transform: uppercase;
-      color: #9ca3af;
+      color: $disable-color;
+      text-align: center;
       margin: 0;
     }
   }

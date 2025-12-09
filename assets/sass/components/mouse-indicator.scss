@@ -18,6 +18,10 @@
     margin-bottom: 10px;
     box-shadow: 0 0 15px rgba(0, 242, 195, 0.2);
     animation: mouseFloat 4s ease-in-out infinite;
+    @include respond(phone) {
+      width: 23px;
+      height: 36px;
+    }
   }
   .wheel {
     width: 4px;
@@ -34,7 +38,7 @@
     width: 2px;
     height: 50px;
     margin-top: 5px;
-  
+
     background-image: linear-gradient(
       to bottom,
       $primary-color 50%,
@@ -44,6 +48,10 @@
     background-repeat: repeat-y;
     position: relative;
     animation: moveDashes 0.8s linear infinite;
+
+    @include respond(phone) {
+      height: 32px;
+    }
   }
   .dashed-line::after {
     content: "";
