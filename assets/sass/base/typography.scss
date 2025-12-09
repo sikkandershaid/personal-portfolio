@@ -8,7 +8,12 @@ body {
   font-weight: 500;
   line-height: normal;
   color: red;
-  background: linear-gradient(135deg, #000000 0%, #04101b 50%, #071428 100%);
+  background: radial-gradient(
+      1200px 600px at 10% 10%,
+      rgba(10, 25, 40, 0.35),
+      transparent 10%
+    ),
+    linear-gradient(180deg, #03111a 0%, #071428 50%, #04101b 100%);
 }
 
 ::selection {

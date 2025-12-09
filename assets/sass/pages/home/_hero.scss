@@ -7,89 +7,13 @@
       transparent 10%
     ),
     linear-gradient(180deg, #03111a 0%, #071428 50%, #04101b 100%);
-  background-position: center;
-  background-size: cover;
-  position: relative;
   overflow: hidden;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../img/360_F_1596296768_eDhRqAgnMexEQcjzPJ29fILXnm8YUXQ3.jpg") no-repeat;
-  background-position: center;
-  background-size: cover;
+  position: relative;
   z-index: 1;
-  /* Darker cinematic overlay */
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-        circle at 10% 10%,
-        rgba(0, 0, 0, 0.9),
-        transparent 35%
-      ),
-      radial-gradient(circle at 90% 90%, rgba(0, 0, 0, 0.85), transparent 40%),
-      linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.9),
-        transparent 50%,
-        rgba(0, 0, 0, 0.95) 100%
-      );
-    pointer-events: none;
-    mix-blend-mode: overlay;
-  }
-
-  // Shild Image
-  .shild-image-wrap {
-    position: absolute;
-    width: 320px;
-    height: 320px;
-    left: 0;
-    transform: translateX(-50%);
-    z-index: -1;
-    opacity: 0.8;
-  }
-
-  .shild-image-wrap img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    object-fit: contain;
-  }
-
-  /* Main Image - clockwise rotation */
-  .shild-image-wrap .main-image {
-    width: 250px;
-    height: 250px;
-    animation: rotateClockwise 15s linear infinite;
-  }
-
-  /* Child Image - counterclockwise rotation */
-  .shild-image-wrap .child-image {
-    width: 130px;
-    height: 130px;
-    animation: rotateCounter 10s linear infinite;
-  }
-
-  @keyframes rotateClockwise {
-    0% {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
-  }
-
-  @keyframes rotateCounter {
-    0% {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-      transform: translate(-50%, -50%) rotate(-360deg);
-    }
-  }
 
   // hero content start
   .hero-content {
@@ -107,6 +31,10 @@
       display: grid;
       place-items: center;
       margin: 0 auto;
+      @include respond(phone) {
+        width: 200px;
+        height: 200px;
+      }
 
       .profile-photo {
         width: 70%;
@@ -162,6 +90,13 @@
         line-height: normal;
         color: $primary-color;
         letter-spacing: 1px;
+
+        @include respond(table) {
+          font-size: 48px;
+        }
+        @include respond(phone) {
+          font-size: 40px;
+        }
       }
 
       /* Skills / subheading */
@@ -172,6 +107,12 @@
         line-height: normal;
         color: $secondary-color;
         letter-spacing: 0.5px;
+        @include respond(table) {
+          font-size: 36px;
+        }
+        @include respond(phone) {
+          font-size: 32px;
+        }
       }
 
       .short-des {
@@ -186,5 +127,10 @@
     align-items: center;
     justify-content: center;
     margin-top: 48px;
+
+    @include respond(table) {
+      gap: 20px;
+      margin-top: 32px;
+    }
   }
 }

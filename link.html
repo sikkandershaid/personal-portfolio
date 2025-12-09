@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fullscreen Menu</title>
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+
+<style>
+body, html {
+  background-color: #fff;
+  height: 100%;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+main {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* RIGHT PANEL ONLY */
+.aside-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;        /* full width */
+  right: 0;
+  background-color: #38618c;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Menu list */
+.aside-list {
+  list-style: none;
+  padding-left: 50px;
+  margin-top: 150px;
+}
+
+.aside-list li {
+  margin-bottom: 20px;
+}
+
+.aside-anchor {
+  padding-bottom: 7px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  position: relative;
+}
+
+.aside-anchor::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ff5964;
+  height: 3px;
+  border-radius: 3px;
+}
+
+.aside-anchor::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 50%;
+  background-color: #fff;
+  z-index: 1;
+  border-radius: 3px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.aside-anchor:hover::before {
+  transform: translateX(100%);
+}
+
+/* Checkbox toggle */
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ aside .aside-right {
+  transform: translateX(0%);
+}
+
+/* Hamburger icon */
+label {
+  position: fixed;
+  top: 10px;
+  padding: 7px 10px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #38618c;
+  border-radius: 5px;
+  margin: 5px auto;
+  transition: 0.4s ease-in;
+}
+
+.middle {
+  margin: 0 auto;
+}
+
+input[type="checkbox"]:checked ~ label .bar {
+  background-color: #fff;
+}
+
+input[type="checkbox"]:checked ~ label .top {
+  transform: translateY(0px) rotateZ(45deg);
+}
+
+input[type="checkbox"]:checked ~ label .bottom {
+  transform: translateY(-15px) rotateZ(-45deg);
+}
+
+input[type="checkbox"]:checked ~ label .middle {
+  width: 0;
+}
+
+/* Heading */
+h1 {
+  margin: 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 30px;
+}
+
+h1 span {
+  font-size: 20px;
+  display: block;
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 40px;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<main>
+
+  <h1>
+    Fullscreen menu
+    <span>with cool links</span>
+  </h1>
+
+  <input type="checkbox" id="myInput">
+
+  <label for="myInput">
+    <span class="bar top"></span>
+    <span class="bar middle"></span>
+    <span class="bar bottom"></span>
+  </label>
+
+  <aside>
+    <div class="aside-right">
+      <ul class="aside-list">
+        <li><a href="#" class="aside-anchor">Link</a></li>
+        <li><a href="#" class="aside-anchor">Link</a></li>
+        <li><a href="#" class="aside-anchor">Link</a></li>
+        <li><a href="#" class="aside-anchor">Link</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</main>
+
+</body>
+</html>
