@@ -192,27 +192,15 @@
   }
 }
 
-.modal {
-  overflow: visible !important;
-}
-
 .portfolio-modal {
   max-width: 900px !important;
-  width: 90%;
+  width: 97%;
   .modal-content {
     background: #111827;
     border-radius: 20px;
     padding: 24px;
     max-height: calc(100vh - 2rem);
     overflow-y: auto !important;
-
-    .modal-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center; // image center theke crop korbe
-      display: block;
-    }
 
     .close-btn {
       position: absolute;
@@ -230,24 +218,39 @@
       justify-content: center;
       opacity: 1;
       transition: 0.3s;
+      @include respond(phone) {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+      }
 
       i {
         font-size: 20px;
+        @include respond(phone) {
+          font-size: 16px;
+        }
       }
 
       &:hover {
         background: #dc3545;
       }
     }
-
     // Modal Header
     .modal-header-wrap {
       margin-bottom: 32px;
+      @include respond(phone) {
+        margin-bottom: 28px;
+      }
       .title {
         font-size: 36px;
         font-weight: 700;
         color: $primary-color;
         margin-bottom: 16px;
+        padding-right: 20px;
+        @include respond(phone) {
+          font-size: 24px;
+          margin-bottom: 12px;
+        }
       }
       .sub-title {
         font-size: 18px;
@@ -265,24 +268,151 @@
         width: fit-content;
         padding-bottom: 4px;
       }
-      .tecnologies {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 15px;
-        .item {
-          padding: 8px 15px;
-          border-radius: 20px;
-          font-size: 14px;
-          color: $primary-color;
-          border: 1px solid $primary-color;
+
+      // top demo wrap
+      .top-demo-wrap {
+        margin-bottom: 32px;
+        @include respond(phone) {
+          margin-bottom: 28px;
+        }
+        // Image Slider Part
+        .portfolio-image-slider {
+          .portfolio-image-slider-wrap {
+            .slider-item {
+              width: 100%;
+              height: auto;
+              max-height: 350px;
+              border-radius: 8px;
+              overflow: hidden;
+              .slide-img {
+                min-height: 175px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 8px;
+                display: block;
+              }
+            }
+          }
+
+          // Slider Arrow ==========
+          .portfolio-slider-button-next,
+          .portfolio-slider-button-prev {
+            width: 30px;
+            height: 30px;
+            background: $medium-dark;
+            color: $primary-color;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: 0.3s;
+
+            &:hover {
+              background: $white-color;
+              color: $heading-color;
+            }
+
+            @include respond(phone) {
+              width: 25px;
+              height: 25px;
+              font-size: 14px;
+            }
+          }
+          /* Position Adjust */
+          .portfolio-slider-button-next {
+            right: 15px;
+          }
+
+          .portfolio-slider-button-prev {
+            left: 15px;
+          }
+
+          /* Default Swiper icons hide */
+          .swiper-button-next::after,
+          .swiper-button-prev::after {
+            display: none;
+          }
+
+          // Slider Pagination ==========
+          .portfolio-slider-pagination {
+            bottom: 18px !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Bullet base */
+            .swiper-pagination-bullet {
+              width: 20px;
+              height: 6px;
+              background: $white-color;
+              border-radius: 10px;
+              margin: 0 6px !important;
+              opacity: 1;
+              overflow: hidden;
+              position: relative;
+
+              &::before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: $primary-color;
+                border-radius: 10px;
+                left: 0;
+                top: 0;
+                transition: width 0.4s ease;
+              }
+
+              :hover {
+                transform: scale(1.1);
+                transition: 0.3s;
+              }
+            }
+            .swiper-pagination-bullet-active::before {
+              width: 100%;
+            }
+          }
         }
       }
+      // Tecnologies Wrap
+      .tecnologies-wrap {
+        margin-bottom: 32px;
+        @include respond(phone) {
+          margin-bottom: 28px;
+        }
+        .tecnologies {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 15px;
+          @include respond(phone) {
+            gap: 12px;
+          }
+          .item {
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: $primary-color;
+            border: 1px solid $primary-color;
+            @include respond(phone) {
+              padding: 6px 12px;
+            }
+          }
+        }
+      }
+
+      // Action Links
       .action-links-wrap {
         display: flex;
+        align-items: center;
         gap: 24px;
         padding-top: 16px;
         border-top: 1px solid $border-color;
+        @include respond(phone) {
+          flex-wrap: wrap;
+        }
 
         .btn {
           display: flex;
@@ -296,6 +426,9 @@
           font-size: 16px;
           font-weight: 500;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
+          @include respond(phone) {
+            padding: 8px 16px;
+          }
 
           &.btn-primary {
             background-color: $primary-light-bg;
