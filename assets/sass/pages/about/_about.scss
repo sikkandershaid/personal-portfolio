@@ -16,7 +16,7 @@
         font-weight: 700;
         letter-spacing: 2px;
         @include respond(phone) {
-          font-size: 24px;
+          font-size: 22px;
         }
       }
       .info-item {
@@ -87,7 +87,7 @@
 
     .stat-line {
       width: 40px;
-      border-top: 2px solid $border-two-color;
+      border-top: 2px solid $gray-color;
       margin: 0.3rem 0 0.5rem 0;
     }
 

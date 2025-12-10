@@ -1,13 +1,19 @@
 .copyright-section {
   padding: 28px;
   border-top: 1px solid $border-color;
+  @include respond(phone) {
+    padding: 20px;
+  }
   .copyright-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
+    gap: 24px;
     flex-wrap: wrap;
     text-align: center;
+    @include respond(tablet) {
+      justify-content: center;
+    }
 
     .contact-link-wrap {
       display: flex;
@@ -26,6 +32,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: all .3s;
+        &:hover {
+          transform: translateY(-5px) scale(1.1);
+        }
       }
     }
 

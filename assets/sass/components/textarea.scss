@@ -1,0 +1,116 @@
+.text-area-card {
+  p,
+  * {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: $white-color;
+    @include respond(phone) {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  p:not(:last-of-type) {
+    margin-bottom: 24px;
+    @include respond(tablet) {
+      margin-bottom: 18px;
+    }
+    @include respond(phone) {
+      margin-bottom: 14px;
+    }
+  }
+
+  img{
+    max-width: 100%;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 500;
+    color: $white-color;
+    margin-bottom: 24px;
+    @include respond(tablet) {
+      margin-bottom: 18px;
+    }
+    @include respond(phone) {
+      margin-bottom: 14px;
+    }
+  }
+
+  & h1 {
+    font-weight: 500;
+    font-size: 36px;
+    color: $white-color;
+
+    @include respond(tablet) {
+      font-size: 24px;
+    }
+    @include respond(phone) {
+      font-size: 20px;
+    }
+  }
+
+
+  & h2 {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+
+    @include respond(tablet) {
+      font-size: 28px;
+      line-height: normal;
+    }
+    @include respond(tablet) {
+      font-size: 24px;
+      line-height: normal;
+    }
+
+
+  }
+  & h3 {
+    font-size: 24px;
+    @include respond(phone) {
+      font-size: 18px;
+    }
+  }
+  & h4 {
+    font-size: 20px;
+    @include respond(phone) {
+      font-size: 16px;
+    }
+  }
+  & h5 {
+    font-size: 18px;
+    @include respond(phone) {
+      font-size: 14px;
+    }
+  }
+  & h6 {
+    font-size: 16px;
+    @include respond(phone) {
+      font-size: 14px;
+    }
+  }
+
+  ul {
+    & li {
+      position: relative;
+      padding: 0 0 6px 20px;
+      color: $white-color;
+      &::after {
+        content: "\f058";
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 10px;
+      }
+    }
+  }
+}

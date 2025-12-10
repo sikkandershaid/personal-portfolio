@@ -9,8 +9,19 @@
     .contact-info {
       display: flex;
       justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
       gap: 48px;
       margin-bottom: 70px;
+      @include respond(sm-laptop) {
+        gap: 32px;
+        margin-bottom: 60px;
+        justify-content: center;
+      }
+      @include respond(tablet) {
+        gap: 24px;
+        margin-bottom: 45px;
+      }
       .contact-item {
         display: flex;
         align-items: center;
@@ -27,6 +38,16 @@
           background-color: #253140;
         }
 
+        @include respond(tablet) {
+          gap: 24px;
+        }
+        @include respond(phone) {
+          flex-direction: row;
+          gap: 16px;
+          border-radius: 16px;
+          width: 100%;
+        }
+
         .contact-icon {
           width: 50px;
           height: 50px;
@@ -37,6 +58,9 @@
           justify-content: center;
           font-size: 20px;
           color: $primary-color;
+          @include respond(phone) {
+            text-align: start;
+          }
         }
 
         .contact-info-title {
@@ -45,6 +69,9 @@
           color: $primary-color;
           margin-bottom: 4px;
           text-align: center;
+          @include respond(phone) {
+            text-align: start;
+          }
         }
 
         .contact-info-subtitle {
@@ -65,6 +92,9 @@
     &-row {
       gap: 48px;
       margin-bottom: 40px;
+      @include respond(tablet) {
+        gap: 24px;
+      }
 
       & > div {
         flex: 1 1 45%;
