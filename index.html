@@ -21,36 +21,39 @@
   <body class="site">
     <header class="header">
       <div class="container">
-        <div class="d-none d-lg-block">
+        <div class="d-none d-md-block">
           <div class="header__menu">
             <!-- NavBar  -->
-            <nav class="navigation">
+            <nav class="navigation" id="mobileNav">
               <ul class="navigation__list">
                 <li class="navigation__item">
-                  <a href="index.html" class="navigation__link">Home</a>
+                  <a href="#home" class="navigation__link active">Home</a>
                 </li>
                 <li class="navigation__item">
-                  <a href="#" class="navigation__link">About Me</a>
+                  <a href="#aboutMe" class="navigation__link">About Me</a>
                 </li>
                 <li class="navigation__item">
-                  <a href="#" class="navigation__link">Portfolio</a>
+                  <a href="#skills" class="navigation__link">Skills</a>
                 </li>
                 <li class="navigation__item">
-                  <a href="#" class="navigation__link">Skills</a>
+                  <a href="#portfolio" class="navigation__link">Portfolio</a>
                 </li>
                 <li class="navigation__item">
-                  <a href="#" class="navigation__link">Contact</a>
+                  <a href="#contact" class="navigation__link">Contact</a>
                 </li>
               </ul>
             </nav>
           </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i> menu
         </div>
       </div>
     </header>
 
     <main class="site__content">
       <!-- ====== Hero Section ======= -->
-      <section class="hero_section section_padding">
+      <section class="hero_section section_padding" id="home">
         <div class="container">
           <div class="hero-content">
             <div class="hero-des-wrap">
@@ -126,18 +129,16 @@
       </section>
 
       <!-- ====== About Me Section ======= -->
-      <section class="about_section section_padding">
-        <!-- <div class="icon-large">&lt;/&gt;</div> -->
-        <!-- scroll-indicator -->
-        <div class="scroll-indicator">
-          <div class="mouse">
-            <div class="wheel"></div>
-          </div>
-          <div class="dashed-line"></div>
-        </div>
-
+      <section class="about-hero_section section_padding" id="aboutMe">
         <div class="container">
-          <!-- Skills Title  -->
+          <!-- scroll-indicator -->
+          <div class="scroll-indicator">
+            <div class="mouse">
+              <div class="wheel"></div>
+            </div>
+            <div class="dashed-line"></div>
+          </div>
+          <!-- About Title  -->
           <div class="section-title-wrap">
             <h1 class="section-title">About Me</h1>
             <div class="title-underline">
@@ -149,101 +150,67 @@
               A brief look into my background and what I offer.
             </p>
           </div>
-          <div class="about-us-content-wrap">
-            <div class="row g-4 parent-row">
-              <!-- Column 1 -->
-              <div class="col-lg-8 full-height">
-                <div class="personal-box">
-                  <h3 class="personal-box-title pb-2 mb-4">PERSONAL INFO</h3>
-
-                  <div class="row gx-5 gy-4">
-                    <div class="col-md-6">
-                      <div class="info-item">
-                        <strong>First Name:</strong> <span>John</span>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="info-item">
-                        <strong>Last Name:</strong> <span>Doe</span>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="info-item">
-                        <strong>Age:</strong> <span>28 Years</span>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="info-item">
-                        <strong>Nationality:</strong> <span>England</span>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="info-item">
-                        <strong>Freelance:</strong>
-                        <span class="text-success fw-bold">Available</span>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="info-item">
-                        <strong>Email:</strong>
-                        <a href="mailto:you@mail.com" class="email-link"
-                          >you@mail.com</a
-                        >
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="info-item">
-                        <strong>Github:</strong>
-                        <a
-                          href="https://github.com/"
-                          target="_blank"
-                          class="email-link"
-                        >
-                          https://github.com/</a
-                        >
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <a href="#" class="download-cv-btn secondary-btn-fill">
-                        DOWNLOAD CV <i class="fas fa-download"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+          <div class="row about-hero-row g-4">
+            <div class="col-xl-5">
+              <div class="hero-image fade-in-up delay-1">
+                <img src="smiling-girl.jpg" alt="John Doe" />
               </div>
+            </div>
+            <div class="col-xl-7">
+              <div class="hero-content fade-in-up">
+                <h1 class="title">
+                  Hi, I'm <span class="highlight">John Doe</span>
+                </h1>
+                <p>
+                  I'm a passionate Full Stack Developer with over 5 years of
+                  experience creating beautiful, functional, and user-centered
+                  digital solutions. My journey in tech began with curiosity and
+                  has evolved into a career I'm truly passionate about.
+                </p>
 
-              <!-- Column 2 -->
-              <div class="col-lg-4 full-height">
-                <div class="row g-4 h-100 stat-full">
-                  <div class="col-6">
-                    <div class="stat-card">
-                      <p class="stat-number">12+</p>
-                      <hr class="stat-line" />
-                      <p class="stat-text">YEARS OF EXPERIENCE</p>
+                <p>
+                  When I'm not coding, you'll find me exploring new
+                  technologies, contributing to open-source projects, or
+                  enjoying outdoor activities. I believe in continuous learning
+                  and always strive to stay at the forefront of web development
+                  trends.
+                </p>
+
+                <p>
+                  I enjoy turning complex problems into simple, elegant
+                  solutions and take pride in writing clean, efficient, and
+                  scalable code. My goal is to build impactful digital
+                  experiences that not only meet business needs but also delight
+                  users.
+                </p>
+                <div class="about-info">
+                  <div class="about-item">
+                    <div class="about-icon">
+                      <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                      <h3 class="about-info-title">Email</h3>
+                      <p class="about-info-subtitle">john.doe@example.com</p>
                     </div>
                   </div>
 
-                  <div class="col-6">
-                    <div class="stat-card">
-                      <p class="stat-number">97+</p>
-                      <hr class="stat-line" />
-                      <p class="stat-text">COMPLETED PROJECTS</p>
+                  <div class="about-item">
+                    <div class="about-icon">
+                      <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                      <h3 class="about-info-title">Phone</h3>
+                      <p class="about-info-subtitle">+1 (123) 456-7890</p>
                     </div>
                   </div>
 
-                  <div class="col-6">
-                    <div class="stat-card">
-                      <p class="stat-number">81+</p>
-                      <hr class="stat-line" />
-                      <p class="stat-text">HAPPY CUSTOMERS</p>
+                  <div class="about-item">
+                    <div class="about-icon">
+                      <i class="fas fa-map-marker-alt"></i>
                     </div>
-                  </div>
-
-                  <div class="col-6">
-                    <div class="stat-card">
-                      <p class="stat-number">53+</p>
-                      <hr class="stat-line" />
-                      <p class="stat-text">AWARDS WON</p>
+                    <div>
+                      <h3 class="about-info-title">Location</h3>
+                      <p class="about-info-subtitle">New York, NY</p>
                     </div>
                   </div>
                 </div>
@@ -261,8 +228,7 @@
       </section>
 
       <!-- ===== Skills Section ====== -->
-      <section class="skills_section section_padding">
-        <!-- <div class="icon-large">&lt;/&gt;</div> -->
+      <section class="skills_section section_padding" id="skills">
         <!-- scroll-indicator -->
         <div class="scroll-indicator">
           <div class="mouse">
@@ -339,7 +305,7 @@
         </div>
       </section>
       <!-- ===== Portfolio Section ====== -->
-      <section class="portfolio_section section_padding">
+      <section class="portfolio_section section_padding" id="portfolio">
         <!-- scroll-indicator -->
         <div class="scroll-indicator">
           <div class="mouse">
@@ -734,7 +700,7 @@
         </div>
       </section>
       <!--==== Contact Us Section ===== -->
-      <section class="contact-us_section section_padding">
+      <section class="contact-us_section section_padding" id="contact">
         <div class="scroll-indicator">
           <div class="mouse">
             <div class="wheel"></div>
@@ -753,10 +719,20 @@
           </div>
 
           <!-- contact Information -->
-
           <div class="contact-info-wrap">
             <div class="cta-banner">Send Me A Message</div>
             <div class="contact-info">
+              <!-- Name  -->
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div>
+                  <h3 class="contact-info-title">Name</h3>
+                  <p class="contact-info-subtitle">John Doe</p>
+                </div>
+              </div>
+              <!-- Email  -->
               <div class="contact-item">
                 <div class="contact-icon">
                   <i class="fas fa-envelope"></i>
@@ -766,7 +742,7 @@
                   <p class="contact-info-subtitle">john.doe@example.com</p>
                 </div>
               </div>
-
+              <!-- Phone  -->
               <div class="contact-item">
                 <div class="contact-icon">
                   <i class="fas fa-phone"></i>
@@ -776,7 +752,7 @@
                   <p class="contact-info-subtitle">+1 (123) 456-7890</p>
                 </div>
               </div>
-
+              <!-- Location -->
               <div class="contact-item">
                 <div class="contact-icon">
                   <i class="fas fa-map-marker-alt"></i>
@@ -870,6 +846,49 @@
     <script src="assets/js/mixitup.min.js"></script>
     <script src="assets/js/script.js"></script>
 
+    <!-- Navigation Active -->
+    <script>
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".navigation__link");
+
+      function setActiveLink() {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 150;
+          if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", setActiveLink);
+      window.addEventListener("load", setActiveLink);
+    </script>
+
+    <script>
+      const menuBtn = document.getElementById("mobileMenuBtn");
+      const mobileNav = document.getElementById("mobileNav");
+
+      menuBtn.addEventListener("click", () => {
+        mobileNav.classList.toggle("active");
+      });
+
+      // Close menu when clicking a link
+      document.querySelectorAll(".navigation__link").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileNav.classList.remove("active");
+        });
+      });
+    </script>
+
     <!-- mixitup  -->
     <script>
       var mixer = mixitup(".portfolio-grid", {
@@ -893,7 +912,7 @@
       });
     </script>
 
-    <!-- Initialize Swiper -->
+    <!-- Initialize Portfolio Image Swiper -->
     <script>
       var swiper = new Swiper(".portfolio-image-slider", {
         slidesPerView: 1,

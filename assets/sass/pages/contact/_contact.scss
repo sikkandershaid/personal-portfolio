@@ -7,21 +7,23 @@
   //  --- Contact Info ---
   .contact-info-wrap {
     .contact-info {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 48px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
       margin-bottom: 70px;
       @include respond(sm-laptop) {
         gap: 32px;
         margin-bottom: 60px;
-        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
       }
       @include respond(tablet) {
         gap: 24px;
         margin-bottom: 45px;
       }
+      @include respond(phone) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
       .contact-item {
         display: flex;
         align-items: center;
@@ -66,7 +68,7 @@
         .contact-info-title {
           font-size: 18px;
           font-weight: 600;
-          color: $primary-color;
+          color: $secondary-color;
           margin-bottom: 4px;
           text-align: center;
           @include respond(phone) {

@@ -1,6 +1,6 @@
 // Main Header
 .header {
-  padding: 12px 32px;
+  padding: 16px 32px;
   position: fixed;
   top: 20px;
   width: fit-content;
@@ -10,13 +10,20 @@
   background-color: $primary-dark;
   box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.06);
   z-index: 999;
+  @include respond(tablet) {
+    padding: 10px 20px;
+    top: 10px;
+  }
 
   // Nab Bar
   .navigation {
     .navigation__list {
       display: flex;
-      gap: 2.4rem;
+      gap: 32px;
       align-items: center;
+    }
+    @include respond(tablet) {
+      gap: 16px;
     }
 
     .navigation__item {
@@ -27,8 +34,10 @@
         transition: color 0.3s ease;
         font-size: 16px;
         font-weight: 600;
+        text-wrap: nowrap;
         transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-        &::after {
+        &::after,
+        &.active::after {
           content: "";
           position: absolute;
           bottom: -5px;
@@ -39,17 +48,31 @@
           background: $secondary-color;
           transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
-        &:hover {
+        &:hover,
+        &.active {
           background: $secondary-color;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
-        &:hover::after {
+        &:hover::after,
+        &.active::after {
           width: 100%;
           left: 0;
           right: auto;
         }
       }
+    }
+  }
+  // Mobile Menu
+  .mobile-menu {
+    display: none;
+    font-size: 16px;
+    color: $white-color;
+    @include respond(tablet) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
     }
   }
 }
