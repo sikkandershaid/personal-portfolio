@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lightbox Video Page</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0b15;
+      color: #fff;
+    }
+
+    .video-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 40px;
+    }
+
+    .video-thumb {
+      position: relative;
+      max-width: 600px;
+      cursor: pointer;
+    }
+
+    .video-thumb img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+    }
+
+    /* Lightbox */
+    .video-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .video-lightbox.active {
+      display: flex;
+    }
+
+    .video-box {
+      position: relative;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    .video-box video {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: -45px;
+      right: 0;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 576px) {
+      .play-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="video-section">
+    <h2>Project Demo Video</h2>
+
+    <div class="video-thumb" id="openVideo">
+      <img src="thumbnail.jpg" alt="Video Thumbnail">
+      <div class="play-btn">▶</div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="video-lightbox" id="videoLightbox">
+    <div class="video-box">
+      <span class="close-btn" id="closeVideo">&times;</span>
+      <video controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <script>
+    const openVideo = document.getElementById("openVideo");
+    const lightbox = document.getElementById("videoLightbox");
+    const closeVideo = document.getElementById("closeVideo");
+    const video = lightbox.querySelector("video");
+
+    openVideo.addEventListener("click", () => {
+      lightbox.classList.add("active");
+      video.play();
+    });
+
+    closeVideo.addEventListener("click", () => {
+      lightbox.classList.remove("active");
+      video.pause();
+      video.currentTime = 0;
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove("active");
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  </script>
+
+</body>
+</html>

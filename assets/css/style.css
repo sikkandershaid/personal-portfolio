@@ -986,6 +986,7 @@ input:focus {
 .copyright-section {
   padding: 28px;
   border-top: 1px solid rgba(55, 65, 81, 0.5);
+  background: linear-gradient(#003356 -2.92%, #001929);
 }
 @media only screen and (max-width: 575px) {
   .copyright-section {
@@ -1104,14 +1105,13 @@ input:focus {
 }
 .hero_section .hero-content .hero-des-wrap {
   text-align: center;
+  /*title */
+  /* Skills / subheading */
 }
 .hero_section .hero-content .hero-des-wrap .cta-banner {
   margin: 0 auto;
   padding: 8px 24px;
   margin-bottom: 12px;
-}
-.hero_section .hero-content .hero-des-wrap {
-  /*title */
 }
 .hero_section .hero-content .hero-des-wrap .title {
   font-size: 60px;
@@ -1129,9 +1129,6 @@ input:focus {
   .hero_section .hero-content .hero-des-wrap .title {
     font-size: 40px;
   }
-}
-.hero_section .hero-content .hero-des-wrap {
-  /* Skills / subheading */
 }
 .hero_section .hero-content .hero-des-wrap .subheading {
   margin: 8px 0;
@@ -1246,7 +1243,7 @@ input:focus {
 .contact-us_section .contact-info-wrap .contact-info .contact-item .contact-info-title {
   font-size: 18px;
   font-weight: 600;
-  color: #FAA32C;
+  color: #00e6ff;
   margin-bottom: 4px;
   text-align: center;
 }
@@ -1320,12 +1317,14 @@ input:focus {
 }
 .about_section .about-us-content-wrap {
   /* Personal Info Box */
+  /* Stat Cards */
 }
 .about_section .about-us-content-wrap .personal-box {
   background: #1f2937;
   border: 1px solid rgba(55, 65, 81, 0.5);
   border-radius: 16px;
   padding: 24px;
+  /* Download CV Button */
 }
 .about_section .about-us-content-wrap .personal-box-title {
   width: fit-content;
@@ -1367,9 +1366,6 @@ input:focus {
 .about_section .about-us-content-wrap .personal-box .info-item .email-link:hover {
   color: #00e6ff;
 }
-.about_section .about-us-content-wrap .personal-box {
-  /* Download CV Button */
-}
 .about_section .about-us-content-wrap .personal-box .download-cv-btn {
   margin-top: 24px;
 }
@@ -1377,9 +1373,6 @@ input:focus {
   .about_section .about-us-content-wrap .personal-box .download-cv-btn {
     margin-top: 16px;
   }
-}
-.about_section .about-us-content-wrap {
-  /* Stat Cards */
 }
 .about_section .about-us-content-wrap .stat-card {
   height: 100%;
@@ -1723,6 +1716,7 @@ input:focus {
 }
 .portfolio_section .skills-content-wrap {
   /* Filter Buttons */
+  /* Portfolio Grid */
 }
 .portfolio_section .skills-content-wrap .portfolio-filter {
   display: flex;
@@ -1762,9 +1756,6 @@ input:focus {
     font-size: 15px;
     padding: 8px 16px;
   }
-}
-.portfolio_section .skills-content-wrap {
-  /* Portfolio Grid */
 }
 .portfolio_section .skills-content-wrap .portfolio-grid {
   display: grid;
@@ -1976,6 +1967,17 @@ input:focus {
     margin-bottom: 28px;
   }
 }
+.portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .image-wrap {
+  border-radius: 12px;
+}
+.portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .image-wrap img {
+  width: 100%;
+  border-radius: 12px;
+}
+.portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .portfolio-image-slider {
+  /* Position Adjust */
+  /* Default Swiper icons hide */
+}
 .portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .portfolio-image-slider .portfolio-image-slider-wrap .slider-item {
   width: 100%;
   height: auto;
@@ -2018,17 +2020,11 @@ input:focus {
     font-size: 14px;
   }
 }
-.portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .portfolio-image-slider {
-  /* Position Adjust */
-}
 .portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .portfolio-image-slider .portfolio-slider-button-next {
   right: 15px;
 }
 .portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .portfolio-image-slider .portfolio-slider-button-prev {
   left: 15px;
-}
-.portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .portfolio-image-slider {
-  /* Default Swiper icons hide */
 }
 .portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .portfolio-image-slider .swiper-button-next::after,
 .portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .portfolio-image-slider .swiper-button-prev::after {

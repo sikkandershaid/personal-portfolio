@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Navigation Bar Dropdown Example</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    /* -----------------------
+           বেসিক স্টাইল 
+           ----------------------- */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      display: flex;
+      justify-content: space-between;
+      /* মেনু এবং টগল বাটনকে আলাদা করতে */
+      align-items: center;
+    }
+
+    .header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 15px 0;
+      position: relative;
+    }
+
+    /* -----------------------
+           নেভিগেশন মেনু স্টাইল (ডেস্কটপ ডিফল্ট)
+           ----------------------- */
+    #mainNav .navigation__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      /* ডেস্কটপে পাশাপাশি */
+    }
+
+    #mainNav .navigation__item {
+      margin-left: 20px;
+    }
+
+    .navigation__link {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+      transition: background-color 0.3s;
+    }
+
+    .navigation__link:hover,
+    .navigation__link.active {
+      background-color: #34495e;
+      border-radius: 4px;
+    }
+
+    /* -----------------------
+           মোবাইল মেনু টগল বাটন স্টাইল 
+           ----------------------- */
+    .mobile-menu {
+      display: none;
+      /* ডিফল্টভাবে লুকিয়ে রাখা */
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.1em;
+      order: 2;
+      /* মেনুর পরে দেখানোর জন্য */
+    }
+
+    /* -----------------------
+           মোবাইল ভিউয়ের জন্য CSS (Media Query)
+           ----------------------- */
+    @media (max-width: 767px) {
+
+      /* 1. মোবাইল টগল বাটন দেখানো */
+      .mobile-menu {
+        display: block;
+      }
+
+      /* 2. মেনু প্রথমে লুকিয়ে রাখা */
+      #mainNav {
+        /*
+                 * display: none এর বদলে max-height: 0 ব্যবহার করা হলো
+                 * যাতে transition কাজ করে।
+                 */
+        max-height: 0;
+        /* মেনু প্রথমে লুকানো */
+        overflow: hidden;
+        /* ভেতরের content কেটে যাবে */
+        transition: max-height 0.5s ease-in-out;
+        /* এখানে transition যোগ করুন */
+
+        /* ড্রপডাউন স্টাইল (আগের মতোই) */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #2c3e50;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+      }
+
+      /* 3. 'open' ক্লাস যোগ হলে মেনু দেখানো */
+      #mainNav.open {
+        display: block;
+        max-height: 300px;
+      }
+
+      /* 4. মোবাইল মেনুর লিস্ট স্টাইল */
+      #mainNav .navigation__list {
+        flex-direction: column;
+        /* কলাম আকারে দেখানোর জন্য */
+        padding: 10px 0;
+      }
+
+      #mainNav .navigation__item {
+        margin: 0;
+        border-bottom: 1px solid #34495e;
+      }
+
+      #mainNav .navigation__item:last-child {
+        border-bottom: none;
+      }
+
+      #mainNav .navigation__link {
+        padding: 15px 20px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container">
+
+      <nav class="navigation" id="mainNav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#home" class="navigation__link active">Home</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#aboutMe" class="navigation__link">About Me</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#skills" class="navigation__link">Skills</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#portfolio" class="navigation__link">Portfolio</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#contact" class="navigation__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="mobile-menu" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i> menu
+      </div>
+
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="container" style="padding: 20px; text-align: center;">
+      <p>আপনার পেজের কন্টেন্ট এখানে থাকবে।</p>
+      <p>ব্রাউজারের আকার (width) 767px এর নিচে নিয়ে দেখুন।</p>
+    </div>
+  </main>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 1. উপাদানগুলো নির্বাচন করুন
+      const menuButton = document.getElementById('mobileMenuBtn');
+      const navBar = document.getElementById('mainNav'); // ID পরিবর্তন করা হয়েছে
+
+      // 2. বাটনে ক্লিক ইভেন্ট লিসেনার যোগ করুন
+      menuButton.addEventListener('click', function () {
+        // 'open' ক্লাস টগল করুন
+        navBar.classList.toggle('open');
+
+        // আইকন পরিবর্তন (bars <-> times)
+        const menuIcon = menuButton.querySelector('.fas');
+        if (navBar.classList.contains('open')) {
+          menuIcon.classList.remove('fa-bars');
+          menuIcon.classList.add('fa-times');
+        } else {
+          menuIcon.classList.remove('fa-times');
+          menuIcon.classList.add('fa-bars');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

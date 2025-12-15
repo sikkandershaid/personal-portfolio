@@ -275,6 +275,14 @@
         @include respond(phone) {
           margin-bottom: 28px;
         }
+        // Image Wrap
+        .image-wrap {
+          border-radius: 12px;
+          img {
+            width: 100%;
+            border-radius: 12px;
+          }
+        }
         // Image Slider Part
         .portfolio-image-slider {
           .portfolio-image-slider-wrap {
