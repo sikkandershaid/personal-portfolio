@@ -1,9 +1,9 @@
 .copyright-section {
-  padding: 28px;
+  padding: 20px;
   border-top: 1px solid $border-color;
   background: linear-gradient(#003356 -2.92%,#001929);
   @include respond(phone) {
-    padding: 20px;
+    padding: 16px;
   }
   .copyright-wrap {
     display: flex;

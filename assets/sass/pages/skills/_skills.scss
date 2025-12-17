@@ -1,5 +1,23 @@
 .skills_section {
   position: relative;
+  // background: url("../img/pngtree-animated-gif-webcam-overlay-pixel-image_16531760.jpg") center / cover no-repeat;
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   inset: 0;
+
+  //   background: linear-gradient(to right, #002741, #001828);
+  //   mix-blend-mode: darken;
+
+  //   pointer-events: none;
+  //   z-index: 0;
+  // }
+
+  // & > * {
+  //   position: relative;
+  //   z-index: 1;
+  // }
 
   .skill-boxes {
     display: flex;

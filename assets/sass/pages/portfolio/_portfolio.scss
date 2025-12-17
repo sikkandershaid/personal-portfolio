@@ -59,6 +59,7 @@
 
         &:hover {
           transform: translateY(-10px);
+          background: $primary-two-color;
         }
         // Thumbnail Image
         .portfolio-img {
@@ -206,8 +207,8 @@
       position: absolute;
       top: 12px;
       right: 12px;
-      background: #000;
-      color: #fff;
+      background: $primary-two-color;
+      color: $white-color;
       border: none;
       width: 38px;
       height: 38px;
@@ -229,10 +230,6 @@
         @include respond(phone) {
           font-size: 16px;
         }
-      }
-
-      &:hover {
-        background: #dc3545;
       }
     }
     // Modal Header

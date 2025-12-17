@@ -29,7 +29,7 @@
         align-items: center;
         flex-direction: column;
         gap: 15px;
-        background-color: $medium-dark;
+        background-color: $primary-two-color;
         padding: 24px;
         border-radius: 20px;
         min-width: 210px;
@@ -37,7 +37,6 @@
         &:hover {
           transform: translateY(-5px);
           box-shadow: $card-shadow;
-          background-color: #253140;
         }
 
         @include respond(tablet) {
