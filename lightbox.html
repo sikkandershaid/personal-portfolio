@@ -1,142 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Lightbox Video Page</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Plus+Jakarta+Sans:wght@300;600&display=swap");
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0b15;
-      color: #fff;
-    }
-
-    .video-section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      padding: 40px;
-    }
-
-    .video-thumb {
-      position: relative;
-      max-width: 600px;
-      cursor: pointer;
-    }
-
-    .video-thumb img {
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    .play-btn {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      background: rgba(0,0,0,0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-    }
-
-    /* Lightbox */
-    .video-lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.9);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-
-    .video-lightbox.active {
-      display: flex;
-    }
-
-    .video-box {
-      position: relative;
-      width: 90%;
-      max-width: 900px;
-    }
-
-    .video-box video {
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: -45px;
-      right: 0;
-      font-size: 40px;
-      cursor: pointer;
-    }
-
-    @media (max-width: 576px) {
-      .play-btn {
-        width: 70px;
-        height: 70px;
-        font-size: 30px;
+      body {
+        background-color: #050505;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+        font-family: "Syncopate", sans-serif;
       }
-    }
-  </style>
-</head>
-<body>
 
-  <section class="video-section">
-    <h2>Project Demo Video</h2>
-
-    <div class="video-thumb" id="openVideo">
-      <img src="thumbnail.jpg" alt="Video Thumbnail">
-      <div class="play-btn">▶</div>
-    </div>
-  </section>
-
-  <!-- Lightbox -->
-  <div class="video-lightbox" id="videoLightbox">
-    <div class="video-box">
-      <span class="close-btn" id="closeVideo">&times;</span>
-      <video controls>
-        <source src="video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-
-  <script>
-    const openVideo = document.getElementById("openVideo");
-    const lightbox = document.getElementById("videoLightbox");
-    const closeVideo = document.getElementById("closeVideo");
-    const video = lightbox.querySelector("video");
-
-    openVideo.addEventListener("click", () => {
-      lightbox.classList.add("active");
-      video.play();
-    });
-
-    closeVideo.addEventListener("click", () => {
-      lightbox.classList.remove("active");
-      video.pause();
-      video.currentTime = 0;
-    });
-
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) {
-        lightbox.classList.remove("active");
-        video.pause();
-        video.currentTime = 0;
+      .header-container {
+        text-align: center;
       }
-    });
-  </script>
 
-</body>
+      /* মেইন টেক্সট কন্টেইনার */
+      #text-container {
+        font-size: 5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        gap: 0.1em;
+        overflow: hidden;
+        height: 1.2em;
+      }
+
+      /* প্রতিটি অক্ষরের জন্য স্টাইল */
+      .char {
+        display: inline-block;
+        transform: translateY(100%);
+        opacity: 0;
+        filter: blur(10px);
+        transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 0.8s linear, filter 0.8s linear;
+      }
+
+      /* যখন অক্ষর দৃশ্যমান হবে */
+      .char.visible {
+        transform: translateY(0);
+        opacity: 1;
+        filter: blur(0);
+      }
+
+      /* যখন অক্ষর চলে যাবে */
+      .char.out {
+        transform: translateY(-100%);
+        opacity: 0;
+        filter: blur(10px);
+      }
+
+      .info-box {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .line {
+        width: 0px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #00f2ff, transparent);
+        transition: width 1s ease-in-out;
+      }
+
+      .sub-title {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.4);
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fadeInSub 2s forwards 0.5s;
+      }
+
+      @keyframes fadeInSub {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        #text-container {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <div id="text-container"></div>
+
+      <div class="info-box">
+        <div class="line" id="glow-line"></div>
+        <p class="sub-title">System Evolution</p>
+      </div>
+    </div>
+
+    <script>
+      const container = document.getElementById("text-container");
+      const line = document.getElementById("glow-line");
+      const phrases = ["About Us", "Freelancer", "Editor"];
+      let phraseIndex = 0;
+
+      function createText(text) {
+        container.innerHTML = "";
+        // Split each character into a separate span
+        text.split("").forEach((char, i) => {
+          const span = document.createElement("span");
+          span.textContent = char === " " ? "\u00A0" : char;
+          span.className = "char";
+          container.appendChild(span);
+
+          // Delay to display the characters one by one
+          setTimeout(() => {
+            span.classList.add("visible");
+          }, i * 50);
+        });
+
+        // Make the bottom line larger
+        line.style.width = "200px";
+      }
+
+      function removeText() {
+        const chars = document.querySelectorAll(".char");
+        chars.forEach((span, i) => {
+          setTimeout(() => {
+            span.classList.remove("visible");
+            span.classList.add("out");
+          }, i * 30);
+        });
+
+        line.style.width = "0px";
+      }
+
+      function cycle() {
+        createText(phrases[phraseIndex]);
+
+        // Remove the text after 4 seconds
+        setTimeout(() => {
+          removeText();
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+
+          // Pause before starting new text
+          setTimeout(cycle, 1000);
+        }, 3500);
+      }
+
+      // Start
+      window.onload = () => {
+        cycle();
+      };
+    </script>
+  </body>
 </html>

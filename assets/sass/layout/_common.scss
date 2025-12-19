@@ -1,4 +1,4 @@
-/* --- CTA Banner --- */
+//  --- CTA Banner ---
 .cta-banner {
   border: 2px solid $primary-color;
   color: $primary-color;
@@ -11,5 +11,160 @@
   &:hover {
     box-shadow: 0 0 20px rgba(0, 242, 195, 0.3);
     transform: translateY(-2px);
+  }
+}
+
+// Big modal ==========
+.Big-size-modal {
+  max-width: 1400px !important;
+  width: 97%;
+  position: relative;
+
+  // MODAL TOP MAIN TITLE=====
+  .modal-header-wrap {
+    text-align: center;
+    position: relative;
+
+    /* Modern Outline Text Effect */
+    .modal-title-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-top: 40px;
+
+      @include respond(tablet) {
+        margin-top: 30px;
+      }
+      @include respond(phone) {
+        margin-top: 16px;
+      }
+      .main-title {
+        font-size: 100px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0;
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 1px $border-color;
+        position: relative;
+
+        &::after {
+          content: "ABOUT ME";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          color: $white-color;
+          -webkit-text-stroke: 0px;
+          clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+          animation: float 4s ease-in-out infinite;
+          filter: drop-shadow(0 0 15px $white-color);
+        }
+
+        @include respond(sm-laptop) {
+          font-size: 80px;
+          line-height: normal;
+        }
+        @include respond(tablet) {
+          font-size: 60px;
+        }
+        @include respond(phone) {
+          font-size: 42px;
+        }
+      }
+    }
+
+    .title-info-box {
+      margin-top: -10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      .line {
+        height: 1px;
+        width: 50px;
+        background: linear-gradient(90deg, transparent, $primary-color);
+      }
+
+      .sub-title {
+        font-size: 14px;
+        color: $primary-color;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: 600;
+        text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+      }
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .main-title {
+        font-size: 3rem;
+      }
+      .sub-title {
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+      }
+    }
+  }
+
+  .modal-content {
+    background: #111827;
+    border-radius: 20px;
+    padding: 24px 0;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto !important;
+    position: relative;
+
+    .close-btn {
+      position: fixed !important;
+      top: 15px;
+      right: 15px;
+      background: $primary-two-color;
+      color: $white-color;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      z-index: 99999 !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+      transition: 0.3s;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+
+      &:hover {
+        background: $primary-two-color;
+        transform: scale(1.1);
+      }
+      @include respond(tablet) {
+        width: 40px;
+        height: 40px;
+      }
+      @include respond(phone) {
+        font-size: 14px;
+        top: 10px;
+        right: 10px;
+      }
+
+      i {
+        font-size: 20px;
+        @include respond(phone) {
+          font-size: 16px;
+        }
+      }
+    }
   }
 }

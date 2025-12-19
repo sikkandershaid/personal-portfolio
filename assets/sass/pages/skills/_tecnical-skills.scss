@@ -1,0 +1,101 @@
+.tecnical-skills-section {
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    @include respond(tablet) {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    /* --- Tecnical Skills Card --- */
+    .skill-card {
+      position: relative;
+      border-radius: 20px;
+      padding: 32px;
+      backdrop-filter: blur(25px);
+      border: 1px solid $border-color;
+      transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      overflow: hidden;
+      @include respond(phone) {
+        padding: 24px;
+      }
+
+      // Icon
+      .icon-box {
+        width: 60px;
+        height: 60px;
+        background: $medium-dark;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+        font-size: 1.5rem;
+        color: $primary-color;
+        border: 1px solid $border-color;
+        transition: 0.4s ease;
+      }
+      &:hover .icon-box {
+        transform: rotateY(180deg);
+        background: $primary-color;
+        color: $heading-color;
+        box-shadow: $card-shadow;
+      }
+      // Title
+      .category-name {
+        font-size: 1.6rem;
+        margin: 0;
+        font-weight: 800;
+        color: $white-color;
+        margin-bottom: 35px;
+        text-transform: uppercase;
+      }
+      // Progress Bar
+      .skill-wrap {
+        margin-bottom: 24px;
+
+        .skill-header {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          font-size: 16px;
+          font-weight: 500;
+          color: $disable-color;
+
+          .higlight{
+            color: $secondary-color;
+          }
+        }
+        .bar-container {
+          height: 5px;
+          background: $disable-color;
+          border-radius: 10px;
+          position: relative;
+          .bar-fill {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, #0077ff, $primary-color);
+            border-radius: 10px;
+            position: relative;
+            transition: 2s cubic-bezier(0.1, 0.5, 0.5, 1);
+            box-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
+
+            &::after {
+              content: "";
+              position: absolute;
+              right: 0;
+              top: 50%;
+              transform: translate(50%, -50%);
+              width: 8px;
+              height: 8px;
+              background: $white-color;
+              border-radius: 50%;
+              box-shadow: 0 0 12px $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

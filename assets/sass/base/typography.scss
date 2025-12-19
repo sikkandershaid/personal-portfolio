@@ -64,6 +64,21 @@ a {
     padding: 4rem 0;
   }
 }
+
+.section_padding-60 {
+  padding: 60px 0;
+  @include respond(sm-laptop) {
+    padding: 40px 0;
+  }
+  @include respond(tablet) {
+    padding: 32px 0;
+  }
+  @include respond(phone) {
+    padding: 24px 0;
+  }
+}
+
+
 input:focus {
   box-shadow: none !important;
 }
