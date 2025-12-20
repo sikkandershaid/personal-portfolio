@@ -6,6 +6,7 @@
       border: 1px solid $border-color;
       border-radius: 16px;
       padding: 24px;
+      box-shadow: $black-shadow;
 
       &-title {
         width: fit-content;
@@ -18,7 +19,7 @@
           font-size: 22px;
         }
       }
-      
+
       .info-item {
         display: flex;
         justify-content: space-between;
@@ -69,6 +70,7 @@
       align-items: center;
       flex-direction: column;
       min-height: 170px;
+      box-shadow: $black-shadow;
     }
     .stat-card:hover {
       transform: translateY(-5px);

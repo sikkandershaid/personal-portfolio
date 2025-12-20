@@ -1065,32 +1065,32 @@ input:focus {
   transform: translateY(-2px);
 }
 
-.Big-size-modal {
+.big-size-modal {
   max-width: 1400px !important;
   width: 97%;
   position: relative;
 }
-.Big-size-modal .modal-header-wrap {
+.big-size-modal .modal-header-wrap {
   text-align: center;
   position: relative;
   /* Modern Outline Text Effect */
 }
-.Big-size-modal .modal-header-wrap .modal-title-wrapper {
+.big-size-modal .modal-header-wrap .modal-title-wrapper {
   position: relative;
   display: inline-block;
   margin-top: 40px;
 }
 @media only screen and (max-width: 767px) {
-  .Big-size-modal .modal-header-wrap .modal-title-wrapper {
+  .big-size-modal .modal-header-wrap .modal-title-wrapper {
     margin-top: 30px;
   }
 }
 @media only screen and (max-width: 575px) {
-  .Big-size-modal .modal-header-wrap .modal-title-wrapper {
+  .big-size-modal .modal-header-wrap .modal-title-wrapper {
     margin-top: 16px;
   }
 }
-.Big-size-modal .modal-header-wrap .modal-title-wrapper .main-title {
+.big-size-modal .modal-header-wrap .modal-title-wrapper .main-title {
   font-size: 100px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1100,7 +1100,7 @@ input:focus {
   -webkit-text-stroke: 1px rgba(55, 65, 81, 0.5);
   position: relative;
 }
-.Big-size-modal .modal-header-wrap .modal-title-wrapper .main-title::after {
+.big-size-modal .modal-header-wrap .modal-title-wrapper .main-title::after {
   content: "ABOUT ME";
   position: absolute;
   left: 0;
@@ -1113,34 +1113,34 @@ input:focus {
   filter: drop-shadow(0 0 15px #FFFFFF);
 }
 @media only screen and (max-width: 991px) {
-  .Big-size-modal .modal-header-wrap .modal-title-wrapper .main-title {
+  .big-size-modal .modal-header-wrap .modal-title-wrapper .main-title {
     font-size: 80px;
     line-height: normal;
   }
 }
 @media only screen and (max-width: 767px) {
-  .Big-size-modal .modal-header-wrap .modal-title-wrapper .main-title {
+  .big-size-modal .modal-header-wrap .modal-title-wrapper .main-title {
     font-size: 60px;
   }
 }
 @media only screen and (max-width: 575px) {
-  .Big-size-modal .modal-header-wrap .modal-title-wrapper .main-title {
+  .big-size-modal .modal-header-wrap .modal-title-wrapper .main-title {
     font-size: 42px;
   }
 }
-.Big-size-modal .modal-header-wrap .title-info-box {
+.big-size-modal .modal-header-wrap .title-info-box {
   margin-top: -10px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
 }
-.Big-size-modal .modal-header-wrap .title-info-box .line {
+.big-size-modal .modal-header-wrap .title-info-box .line {
   height: 1px;
   width: 50px;
   background: linear-gradient(90deg, transparent, #00e6ff);
 }
-.Big-size-modal .modal-header-wrap .title-info-box .sub-title {
+.big-size-modal .modal-header-wrap .title-info-box .sub-title {
   font-size: 14px;
   color: #00e6ff;
   text-transform: uppercase;
@@ -1156,19 +1156,19 @@ input:focus {
     transform: translateY(-10px);
   }
 }
-.Big-size-modal .modal-header-wrap {
+.big-size-modal .modal-header-wrap {
   /* Responsive */
 }
 @media (max-width: 768px) {
-  .Big-size-modal .modal-header-wrap .main-title {
+  .big-size-modal .modal-header-wrap .main-title {
     font-size: 3rem;
   }
-  .Big-size-modal .modal-header-wrap .sub-title {
+  .big-size-modal .modal-header-wrap .sub-title {
     font-size: 0.7rem;
     letter-spacing: 3px;
   }
 }
-.Big-size-modal .modal-content {
+.big-size-modal .modal-content {
   background: #111827;
   border-radius: 20px;
   padding: 24px 0;
@@ -1176,7 +1176,7 @@ input:focus {
   overflow-y: auto !important;
   position: relative;
 }
-.Big-size-modal .modal-content .close-btn {
+.big-size-modal .modal-content .close-btn {
   position: fixed !important;
   top: 15px;
   right: 15px;
@@ -1195,30 +1195,66 @@ input:focus {
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
-.Big-size-modal .modal-content .close-btn:hover {
+.big-size-modal .modal-content .close-btn:hover {
   background: #0A2E46;
   transform: scale(1.1);
 }
 @media only screen and (max-width: 767px) {
-  .Big-size-modal .modal-content .close-btn {
+  .big-size-modal .modal-content .close-btn {
     width: 40px;
     height: 40px;
   }
 }
 @media only screen and (max-width: 575px) {
-  .Big-size-modal .modal-content .close-btn {
+  .big-size-modal .modal-content .close-btn {
     font-size: 14px;
     top: 10px;
     right: 10px;
   }
 }
-.Big-size-modal .modal-content .close-btn i {
+.big-size-modal .modal-content .close-btn i {
   font-size: 20px;
 }
 @media only screen and (max-width: 575px) {
-  .Big-size-modal .modal-content .close-btn i {
+  .big-size-modal .modal-content .close-btn i {
     font-size: 16px;
   }
+}
+
+/* --- Custom Scrollbar Design --- */
+.modal-content {
+  /* 1. Original width of the scrollbar */
+}
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-content {
+  /* 2. Scrollbar background (Track) */
+}
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+.modal-content {
+  /* 3. Moving part of the scrollbar (Thumb) */
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(transparent, #00e6ff, transparent);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(transparent, #FFFFFF, transparent);
+  box-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+.modal-content {
+  /* For Firefox (Optional) */
+  scrollbar-width: thin;
+  scrollbar-color: #00e6ff rgba(255, 255, 255, 0.02);
+}
+
+.about-all-modal .modal-content {
+  padding-bottom: 0;
 }
 
 .copyright-section {
@@ -1553,6 +1589,35 @@ input:focus {
   resize: none;
 }
 
+/* Contact CTA */
+.contact-cta {
+  text-align: center;
+  padding: 60px 40px;
+  background: #1f2937;
+  border-radius: 20px;
+}
+.contact-cta .cta-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+.contact-cta .cta-description {
+  font-size: 1.1rem;
+  color: #d1d5db;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+.contact-cta .cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contact-cta .section-btn {
+  margin: 0;
+}
+
 .about_details-section {
   position: relative;
 }
@@ -1563,6 +1628,7 @@ input:focus {
   border: 1px solid rgba(55, 65, 81, 0.5);
   border-radius: 16px;
   padding: 24px;
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
 }
 .about_details-section .about-us-content-wrap .personal-box-title {
   width: fit-content;
@@ -1630,6 +1696,7 @@ input:focus {
   align-items: center;
   flex-direction: column;
   min-height: 170px;
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
 }
 .about_details-section .about-us-content-wrap .stat-card:hover {
   transform: translateY(-5px);
@@ -1864,6 +1931,7 @@ input:focus {
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   backdrop-filter: blur(20px);
   border-radius: 0 20px;
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
 }
 @media only screen and (max-width: 575px) {
   .career-map-section .split-timeline .career-card {
@@ -1891,7 +1959,6 @@ input:focus {
 .career-map-section .split-timeline .career-card:hover {
   transform: translateY(-10px);
   border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
 }
 .career-map-section .split-timeline .career-card .year-wrapper {
   display: flex;
@@ -1968,6 +2035,118 @@ input:focus {
 @media only screen and (max-width: 991px) {
   .career-map-section .split-timeline .divider-line {
     display: none;
+  }
+}
+
+.interest-hobbies-section {
+  /* --- Bento Grid Layout --- */
+}
+.interest-hobbies-section .interests-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 160px;
+  gap: 20px;
+}
+@media only screen and (max-width: 767px) {
+  .interest-hobbies-section .interests-grid {
+    grid-auto-rows: 130px;
+  }
+}
+.interest-hobbies-section .interest-item {
+  position: relative;
+  background: #1f2937;
+  border: 1px solid rgba(55, 65, 81, 0.5);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+.interest-hobbies-section {
+  /* Widest-card (Featured) */
+}
+.interest-hobbies-section .interest-item.wide {
+  grid-column: span 2;
+}
+@media only screen and (max-width: 767px) {
+  .interest-hobbies-section .interest-item.wide {
+    grid-column: span 1;
+  }
+}
+.interest-hobbies-section .interest-item.tall {
+  grid-row: span 2;
+}
+@media only screen and (max-width: 767px) {
+  .interest-hobbies-section .interest-item.tall {
+    grid-row: span 1;
+  }
+}
+.interest-hobbies-section .interest-item:hover {
+  transform: translateY(-5px) scale(1.01);
+  border-color: rgba(55, 65, 81, 0.5);
+}
+.interest-hobbies-section {
+  /* Icon Style*/
+}
+.interest-hobbies-section .interest-icon {
+  font-size: 28px;
+  color: #d1d5db;
+  margin-bottom: 15px;
+  transition: 0.4s;
+}
+@media only screen and (max-width: 767px) {
+  .interest-hobbies-section .interest-icon {
+    font-size: 24px;
+  }
+}
+.interest-hobbies-section .interest-item:hover .interest-icon {
+  color: #00e6ff;
+  transform: scale(1.1) rotate(-5deg);
+}
+.interest-hobbies-section .interest-name {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #d1d5db;
+  transition: 0.3s;
+}
+@media only screen and (max-width: 767px) {
+  .interest-hobbies-section .interest-name {
+    font-size: 14px;
+  }
+}
+.interest-hobbies-section .interest-item:hover .interest-name {
+  color: #FFFFFF;
+  letter-spacing: 2px;
+}
+.interest-hobbies-section {
+  /* Background Decoration */
+}
+.interest-hobbies-section .interest-item::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 242, 255, 0.05) 0%, transparent 70%);
+  opacity: 0;
+  transition: 0.5s;
+}
+.interest-hobbies-section .interest-item:hover::after {
+  opacity: 1;
+}
+.interest-hobbies-section {
+  /* Responsive */
+}
+@media (max-width: 768px) {
+  .interest-hobbies-section .interests-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -2116,6 +2295,10 @@ input:focus {
   border: 1px solid rgba(55, 65, 81, 0.5);
   transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   overflow: hidden;
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
+}
+.tecnical-skills-section .skills-grid .skill-card:hover {
+  background: #1f2937;
 }
 @media only screen and (max-width: 575px) {
   .tecnical-skills-section .skills-grid .skill-card {

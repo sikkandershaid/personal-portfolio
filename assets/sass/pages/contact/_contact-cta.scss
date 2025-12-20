@@ -1,0 +1,33 @@
+/* Contact CTA */
+.contact-cta {
+  text-align: center;
+  padding: 60px 40px;
+  background: $medium-dark;
+  border-radius: 20px;
+
+  .cta-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: $white-color;
+  }
+
+  .cta-description {
+    font-size: 1.1rem;
+    color: $disable-color;
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .section-btn{
+    margin: 0;
+  }
+
+}

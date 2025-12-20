@@ -17,6 +17,10 @@
       border: 1px solid $border-color;
       transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
       overflow: hidden;
+      box-shadow: $black-shadow;
+      &:hover {
+        background: $medium-dark;
+      }
       @include respond(phone) {
         padding: 24px;
       }
@@ -63,7 +67,7 @@
           font-weight: 500;
           color: $disable-color;
 
-          .higlight{
+          .higlight {
             color: $secondary-color;
           }
         }

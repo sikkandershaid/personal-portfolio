@@ -15,7 +15,7 @@
 }
 
 // Big modal ==========
-.Big-size-modal {
+.big-size-modal {
   max-width: 1400px !important;
   width: 97%;
   position: relative;
@@ -166,5 +166,41 @@
         }
       }
     }
+  }
+}
+
+/* --- Custom Scrollbar Design --- */
+.modal-content {
+  /* 1. Original width of the scrollbar */
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  /* 2. Scrollbar background (Track) */
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+  }
+
+  /* 3. Moving part of the scrollbar (Thumb) */
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, $primary-color, transparent);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(transparent, $white-color, transparent);
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+  }
+
+  /* For Firefox (Optional) */
+  scrollbar-width: thin;
+  scrollbar-color: $primary-color rgba(255, 255, 255, 0.02);
+}
+
+// OTHERS =======
+.about-all-modal{
+  .modal-content{
+    padding-bottom: 0;
   }
 }
