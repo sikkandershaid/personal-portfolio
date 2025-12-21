@@ -922,8 +922,8 @@ input:focus {
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50px;
-  background-color: #1A1E23;
-  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.06);
+  background-color: #1f2937;
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
   z-index: 999;
 }
 @media only screen and (max-width: 767px) {
@@ -1074,6 +1074,7 @@ input:focus {
   text-align: center;
   position: relative;
   /* Modern Outline Text Effect */
+  /* Responsive */
 }
 .big-size-modal .modal-header-wrap .modal-title-wrapper {
   position: relative;
@@ -1156,9 +1157,6 @@ input:focus {
     transform: translateY(-10px);
   }
 }
-.big-size-modal .modal-header-wrap {
-  /* Responsive */
-}
 @media (max-width: 768px) {
   .big-size-modal .modal-header-wrap .main-title {
     font-size: 3rem;
@@ -1224,19 +1222,18 @@ input:focus {
 /* --- Custom Scrollbar Design --- */
 .modal-content {
   /* 1. Original width of the scrollbar */
+  /* 2. Scrollbar background (Track) */
+  /* 3. Moving part of the scrollbar (Thumb) */
+  /* For Firefox (Optional) */
+  scrollbar-width: thin;
+  scrollbar-color: #00e6ff rgba(255, 255, 255, 0.02);
 }
 .modal-content::-webkit-scrollbar {
   width: 6px;
 }
-.modal-content {
-  /* 2. Scrollbar background (Track) */
-}
 .modal-content::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.02);
   border-radius: 10px;
-}
-.modal-content {
-  /* 3. Moving part of the scrollbar (Thumb) */
 }
 .modal-content::-webkit-scrollbar-thumb {
   background: linear-gradient(transparent, #00e6ff, transparent);
@@ -1246,11 +1243,6 @@ input:focus {
 .modal-content::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(transparent, #FFFFFF, transparent);
   box-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
-}
-.modal-content {
-  /* For Firefox (Optional) */
-  scrollbar-width: thin;
-  scrollbar-color: #00e6ff rgba(255, 255, 255, 0.02);
 }
 
 .about-all-modal .modal-content {
@@ -1379,14 +1371,13 @@ input:focus {
 }
 .hero_section .hero-content .hero-des-wrap {
   text-align: center;
+  /*title */
+  /* Skills / subheading */
 }
 .hero_section .hero-content .hero-des-wrap .cta-banner {
   margin: 0 auto;
   padding: 8px 24px;
   margin-bottom: 12px;
-}
-.hero_section .hero-content .hero-des-wrap {
-  /*title */
 }
 .hero_section .hero-content .hero-des-wrap .title {
   font-size: 60px;
@@ -1404,9 +1395,6 @@ input:focus {
   .hero_section .hero-content .hero-des-wrap .title {
     font-size: 40px;
   }
-}
-.hero_section .hero-content .hero-des-wrap {
-  /* Skills / subheading */
 }
 .hero_section .hero-content .hero-des-wrap .subheading {
   margin: 8px 0;
@@ -1478,7 +1466,8 @@ input:focus {
   align-items: center;
   flex-direction: column;
   gap: 15px;
-  background-color: #0A2E46;
+  background-color: #1f2937;
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
   padding: 24px;
   border-radius: 20px;
   min-width: 210px;
@@ -1623,12 +1612,14 @@ input:focus {
 }
 .about_details-section .about-us-content-wrap {
   /* Personal Info Box */
+  /* Stat Cards */
 }
 .about_details-section .about-us-content-wrap .personal-box {
   border: 1px solid rgba(55, 65, 81, 0.5);
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
+  /* Download CV Button */
 }
 .about_details-section .about-us-content-wrap .personal-box-title {
   width: fit-content;
@@ -1670,9 +1661,6 @@ input:focus {
 .about_details-section .about-us-content-wrap .personal-box .info-item .email-link:hover {
   color: #00e6ff;
 }
-.about_details-section .about-us-content-wrap .personal-box {
-  /* Download CV Button */
-}
 .about_details-section .about-us-content-wrap .personal-box .download-cv-btn {
   margin-top: 24px;
 }
@@ -1680,9 +1668,6 @@ input:focus {
   .about_details-section .about-us-content-wrap .personal-box .download-cv-btn {
     margin-top: 16px;
   }
-}
-.about_details-section .about-us-content-wrap {
-  /* Stat Cards */
 }
 .about_details-section .about-us-content-wrap .stat-card {
   height: 100%;
@@ -1903,6 +1888,8 @@ input:focus {
   grid-template-columns: 1fr 2px 1fr;
   gap: 80px;
   position: relative;
+  /* The Modern career-card */
+  /* Center Line Styling */
 }
 @media only screen and (max-width: 991px) {
   .career-map-section .split-timeline {
@@ -1917,9 +1904,6 @@ input:focus {
   border-color: #FAA32C;
   color: #FAA32C;
 }
-.career-map-section .split-timeline {
-  /* The Modern career-card */
-}
 .career-map-section .split-timeline .career-card {
   position: relative;
   background: transparent;
@@ -1932,15 +1916,13 @@ input:focus {
   backdrop-filter: blur(20px);
   border-radius: 0 20px;
   box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
+  /* Hover Gradient Border Glow */
 }
 @media only screen and (max-width: 575px) {
   .career-map-section .split-timeline .career-card {
     padding: 24px;
     margin-bottom: 32px;
   }
-}
-.career-map-section .split-timeline .career-card {
-  /* Hover Gradient Border Glow */
 }
 .career-map-section .split-timeline .career-card::before {
   content: "";
@@ -2005,9 +1987,6 @@ input:focus {
 .career-map-section .split-timeline .right-col .org {
   color: #FAA32C;
 }
-.career-map-section .split-timeline {
-  /* Center Line Styling */
-}
 .career-map-section .split-timeline .divider-line {
   background: rgba(55, 65, 81, 0.5);
   position: relative;
@@ -2040,6 +2019,10 @@ input:focus {
 
 .interest-hobbies-section {
   /* --- Bento Grid Layout --- */
+  /* Widest-card (Featured) */
+  /* Icon Style*/
+  /* Background Decoration */
+  /* Responsive */
 }
 .interest-hobbies-section .interests-grid {
   display: grid;
@@ -2064,10 +2047,6 @@ input:focus {
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   overflow: hidden;
   backdrop-filter: blur(10px);
-  cursor: pointer;
-}
-.interest-hobbies-section {
-  /* Widest-card (Featured) */
 }
 .interest-hobbies-section .interest-item.wide {
   grid-column: span 2;
@@ -2088,9 +2067,6 @@ input:focus {
 .interest-hobbies-section .interest-item:hover {
   transform: translateY(-5px) scale(1.01);
   border-color: rgba(55, 65, 81, 0.5);
-}
-.interest-hobbies-section {
-  /* Icon Style*/
 }
 .interest-hobbies-section .interest-icon {
   font-size: 28px;
@@ -2124,9 +2100,6 @@ input:focus {
   color: #FFFFFF;
   letter-spacing: 2px;
 }
-.interest-hobbies-section {
-  /* Background Decoration */
-}
 .interest-hobbies-section .interest-item::after {
   content: "";
   position: absolute;
@@ -2140,9 +2113,6 @@ input:focus {
 }
 .interest-hobbies-section .interest-item:hover::after {
   opacity: 1;
-}
-.interest-hobbies-section {
-  /* Responsive */
 }
 @media (max-width: 768px) {
   .interest-hobbies-section .interests-grid {
@@ -2277,15 +2247,13 @@ input:focus {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
+  /* --- Tecnical Skills Card --- */
 }
 @media only screen and (max-width: 767px) {
   .tecnical-skills-section .skills-grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
-}
-.tecnical-skills-section .skills-grid {
-  /* --- Tecnical Skills Card --- */
 }
 .tecnical-skills-section .skills-grid .skill-card {
   position: relative;
@@ -2380,6 +2348,7 @@ input:focus {
 }
 .portfolio_section .skills-content-wrap {
   /* Filter Buttons */
+  /* Portfolio Grid */
 }
 .portfolio_section .skills-content-wrap .portfolio-filter {
   display: flex;
@@ -2419,9 +2388,6 @@ input:focus {
     font-size: 15px;
     padding: 8px 16px;
   }
-}
-.portfolio_section .skills-content-wrap {
-  /* Portfolio Grid */
 }
 .portfolio_section .skills-content-wrap .portfolio-grid {
   display: grid;
@@ -2638,6 +2604,10 @@ input:focus {
   width: 100%;
   border-radius: 12px;
 }
+.portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .portfolio-image-slider {
+  /* Position Adjust */
+  /* Default Swiper icons hide */
+}
 .portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .portfolio-image-slider .portfolio-image-slider-wrap .slider-item {
   width: 100%;
   height: auto;
@@ -2680,17 +2650,11 @@ input:focus {
     font-size: 14px;
   }
 }
-.portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .portfolio-image-slider {
-  /* Position Adjust */
-}
 .portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .portfolio-image-slider .portfolio-slider-button-next {
   right: 15px;
 }
 .portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .portfolio-image-slider .portfolio-slider-button-prev {
   left: 15px;
-}
-.portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .portfolio-image-slider {
-  /* Default Swiper icons hide */
 }
 .portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .portfolio-image-slider .swiper-button-next::after,
 .portfolio-modal .modal-content .modal-content-wrap .top-demo-wrap .portfolio-image-slider .swiper-button-prev::after {
