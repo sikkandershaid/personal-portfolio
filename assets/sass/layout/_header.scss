@@ -7,7 +7,7 @@
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50px;
-  background-color: $medium-dark;
+  background: linear-gradient(#003356 -2.92%,#001929);
   box-shadow: $black-shadow;
   z-index: 999;
   @include respond(tablet) {

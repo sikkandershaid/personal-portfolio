@@ -922,7 +922,7 @@ input:focus {
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50px;
-  background-color: #1f2937;
+  background: linear-gradient(#003356 -2.92%, #001929);
   box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
   z-index: 999;
 }
@@ -1102,7 +1102,6 @@ input:focus {
   position: relative;
 }
 .big-size-modal .modal-header-wrap .modal-title-wrapper .main-title::after {
-  content: "ABOUT ME";
   position: absolute;
   left: 0;
   top: 0;
@@ -1882,6 +1881,9 @@ input:focus {
 .about-hero_section .hero-image:hover img {
   transform: scale(1.03);
 }
+.about-hero_section .big-size-modal .modal-header-wrap .modal-title-wrapper .main-title::after {
+  content: "ABOUT ME";
+}
 
 .career-map-section .split-timeline {
   display: grid;
@@ -2241,6 +2243,9 @@ input:focus {
 }
 .skills_section .skills-tech-icons .tech-item .bg-5 {
   background-color: #5fa04e;
+}
+.skills_section .big-size-modal .modal-header-wrap .modal-title-wrapper .main-title::after {
+  content: "MY SKILLS";
 }
 
 .tecnical-skills-section .skills-grid {
