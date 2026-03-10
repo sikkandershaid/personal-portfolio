@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Skills - Professional Expertise</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Custom Animations */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .animate-pulse-slow {
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    .animate-slideIn {
+      animation: slideIn 0.6s ease-out forwards;
+    }
+
+    /* Skill bar animation */
+    @keyframes fillBar {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: var(--target-width);
+      }
+    }
+
+    .skill-bar-fill {
+      animation: fillBar 1.5s ease-out forwards;
+      width: 0;
+    }
+
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, #1a4d3a 0%, #ffbf42 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Card hover effect */
+    .skill-card {
+      transition: all 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px -15px rgba(26, 77, 58, 0.3);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="#" class="text-2xl font-bold">
+            <span class="gradient-text">MySkills</span>
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#" class="text-gray-700 hover:text-green-800 transition">Home</a>
+          <a href="#" class="text-gray-700 hover:text-green-800 transition">Portfolio</a>
+          <a href="#" class="text-green-800 font-semibold border-b-2 border-yellow-500 pb-1">Skills</a>
+          <a href="#" class="text-gray-700 hover:text-green-800 transition">Contact</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden text-gray-700">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-24 bg-[#050505] relative overflow-hidden">
+
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-500/5 rounded-full blur-[100px]">
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+      <h2 class="text-4xl md:text-5xl font-black text-white text-center mb-20 tracking-tighter">
+        My Professional <span class="text-green-400">Journey</span>
+      </h2>
+
+      <div class="flex flex-wrap justify-center gap-12 lg:gap-20">
+
+        <div class="group relative">
+          <div
+            class="absolute inset-0 bg-green-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500">
+          </div>
+
+          <div
+            class="relative w-64 h-64 rounded-full bg-[#0a0a0a] border-2 border-green-500/30 flex flex-col items-center justify-center p-8 text-center transition-all duration-500 group-hover:border-green-400 group-hover:-translate-y-2">
+            <span class="text-green-400 font-mono text-sm mb-2 italic">2023 - Present</span>
+            <h3 class="text-white font-bold text-xl leading-tight mb-1">Senior Web Developer</h3>
+            <p class="text-gray-500 text-sm">Tech Solutions Ltd.</p>
+
+            <div
+              class="absolute inset-0 rounded-full bg-green-500 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-90 group-hover:scale-100">
+              <p class="text-black font-bold text-sm leading-snug">Led a team of 5 to build 20+ scalable SaaS platforms.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative lg:mt-20">
+          <div
+            class="absolute inset-0 bg-yellow-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500">
+          </div>
+
+          <div
+            class="relative w-64 h-64 rounded-full bg-[#0a0a0a] border-2 border-yellow-500/30 flex flex-col items-center justify-center p-8 text-center transition-all duration-500 group-hover:border-yellow-400 group-hover:-translate-y-2">
+            <span class="text-yellow-400 font-mono text-sm mb-2 italic">2021 - 2023</span>
+            <h3 class="text-white font-bold text-xl leading-tight mb-1">UI/UX Designer</h3>
+            <p class="text-gray-500 text-sm">Creative Agency</p>
+
+            <div
+              class="absolute inset-0 rounded-full bg-yellow-400 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-90 group-hover:scale-100">
+              <p class="text-black font-bold text-sm leading-snug">Designed mobile interfaces for 1M+ active users.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative">
+          <div
+            class="absolute inset-0 bg-green-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500">
+          </div>
+
+          <div
+            class="relative w-64 h-64 rounded-full bg-[#0a0a0a] border-2 border-green-500/30 flex flex-col items-center justify-center p-8 text-center transition-all duration-500 group-hover:border-green-400 group-hover:-translate-y-2">
+            <span class="text-green-400 font-mono text-sm mb-2 italic">2019 - 2021</span>
+            <h3 class="text-white font-bold text-xl leading-tight mb-1">Junior Developer</h3>
+            <p class="text-gray-500 text-sm">InnoSoft Dhaka</p>
+
+            <div
+              class="absolute inset-0 rounded-full bg-green-500 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-90 group-hover:scale-100">
+              <p class="text-black font-bold text-sm leading-snug">Optimized backend APIs reducing latency by 40%.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Skills Section -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto max-w-6xl">
+      <!-- Section Title -->
+      <div class="text-center mb-12">
+        <span class="text-green-800 font-semibold text-sm uppercase tracking-wider">What I Do Best</span>
+        <h2 class="text-4xl font-bold text-gray-900 mt-2">Core <span class="gradient-text">Expertise</span></h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          Specialized in creating beautiful, functional, and user-centered digital solutions
+        </p>
+      </div>
+
+      <!-- Skill Categories -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <!-- Frontend Development -->
+        <div class="bg-white rounded-3xl p-8 shadow-sm skill-card">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center">
+              <i class="fas fa-code text-3xl text-green-800"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900">Frontend Development</h3>
+              <p class="text-gray-500">Building responsive web apps</p>
+            </div>
+          </div>
+
+          <div class="space-y-5">
+            <!-- Skill 1 -->
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-semibold text-gray-700">HTML5 & CSS3</span>
+                <span class="text-green-800 font-bold">95%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-gradient-to-r from-green-800 to-yellow-500 h-2.5 rounded-full skill-bar-fill"
+                  style="--target-width: 95%; width: 95%"></div>
+              </div>
+            </div>
+
+            <!-- Skill 2 -->
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-semibold text-gray-700">JavaScript/TypeScript</span>
+                <span class="text-green-800 font-bold">90%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-gradient-to-r from-green-800 to-yellow-500 h-2.5 rounded-full" style="width: 90%"></div>
+              </div>
+            </div>
+
+            <!-- Skill 3 -->
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-semibold text-gray-700">React & Next.js</span>
+                <span class="text-green-800 font-bold">88%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-gradient-to-r from-green-800 to-yellow-500 h-2.5 rounded-full" style="width: 88%"></div>
+              </div>
+            </div>
+
+            <!-- Skill 4 -->
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-semibold text-gray-700">Tailwind CSS</span>
+                <span class="text-green-800 font-bold">92%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-gradient-to-r from-green-800 to-yellow-500 h-2.5 rounded-full" style="width: 92%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend Development -->
+        <div class="bg-white rounded-3xl p-8 shadow-sm skill-card">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 bg-yellow-100 rounded-2xl flex items-center justify-center">
+              <i class="fas fa-server text-3xl text-yellow-700"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900">Backend Development</h3>
+              <p class="text-gray-500">Scalable server solutions</p>
+            </div>
+          </div>
+
+          <div class="space-y-5">
+            <!-- Skill 1 -->
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-semibold text-gray-700">Node.js</span>
+                <span class="text-green-800 font-bold">85%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-gradient-to-r from-green-800 to-yellow-500 h-2.5 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <!-- Skill 2 -->
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-semibold text-gray-700">Python</span>
+                <span class="text-green-800 font-bold">80%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-gradient-to-r from-green-800 to-yellow-500 h-2.5 rounded-full" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <!-- Skill 3 -->
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-semibold text-gray-700">PHP</span>
+                <span class="text-green-800 font-bold">75%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-gradient-to-r from-green-800 to-yellow-500 h-2.5 rounded-full" style="width: 75%"></div>
+              </div>
+            </div>
+
+            <!-- Skill 4 -->
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-semibold text-gray-700">MySQL/MongoDB</span>
+                <span class="text-green-800 font-bold">82%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-gradient-to-r from-green-800 to-yellow-500 h-2.5 rounded-full" style="width: 82%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Skills Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <!-- UI/UX Design -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm skill-card">
+          <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+            <i class="fas fa-paint-brush text-2xl text-purple-700"></i>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-3">UI/UX Design</h4>
+          <p class="text-gray-600 mb-4">Figma, Adobe XD, Wireframing, Prototyping</p>
+          <div class="flex gap-2">
+            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">90%</span>
+          </div>
+        </div>
+
+        <!-- Mobile Development -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm skill-card">
+          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+            <i class="fas fa-mobile-alt text-2xl text-blue-700"></i>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-3">Mobile Development</h4>
+          <p class="text-gray-600 mb-4">React Native, Flutter, iOS, Android</p>
+          <div class="flex gap-2">
+            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">75%</span>
+          </div>
+        </div>
+
+        <!-- DevOps -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm skill-card">
+          <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+            <i class="fas fa-cloud text-2xl text-orange-700"></i>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-3">DevOps</h4>
+          <p class="text-gray-600 mb-4">Docker, AWS, CI/CD, Git</p>
+          <div class="flex gap-2">
+            <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">70%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools & Technologies -->
+      <div class="bg-white rounded-3xl p-8 shadow-sm mb-16">
+        <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Tools & Technologies I Use</h3>
+
+        <div class="grid grid-cols-3 md:grid-cols-6 gap-6">
+          <div class="text-center group">
+            <div
+              class="w-16 h-16 mx-auto bg-gray-100 rounded-2xl flex items-center justify-center group-hover:bg-green-100 transition">
+              <i class="fab fa-figma text-3xl text-gray-700 group-hover:text-green-800"></i>
+            </div>
+            <p class="text-sm text-gray-600 mt-2">Figma</p>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="w-16 h-16 mx-auto bg-gray-100 rounded-2xl flex items-center justify-center group-hover:bg-green-100 transition">
+              <i class="fab fa-git-alt text-3xl text-gray-700 group-hover:text-green-800"></i>
+            </div>
+            <p class="text-sm text-gray-600 mt-2">Git</p>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="w-16 h-16 mx-auto bg-gray-100 rounded-2xl flex items-center justify-center group-hover:bg-green-100 transition">
+              <i class="fab fa-docker text-3xl text-gray-700 group-hover:text-green-800"></i>
+            </div>
+            <p class="text-sm text-gray-600 mt-2">Docker</p>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="w-16 h-16 mx-auto bg-gray-100 rounded-2xl flex items-center justify-center group-hover:bg-green-100 transition">
+              <i class="fab fa-jira text-3xl text-gray-700 group-hover:text-green-800"></i>
+            </div>
+            <p class="text-sm text-gray-600 mt-2">Jira</p>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="w-16 h-16 mx-auto bg-gray-100 rounded-2xl flex items-center justify-center group-hover:bg-green-100 transition">
+              <i class="fab fa-vuejs text-3xl text-gray-700 group-hover:text-green-800"></i>
+            </div>
+            <p class="text-sm text-gray-600 mt-2">Vue.js</p>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="w-16 h-16 mx-auto bg-gray-100 rounded-2xl flex items-center justify-center group-hover:bg-green-100 transition">
+              <i class="fab fa-aws text-3xl text-gray-700 group-hover:text-green-800"></i>
+            </div>
+            <p class="text-sm text-gray-600 mt-2">AWS</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <div
+          class="relative group overflow-hidden bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-10 transition-all duration-500 hover:border-green-500/40">
+          <div
+            class="absolute -top-24 -right-24 w-48 h-48 bg-green-500/10 rounded-full blur-[80px] group-hover:bg-green-500/20 transition-all">
+          </div>
+
+          <h3 class="text-3xl font-black text-white mb-8 tracking-tight">
+            Soft <span class="text-green-400">Skills</span>
+          </h3>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div
+              class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-all">
+              <div
+                class="w-12 h-12 shrink-0 bg-green-500/20 rounded-xl flex items-center justify-center text-green-400">
+                <i class="fas fa-comments text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Communication</h4>
+                <p class="text-xs text-gray-500 mt-1">Fluent in English & Bengali</p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-all">
+              <div
+                class="w-12 h-12 shrink-0 bg-yellow-500/20 rounded-xl flex items-center justify-center text-yellow-400">
+                <i class="fas fa-users text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Collaboration</h4>
+                <p class="text-xs text-gray-500 mt-1">Cross-functional team player</p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-all">
+              <div
+                class="w-12 h-12 shrink-0 bg-purple-500/20 rounded-xl flex items-center justify-center text-purple-400">
+                <i class="fas fa-lightbulb text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Problem Solving</h4>
+                <p class="text-xs text-gray-500 mt-1">Analytical & creative</p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-all">
+              <div class="w-12 h-12 shrink-0 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-400">
+                <i class="fas fa-clock text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Management</h4>
+                <p class="text-xs text-gray-500 mt-1">Strict deadline follower</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="relative overflow-hidden bg-gradient-to-br from-green-600 to-yellow-500 rounded-[2.5rem] p-10 flex flex-col justify-center shadow-[0_20px_50px_rgba(34,197,94,0.2)]">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl animate-pulse">
+          </div>
+          <div class="absolute bottom-0 left-0 w-32 h-32 bg-black/10 rounded-full -ml-10 -mb-10 blur-2xl"></div>
+
+          <div class="relative z-10">
+            <h3 class="text-4xl font-black text-black mb-4 leading-tight">
+              Let's Build Something <br>Extraordinary!
+            </h3>
+            <p class="text-black/80 text-lg mb-8 font-medium max-w-sm">
+              Ready to take your project to the next level? I'm just one message away.
+            </p>
+
+            <a href="mailto:your@email.com"
+              class="group inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-all active:scale-95 shadow-2xl">
+              <span>Hire Me Now</span>
+              <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t mt-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-600 text-sm mb-4 md:mb-0">
+          © 2024 My Skills Portfolio. All rights reserved.
+        </p>
+
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-400 hover:text-green-800 transition text-xl">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-green-800 transition text-xl">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-green-800 transition text-xl">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-green-800 transition text-xl">
+            <i class="fab fa-codepen"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
