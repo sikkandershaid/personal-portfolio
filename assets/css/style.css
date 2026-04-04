@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import "../fontawesome-free/css/all.min.css";
 /*
 0px - 575px    :         Phone
@@ -929,7 +930,7 @@ input:focus {
   transform: translateX(-50%);
   border-radius: 50px;
   background: linear-gradient(#003356 -2.92%, #001929);
-  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.4);
   z-index: 999;
 }
 @media only screen and (max-width: 767px) {
@@ -1006,12 +1007,72 @@ input:focus {
   display: none;
   font-size: 16px;
   color: #FFFFFF;
-  cursor: pointer;
   order: 2;
 }
 .header .mobile-menu .home-btn {
   font-size: 16px;
   color: #00e6ff;
+  cursor: pointer;
+}
+.header .mobile-menu .mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #111827;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* 🔥 Active state (correct way) */
+}
+.header .mobile-menu .mobile-menu-btn:hover {
+  background: #1f2937;
+}
+.header .mobile-menu .mobile-menu-btn:hover .hamburger span:nth-child(1) {
+  transform: translateX(3px);
+}
+.header .mobile-menu .mobile-menu-btn:hover .hamburger span:nth-child(3) {
+  transform: translateX(-3px);
+}
+.header .mobile-menu .mobile-menu-btn .menu-text {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.header .mobile-menu .mobile-menu-btn .hamburger {
+  width: 20px;
+  height: 14px;
+  position: relative;
+}
+.header .mobile-menu .mobile-menu-btn .hamburger span {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: white;
+  left: 0;
+  transition: all 0.3s ease;
+}
+.header .mobile-menu .mobile-menu-btn .hamburger span:nth-child(1) {
+  top: 0;
+}
+.header .mobile-menu .mobile-menu-btn .hamburger span:nth-child(2) {
+  top: 6px;
+}
+.header .mobile-menu .mobile-menu-btn .hamburger span:nth-child(3) {
+  bottom: 0;
+}
+.header .mobile-menu .mobile-menu-btn.active .hamburger span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 6px;
+}
+.header .mobile-menu .mobile-menu-btn.active .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.header .mobile-menu .mobile-menu-btn.active .hamburger span:nth-child(3) {
+  transform: rotate(-45deg);
+  bottom: 6px;
 }
 @media only screen and (max-width: 767px) {
   .header .mobile-menu {
@@ -1320,6 +1381,19 @@ input:focus {
   position: relative;
   z-index: 1;
 }
+.hero_section.section_padding {
+  padding: 100px 0;
+}
+@media only screen and (max-width: 991px) {
+  .hero_section.section_padding {
+    padding: 6rem 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .hero_section.section_padding {
+    padding: 5rem 0;
+  }
+}
 @media only screen and (max-width: 767px) {
   .hero_section {
     min-height: auto;
@@ -1503,7 +1577,7 @@ input:focus {
   flex-direction: column;
   gap: 15px;
   background-color: #1f2937;
-  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.4);
   padding: 24px;
   border-radius: 20px;
   min-width: 210px;
@@ -1654,7 +1728,7 @@ input:focus {
   border: 1px solid rgba(55, 65, 81, 0.5);
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.4);
   /* Download CV Button */
 }
 .about_details-section .about-us-content-wrap .personal-box-title {
@@ -1717,7 +1791,7 @@ input:focus {
   align-items: center;
   flex-direction: column;
   min-height: 170px;
-  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.4);
 }
 .about_details-section .about-us-content-wrap .stat-card:hover {
   transform: translateY(-5px);
@@ -1954,7 +2028,7 @@ input:focus {
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   backdrop-filter: blur(20px);
   border-radius: 0 20px;
-  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.4);
   /* Hover Gradient Border Glow */
 }
 @media only screen and (max-width: 575px) {
@@ -2291,6 +2365,16 @@ input:focus {
   justify-content: center;
   gap: 80px;
 }
+@media only screen and (max-width: 767px) {
+  .experience-section .circle-wrapper {
+    gap: 48px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .experience-section .circle-wrapper {
+    gap: 24px;
+  }
+}
 .experience-section .circle-group {
   position: relative;
 }
@@ -2323,11 +2407,21 @@ input:focus {
   font-style: italic;
   font-family: monospace;
 }
+@media only screen and (max-width: 575px) {
+  .experience-section .circle-group .circle-card .circle-date {
+    font-size: 11px;
+  }
+}
 .experience-section .circle-group .circle-card .circle-title {
   color: #FFFFFF;
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 5px;
+}
+@media only screen and (max-width: 575px) {
+  .experience-section .circle-group .circle-card .circle-title {
+    font-size: 16px;
+  }
 }
 .experience-section .circle-group .circle-card .circle-company {
   color: #6b7280;
@@ -2369,6 +2463,18 @@ input:focus {
 .experience-section .circle-group .circle-card.card-2 .circle-hover {
   background: #FAA32C;
 }
+@media only screen and (max-width: 991px) {
+  .experience-section .circle-group .circle-card {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .experience-section .circle-group .circle-card {
+    width: 160px;
+    height: 160px;
+  }
+}
 .experience-section .circle-group:hover .circle-glow {
   opacity: 1;
 }
@@ -2381,6 +2487,11 @@ input:focus {
 }
 .experience-section .mt {
   margin-top: 60px;
+}
+@media only screen and (max-width: 575px) {
+  .experience-section .mt {
+    margin-top: 0;
+  }
 }
 
 .soft-skills-section .soft-skills-card {
@@ -2407,6 +2518,11 @@ input:focus {
 .soft-skills-section .soft-skills-card:hover .skills-glow {
   background: rgba(0, 230, 255, 0.3);
 }
+@media only screen and (max-width: 767px) {
+  .soft-skills-section .soft-skills-card {
+    padding: 24px;
+  }
+}
 .soft-skills-section .skills-title {
   font-size: 32px;
   font-weight: 900;
@@ -2418,8 +2534,18 @@ input:focus {
 }
 .soft-skills-section .skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 20px;
+}
+@media only screen and (max-width: 1200px) {
+  .soft-skills-section .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media only screen and (max-width: 575px) {
+  .soft-skills-section .skills-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 .soft-skills-section .skill-item {
   display: flex;
@@ -2458,6 +2584,14 @@ input:focus {
   background: rgba(59, 130, 246, 0.2);
   color: #3b82f6;
 }
+@media only screen and (max-width: 767px) {
+  .soft-skills-section .skill-item .skill-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+}
 .soft-skills-section .skill-item .title {
   color: #FFFFFF;
   font-weight: 700;
@@ -2488,7 +2622,7 @@ input:focus {
   border: 1px solid rgba(55, 65, 81, 0.5);
   transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   overflow: hidden;
-  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.4);
 }
 .tecnical-skills-section .skills-grid .skill-card:hover {
   background: #1f2937;

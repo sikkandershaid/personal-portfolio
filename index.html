@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/fonts/fontawesome-free/css/all.min.css" />
   <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
+
 </head>
 
 <body class="site">
@@ -43,8 +44,13 @@
       <div class="mobile-menu">
         <a href="#home" class="home-btn">Home</a>
         <button id="mobileMenuBtn" class="mobile-menu-btn">
-          <span>menu</span>
-          <i class="fas fa-bars"></i>
+          <span class="menu-text">Menu</span>
+
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </button>
       </div>
 
@@ -787,7 +793,7 @@
                   <!-- Experience Section -->
                   <section class="experience-section section_padding-60">
                     <div class="circle-wrapper">
-
+                      <!-- Group - 1 -->
                       <div class="circle-group">
                         <div class="circle-glow"></div>
 
@@ -801,8 +807,7 @@
                           </div>
                         </div>
                       </div>
-
-
+                      <!-- Group - 2 -->
                       <div class="circle-group mt">
                         <div class="circle-glow"></div>
 
@@ -816,8 +821,7 @@
                           </div>
                         </div>
                       </div>
-
-
+                      <!-- Group - 3 -->
                       <div class="circle-group">
                         <div class="circle-glow"></div>
 
@@ -848,8 +852,10 @@
                         <div class="skills-grid">
 
                           <div class="skill-item">
-                            <div class="skill-icon green">
-                              <i class="fas fa-comments"></i>
+                            <div>
+                              <div class="skill-icon green">
+                                <i class="fas fa-comments"></i>
+                              </div>
                             </div>
                             <div>
                               <h4 class="title">Communication</h4>
@@ -858,8 +864,10 @@
                           </div>
 
                           <div class="skill-item">
-                            <div class="skill-icon yellow">
-                              <i class="fas fa-users"></i>
+                            <div>
+                              <div class="skill-icon yellow">
+                                <i class="fas fa-users"></i>
+                              </div>
                             </div>
                             <div>
                               <h4 class="title">Collaboration</h4>
@@ -868,8 +876,10 @@
                           </div>
 
                           <div class="skill-item">
-                            <div class="skill-icon purple">
-                              <i class="fas fa-lightbulb"></i>
+                            <div>
+                              <div class="skill-icon purple">
+                                <i class="fas fa-lightbulb"></i>
+                              </div>
                             </div>
                             <div>
                               <h4 class="title">Problem Solving</h4>
@@ -878,8 +888,10 @@
                           </div>
 
                           <div class="skill-item">
-                            <div class="skill-icon blue">
-                              <i class="fas fa-clock"></i>
+                            <div>
+                              <div class="skill-icon blue">
+                                <i class="fas fa-clock"></i>
+                              </div>
                             </div>
                             <div>
                               <h4 class="title">Management</h4>
@@ -1635,6 +1647,13 @@
   <script src="assets/js/mixitup.min.js"></script>
   <script src="assets/js/subtitleContainer.js"></script>
   <script src="assets/js/script.js"></script>
+  <script>
+    const btn = document.getElementById("mobileMenuBtn");
+
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+    });
+  </script>
 </body>
 
 </html>

@@ -160,6 +160,12 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 80px;
+    @include respond(tablet) {
+      gap: 48px;
+    }
+    @include respond(phone) {
+      gap: 24px;
+    }
   }
 
   .circle-group {
@@ -191,12 +197,18 @@
         margin-bottom: 8px;
         font-style: italic;
         font-family: monospace;
+        @include respond(phone) {
+          font-size: 11px;
+        }
       }
       .circle-title {
         color: $white-color;
         font-weight: bold;
         font-size: 20px;
         margin-bottom: 5px;
+        @include respond(phone) {
+          font-size: 16px;
+        }
       }
       .circle-company {
         color: #6b7280;
@@ -238,6 +250,15 @@
           background: $secondary-color;
         }
       }
+
+      @include respond(sm-laptop) {
+        width: 200px;
+        height: 200px;
+      }
+      @include respond(phone) {
+        width: 160px;
+        height: 160px;
+      }
     }
     &:hover .circle-glow {
       opacity: 1;
@@ -253,6 +274,9 @@
 
   .mt {
     margin-top: 60px;
+    @include respond(phone) {
+      margin-top: 0;
+    }
   }
 }
 
@@ -266,9 +290,6 @@
     border: 1px solid $border-color;
     overflow: hidden;
     transition: 0.5s;
-    // &:hover {
-    //   border-color: $gray-color;
-    // }
     .skills-glow {
       position: absolute;
       top: -100px;
@@ -282,6 +303,9 @@
     }
     &:hover .skills-glow {
       background: rgba(0, 230, 255, 0.3);
+    }
+    @include respond(tablet) {
+      padding: 24px;
     }
   }
 
@@ -297,8 +321,16 @@
 
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
+
+    @include respond(bg-laptop) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include respond(phone) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
   }
 
   .skill-item {
@@ -335,6 +367,12 @@
       &.blue {
         background: rgba(59, 130, 246, 0.2);
         color: #3b82f6;
+      }
+      @include respond(tablet) {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        font-size: 16px;
       }
     }
     .title {

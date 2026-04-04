@@ -73,31 +73,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuButton = document.getElementById("mobileMenuBtn");
     const navBar = document.getElementById("mainNav");
 
-    const navLinks = navBar.querySelectorAll(".navigation__link");
-
-    const closeMenu = () => {
-        navBar.classList.remove("open");
-
-        const menuIcon = menuButton.querySelector(".fas");
-        menuIcon.classList.remove("fa-times");
-        menuIcon.classList.add("fa-bars");
-    };
-
     menuButton.addEventListener("click", function () {
         navBar.classList.toggle("open");
-
-        const menuIcon = menuButton.querySelector(".fas");
-        if (navBar.classList.contains("open")) {
-            menuIcon.classList.remove("fa-bars");
-            menuIcon.classList.add("fa-times");
-        } else {
-            menuIcon.classList.remove("fa-times");
-            menuIcon.classList.add("fa-bars");
-        }
-    });
-
-    navLinks.forEach((link) => {
-        link.addEventListener("click", closeMenu);
     });
 });
 
