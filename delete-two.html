@@ -1,298 +1,76 @@
-<!-- How to use in your HTML -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <style>
-        .background-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
+  <meta charset="UTF-8">
+  <title>Video Thumbnail</title>
+  <style>
+    .video-container {
+      position: relative;
+      width: 600px;
+      max-width: 100%;
+      cursor: pointer;
+    }
 
-        .content {
-            position: relative;
-            z-index: 1;
-            color: white;
-            padding: 50px;
-        }
-    </style>
+    .thumbnail {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70px;
+      height: 70px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .play-btn::before {
+      content: "";
+      border-style: solid;
+      border-width: 12px 0 12px 20px;
+      border-color: transparent transparent transparent white;
+    }
+
+    video {
+      width: 100%;
+      display: none;
+      border-radius: 10px;
+    }
+  </style>
 </head>
-
 <body>
-    <!-- Option 1: Pure CSS Background -->
-    <div class="background-container cosmic-nebula"></div>
 
-    <!-- Option 2: Canvas Background -->
-    <canvas id="matrixCanvas" class="background-container" data-effect="matrix-rain"
-        data-options='{"fontSize": 18, "colors": ["#00ffcc", "#ff0080"]}'>
-    </canvas>
+<div class="video-container" onclick="playVideo()">
+  <!-- Thumbnail -->
+  <img src="thumbnail.jpg" class="thumbnail" id="thumb">
 
-    <!-- Option 3: Multiple Layers -->
-    <div class="background-container" style="
-        background: radial-gradient(circle at 30% 30%, 
-            rgba(108, 99, 255, 0.3) 0%, transparent 50%);
-    "></div>
+  <!-- Play Button -->
+  <div class="play-btn" id="playBtn"></div>
 
-    <div class="background-container" style="
-        background: radial-gradient(circle at 70% 70%, 
-            rgba(255, 0, 122, 0.2) 0%, transparent 50%);
-        mix-blend-mode: overlay;
-    "></div>
+  <!-- Video -->
+  <video id="video" controls>
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
 
-    <div class="content">
-        <!-- Your content here -->
-        <h1>Your Content Over Background</h1>
-        <p>This will appear above the background effects</p>
-    </div>
+<script>
+  function playVideo() {
+    document.getElementById("thumb").style.display = "none";
+    document.getElementById("playBtn").style.display = "none";
 
-    <script>
-        // background-effects.js
-        class BackgroundEffects {
-            constructor() {
-                this.effects = {
-                    'matrix-rain': this.matrixRain,
-                    'particle-field': this.particleField,
-                    'nebula-clouds': this.nebulaClouds,
-                    'circry-flow': this.circuitFlow,
-                    'wave-distortion': this.waveDistortion
-                };
-            }
+    const video = document.getElementById("video");
+    video.style.display = "block";
+    video.play();
+  }
+</script>
 
-            // Matrix Rain Effect
-            matrixRain(canvasId, options = {}) {
-                const canvas = document.getElementById(canvasId);
-                if (!canvas) return;
-
-                const ctx = canvas.getContext('2d');
-                const chars = 'sh3azw4xe5cdr6vt7bgy8hnu9j0im,o[pl.];';
-
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-
-                const fontSize = options.fontSize || 14;
-                const columns = canvas.width / fontSize;
-                const drops = [];
-
-                for (let i = 0; i < columns; i++) {
-                    drops[i] = Math.random() * canvas.height;
-                }
-
-                function draw() {
-                    ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
-                    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                    ctx.font = `${fontSize}px monospace`;
-
-                    for (let i = 0; i < drops.length; i++) {
-                        const char = chars[Math.floor(Math.random() * chars.length)];
-                        const x = i * fontSize;
-                        const y = drops[i] * fontSize;
-
-                        // Gradient color from top to bottom
-                        const gradient = ctx.createLinearGradient(x, y - fontSize, x, y + fontSize);
-                        gradient.addColorStop(0, '#00ffcc');
-                        gradient.addColorStop(0.5, '#ff0080');
-                        gradient.addColorStop(1, '#00ffcc');
-
-                        ctx.fillStyle = gradient;
-                        ctx.fillText(char, x, y);
-
-                        if (y > canvas.height && Math.random() > 0.975) {
-                            drops[i] = 0;
-                        }
-                        drops[i]++;
-                    }
-                }
-
-                setInterval(draw, 33);
-
-                window.addEventListener('resize', () => {
-                    canvas.width = window.innerWidth;
-                    canvas.height = window.innerHeight;
-                });
-            }
-
-            // Particle Field
-            particleField(canvasId, options = {}) {
-                const canvas = document.getElementById(canvasId);
-                if (!canvas) return;
-
-                const ctx = canvas.getContext('2d');
-                const particles = [];
-                const particleCount = options.count || 100;
-
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-
-                class Particle {
-                    constructor() {
-                        this.x = Math.random() * canvas.width;
-                        this.y = Math.random() * canvas.height;
-                        this.size = Math.random() * 3 + 1;
-                        this.speedX = Math.random() * 2 - 1;
-                        this.speedY = Math.random() * 2 - 1;
-                        this.color = options.colors ?
-                            options.colors[Math.floor(Math.random() * options.colors.length)] :
-                            `hsl(${Math.random() * 360}, 100%, 70%)`;
-                    }
-
-                    update() {
-                        this.x += this.speedX;
-                        this.y += this.speedY;
-
-                        if (this.x > canvas.width) this.x = 0;
-                        else if (this.x < 0) this.x = canvas.width;
-                        if (this.y > canvas.height) this.y = 0;
-                        else if (this.y < 0) this.y = canvas.height;
-                    }
-
-                    draw() {
-                        ctx.fillStyle = this.color;
-                        ctx.beginPath();
-                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                        ctx.fill();
-
-                        // Connection lines
-                        particles.forEach(particle => {
-                            const dx = this.x - particle.x;
-                            const dy = this.y - particle.y;
-                            const distance = Math.sqrt(dx * dx + dy * dy);
-
-                            if (distance < 100) {
-                                ctx.beginPath();
-                                ctx.strokeStyle = this.color.replace(')', ', 0.2)').replace('rgb', 'rgba');
-                                ctx.lineWidth = 0.5;
-                                ctx.moveTo(this.x, this.y);
-                                ctx.lineTo(particle.x, particle.y);
-                                ctx.stroke();
-                            }
-                        });
-                    }
-                }
-
-                // Create particles
-                for (let i = 0; i < particleCount; i++) {
-                    particles.push(new Particle());
-                }
-
-                function animate() {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    particles.forEach(particle => {
-                        particle.update();
-                        particle.draw();
-                    });
-                    requestAnimationFrame(animate);
-                }
-
-                animate();
-
-                window.addEventListener('resize', () => {
-                    canvas.width = window.innerWidth;
-                    canvas.height = window.innerHeight;
-                });
-            }
-
-            // Nebula Clouds
-            nebulaClouds(canvasId, options = {}) {
-                const canvas = document.getElementById(canvasId);
-                if (!canvas) return;
-
-                const ctx = canvas.getContext('2d');
-                const clouds = [];
-
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-
-                class Cloud {
-                    constructor() {
-                        this.x = Math.random() * canvas.width;
-                        this.y = Math.random() * canvas.height;
-                        this.size = Math.random() * 200 + 100;
-                        this.speedX = Math.random() * 0.5 - 0.25;
-                        this.speedY = Math.random() * 0.5 - 0.25;
-                        this.color = options.colors ?
-                            options.colors[Math.floor(Math.random() * options.colors.length)] :
-                            `hsla(${Math.random() * 360}, 100%, 50%, 0.1)`;
-                    }
-
-                    update() {
-                        this.x += this.speedX;
-                        this.y += this.speedY;
-
-                        if (this.x > canvas.width + this.size) this.x = -this.size;
-                        else if (this.x < -this.size) this.x = canvas.width + this.size;
-                        if (this.y > canvas.height + this.size) this.y = -this.size;
-                        else if (this.y < -this.size) this.y = canvas.height + this.size;
-                    }
-
-                    draw() {
-                        const gradient = ctx.createRadialGradient(
-                            this.x, this.y, 0,
-                            this.x, this.y, this.size
-                        );
-
-                        gradient.addColorStop(0, this.color);
-                        gradient.addColorStop(1, 'transparent');
-
-                        ctx.fillStyle = gradient;
-                        ctx.beginPath();
-                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                        ctx.fill();
-                    }
-                }
-
-                // Create clouds
-                for (let i = 0; i < 5; i++) {
-                    clouds.push(new Cloud());
-                }
-
-                function animate() {
-                    ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
-                    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                    clouds.forEach(cloud => {
-                        cloud.update();
-                        cloud.draw();
-                    });
-
-                    requestAnimationFrame(animate);
-                }
-
-                animate();
-
-                window.addEventListener('resize', () => {
-                    canvas.width = window.innerWidth;
-                    canvas.height = window.innerHeight;
-                });
-            }
-
-            // Initialize all effects
-            init() {
-                Object.keys(this.effects).forEach(effect => {
-                    const elements = document.querySelectorAll(`[data-effect="${effect}"]`);
-                    elements.forEach(el => {
-                        const canvasId = el.id;
-                        const options = JSON.parse(el.getAttribute('data-options') || '{}');
-                        this.effects[effect].call(this, canvasId, options);
-                    });
-                });
-            }
-        }
-
-        // Usage:
-        // const bgEffects = new BackgroundEffects();
-        // bgEffects.init();
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const effects = new BackgroundEffects();
-            effects.init();
-        });
-    </script>
 </body>
-
 </html>

@@ -1,168 +1,197 @@
-// Mobile Nav Open Close
-document.addEventListener('DOMContentLoaded', () => {
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-    const menuBtn = document.getElementById('menuBtn');
-    const closeBtn = document.getElementById('closeBtn');
+document.addEventListener("DOMContentLoaded", function () {
 
-    // Open sidebar and overlay
-    menuBtn.addEventListener('click', () => {
-        sidebar.classList.add('active');
-        overlay.classList.add('active');
-    });
+    /* =============================
+       Mobile Sidebar Toggle
+    ============================= */
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+    const menuBtn = document.getElementById("menuBtn");
+    const closeBtn = document.getElementById("closeBtn");
 
-    // Close sidebar and overlay
+    if (menuBtn && sidebar && overlay) {
+        menuBtn.addEventListener("click", () => {
+            sidebar.classList.add("active");
+            overlay.classList.add("active");
+        });
+    }
+
     const closeSidebar = () => {
-        sidebar.classList.remove('active');
-        overlay.classList.remove('active');
+        sidebar?.classList.remove("active");
+        overlay?.classList.remove("active");
     };
 
-    closeBtn.addEventListener('click', closeSidebar);
-    overlay.addEventListener('click', closeSidebar); // Close when clicking outside the sidebar
-});
-
-// ScrollReveal Animation---------
-const sr = ScrollReveal({
-    origin: 'bottom',
-    distance: '40px',
-    duration: 800,
-    delay: 400,
-    // reset: true
-})
-
-sr.reveal('.Class-name', {
-    distance: '20px',
-    origin: 'top',
-})
+    closeBtn?.addEventListener("click", closeSidebar);
+    overlay?.addEventListener("click", closeSidebar);
 
 
-// Navigation Active
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".navigation__link");
-
-function setActiveLink() {
-    let current = "";
-
-    sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 150;
-        const sectionHeight = section.offsetHeight;
-
-        if (
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-        ) {
-            current = section.getAttribute("id");
-        }
-    });
-
-    navLinks.forEach((link) => {
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === `#${current}`) {
-            link.classList.add("active");
-        }
-    });
-}
-
-window.addEventListener("scroll", setActiveLink);
-window.addEventListener("load", setActiveLink);
-
-
-// Mobile menu active / inactive
-document.addEventListener("DOMContentLoaded", function () {
+    /* =============================
+       Mobile Menu Toggle
+    ============================= */
     const menuButton = document.getElementById("mobileMenuBtn");
     const navBar = document.getElementById("mainNav");
 
-    menuButton.addEventListener("click", function () {
-        navBar.classList.toggle("open");
+    menuButton?.addEventListener("click", () => {
+        navBar?.classList.toggle("open");
     });
-});
 
 
-// mixitup
-var mixer = mixitup(".portfolio-grid", {
-    animation: {
-        duration: 600,
-        easing: "ease-in-out",
-        effects: "fade blur(10px)",
-        staggerSequence: function (i) {
-            return i * 20;
-        },
-    },
-});
+    /* =============================
+       Navigation Active on Scroll
+    ============================= */
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navigation__link");
 
-// Active button effect
-const buttons = document.querySelectorAll(".portfolio-item button");
-buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        buttons.forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-    });
-});
+    function setActiveLink() {
+        let current = "";
 
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 150;
+            const sectionHeight = section.offsetHeight;
 
-// Initialize Portfolio Image Swiper
-var swiper = new Swiper(".portfolio-image-slider", {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    loop: true,
-
-    // autoplay: {
-    //   delay: 2500,
-    //   disableOnInteraction: false,
-    // },
-    pagination: {
-        el: ".portfolio-slider-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".portfolio-slider-button-next",
-        prevEl: ".portfolio-slider-button-prev",
-    },
-});
-
-
-//    Progress bar animation starts when scrolling
-
-const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                const bars = entry.target.querySelectorAll(".bar-fill");
-                bars.forEach((bar) => {
-                    bar.style.width = bar.getAttribute("data-progress");
-                });
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionTop + sectionHeight
+            ) {
+                current = section.getAttribute("id");
             }
         });
-    },
-    { threshold: 0.1 }
-);
 
-document
-    .querySelectorAll(".skill-card")
-    .forEach((card) => observer.observe(card));
+        navLinks.forEach((link) => {
+            link.classList.remove("active");
+
+            if (link.getAttribute("href") === `#${current}`) {
+                link.classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", setActiveLink);
+    window.addEventListener("load", setActiveLink);
 
 
-// Clicking on a link within the modal will take you out of the modal
+    /* =============================
+       ScrollReveal Animation
+    ============================= */
+    if (typeof ScrollReveal !== "undefined") {
+        const sr = ScrollReveal({
+            origin: "bottom",
+            distance: "40px",
+            duration: 800,
+            delay: 400,
+        });
 
-document.querySelectorAll(".modal-link").forEach((link) => {
-    link.addEventListener("click", function (e) {
-        e.preventDefault();
+        sr.reveal(".Class-name", {
+            distance: "20px",
+            origin: "top",
+        });
+    }
 
-        const targetId = this.getAttribute("href");
 
-        // modal close (Bootstrap example)
-        const modalEl = document.querySelector(".modal.show");
-        if (modalEl) {
-            const modalInstance = bootstrap.Modal.getInstance(modalEl);
-            modalInstance.hide();
-        }
+    /* =============================
+       Magnific Popup (Video)
+    ============================= */
+    if (typeof $ !== "undefined" && $.fn.magnificPopup) {
+        $(".video-popup").magnificPopup({
+            type: "iframe",
+            mainClass: "mfp-fade",
+            removalDelay: 300,
+            preloader: false,
+            fixedContentPos: false,
+        });
+        $('.video-popup').on('click', function () {
+            $('.modal').modal('hide');
+        });
+    }
 
-        // scroll after modal closes
-        setTimeout(() => {
-            document.querySelector(targetId).scrollIntoView({
-                behavior: "smooth",
-            });
-        }, 300);
+
+    /* =============================
+       MixItUp (Portfolio Filter)
+    ============================= */
+    if (typeof mixitup !== "undefined") {
+        mixitup(".portfolio-grid", {
+            animation: {
+                duration: 600,
+                easing: "ease-in-out",
+                effects: "fade blur(10px)",
+                staggerSequence: (i) => i * 20,
+            },
+        });
+    }
+
+    // Active button
+    const buttons = document.querySelectorAll(".portfolio-item button");
+    buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            buttons.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+        });
     });
+
+
+    /* =============================
+       Swiper Slider
+    ============================= */
+    if (typeof Swiper !== "undefined") {
+        new Swiper(".portfolio-image-slider", {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+
+            pagination: {
+                el: ".portfolio-slider-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".portfolio-slider-button-next",
+                prevEl: ".portfolio-slider-button-prev",
+            },
+        });
+    }
+
+
+    /* =============================
+       Progress Bar Animation
+    ============================= */
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const bars = entry.target.querySelectorAll(".bar-fill");
+                    bars.forEach((bar) => {
+                        bar.style.width = bar.getAttribute("data-progress");
+                    });
+                }
+            });
+        },
+        { threshold: 0.1 }
+    );
+
+    document.querySelectorAll(".skill-card").forEach((card) => {
+        observer.observe(card);
+    });
+
+
+    /* =============================
+       Modal Link Scroll Fix
+    ============================= */
+    document.querySelectorAll(".modal-link").forEach((link) => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+
+            const modalEl = document.querySelector(".modal.show");
+            if (modalEl && typeof bootstrap !== "undefined") {
+                const modalInstance = bootstrap.Modal.getInstance(modalEl);
+                modalInstance?.hide();
+            }
+
+            setTimeout(() => {
+                document.querySelector(targetId)?.scrollIntoView({
+                    behavior: "smooth",
+                });
+            }, 300);
+        });
+    });
+
 });
